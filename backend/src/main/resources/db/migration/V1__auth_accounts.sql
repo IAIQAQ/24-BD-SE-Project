@@ -1,0 +1,14 @@
+CREATE TABLE sys_account (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  login_name VARCHAR(64) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  role VARCHAR(20) NOT NULL,
+  status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE student_profile (
+  account_id BIGINT PRIMARY KEY,
+  nickname VARCHAR(64) NOT NULL,
+  grade TINYINT NOT NULL,
+  CONSTRAINT fk_student_account FOREIGN KEY (account_id) REFERENCES sys_account(id),
+  CONSTRAINT ck_student_grade CHECK (grade BETWEEN 1 AND 3)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
