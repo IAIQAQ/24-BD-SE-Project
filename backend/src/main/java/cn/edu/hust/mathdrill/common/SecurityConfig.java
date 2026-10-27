@@ -42,7 +42,7 @@ public class SecurityConfig {
         return http.build();
     }
     @Bean CorsConfigurationSource corsConfigurationSource(@Value("${mathdrill.cors-origins}")String origins){
-        var c=new CorsConfiguration();c.setAllowedOrigins(Arrays.stream(origins.split(",")).map(String::trim).toList());c.setAllowedMethods(List.of("GET","POST","OPTIONS"));c.setAllowedHeaders(List.of("Content-Type","X-CSRF-TOKEN"));c.setAllowCredentials(true);
+        var c=new CorsConfiguration();c.setAllowedOrigins(Arrays.stream(origins.split(",")).map(String::trim).toList());c.setAllowedMethods(List.of("GET","POST","PUT","OPTIONS"));c.setAllowedHeaders(List.of("Content-Type","X-CSRF-TOKEN"));c.setAllowCredentials(true);
         var source=new UrlBasedCorsConfigurationSource();source.registerCorsConfiguration("/api/v1/**",c);return source;
     }
     @Bean CommandLineRunner seed(AuthService users,PasswordEncoder encoder,@Value("${mathdrill.seed-enabled:false}")boolean enabled,@Value("${mathdrill.seed-password:}")String password){

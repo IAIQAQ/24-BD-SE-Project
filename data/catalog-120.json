@@ -1,0 +1,1082 @@
+[
+  {
+    "id": 1,
+    "a": 0,
+    "b": 0,
+    "stem": "0 + 0 =",
+    "standardAnswer": "0",
+    "explanation": "从 0 开始，再增加 0，得到 0。",
+    "fingerprint": "3e14edcf121e182f7377546d2934b8aaa02a76734196cf8e34e18ba1a22b3adc"
+  },
+  {
+    "id": 2,
+    "a": 0,
+    "b": 1,
+    "stem": "0 + 1 =",
+    "standardAnswer": "1",
+    "explanation": "从 0 开始，再增加 1，得到 1。",
+    "fingerprint": "96282536c2b2517f6383d65164d0dad83c450bb3f433379c7681128fec05a773"
+  },
+  {
+    "id": 3,
+    "a": 0,
+    "b": 2,
+    "stem": "0 + 2 =",
+    "standardAnswer": "2",
+    "explanation": "从 0 开始，再增加 2，得到 2。",
+    "fingerprint": "ab944598ca50d16bfa0d0962215262f233eb50b98fec714ed746e45447c1964b"
+  },
+  {
+    "id": 4,
+    "a": 0,
+    "b": 3,
+    "stem": "0 + 3 =",
+    "standardAnswer": "3",
+    "explanation": "从 0 开始，再增加 3，得到 3。",
+    "fingerprint": "6d13638c8f2a1b97efa6be21532c75542d66d90d13c0e0426d9d0f5ecdab03d4"
+  },
+  {
+    "id": 5,
+    "a": 0,
+    "b": 4,
+    "stem": "0 + 4 =",
+    "standardAnswer": "4",
+    "explanation": "从 0 开始，再增加 4，得到 4。",
+    "fingerprint": "6acfb296304cd605b31aae49ca7b9ed1579bd9608bf458710212f430cc12f663"
+  },
+  {
+    "id": 6,
+    "a": 0,
+    "b": 5,
+    "stem": "0 + 5 =",
+    "standardAnswer": "5",
+    "explanation": "从 0 开始，再增加 5，得到 5。",
+    "fingerprint": "a1b3e5fab6b002d9c74fc8c123363436f3f7df26acbdff27b54a8fd2c9caf7cd"
+  },
+  {
+    "id": 7,
+    "a": 0,
+    "b": 6,
+    "stem": "0 + 6 =",
+    "standardAnswer": "6",
+    "explanation": "从 0 开始，再增加 6，得到 6。",
+    "fingerprint": "faab341195cf8b14c6b272ec686ae519a8c9616e971d859d40a1c02ecfe873f4"
+  },
+  {
+    "id": 8,
+    "a": 0,
+    "b": 7,
+    "stem": "0 + 7 =",
+    "standardAnswer": "7",
+    "explanation": "从 0 开始，再增加 7，得到 7。",
+    "fingerprint": "c1936e5aa4e1f167035d5665a8f9e328c5b467dc8df85bd6036c70ee648c4c8a"
+  },
+  {
+    "id": 9,
+    "a": 0,
+    "b": 8,
+    "stem": "0 + 8 =",
+    "standardAnswer": "8",
+    "explanation": "从 0 开始，再增加 8，得到 8。",
+    "fingerprint": "b6f2210dc2e23861a5af818a167d6991393ec5e90b20fbfb2f585df53cdab952"
+  },
+  {
+    "id": 10,
+    "a": 0,
+    "b": 9,
+    "stem": "0 + 9 =",
+    "standardAnswer": "9",
+    "explanation": "从 0 开始，再增加 9，得到 9。",
+    "fingerprint": "57e3600465bce8df57b2e7fbc7f72d961cecb722231d838acee2dd4fe695015c"
+  },
+  {
+    "id": 11,
+    "a": 0,
+    "b": 10,
+    "stem": "0 + 10 =",
+    "standardAnswer": "10",
+    "explanation": "从 0 开始，再增加 10，得到 10。",
+    "fingerprint": "ed89587192a19eecf0d318eb84c162c81fb5655b78100d2b3c33e919d33bccd4"
+  },
+  {
+    "id": 12,
+    "a": 0,
+    "b": 11,
+    "stem": "0 + 11 =",
+    "standardAnswer": "11",
+    "explanation": "从 0 开始，再增加 11，得到 11。",
+    "fingerprint": "2c5016b130bd8ef09e70c5d5382388724f036887f959b81141efb6d082330e40"
+  },
+  {
+    "id": 13,
+    "a": 0,
+    "b": 12,
+    "stem": "0 + 12 =",
+    "standardAnswer": "12",
+    "explanation": "从 0 开始，再增加 12，得到 12。",
+    "fingerprint": "be7c46979bd50dbffe2eaf718ab59b844dd7d86e94d4946c5ddbb0bdbbde0e1c"
+  },
+  {
+    "id": 14,
+    "a": 0,
+    "b": 13,
+    "stem": "0 + 13 =",
+    "standardAnswer": "13",
+    "explanation": "从 0 开始，再增加 13，得到 13。",
+    "fingerprint": "9554d2bfafbb2db245496c0f5c248e09dfa2aaeea27dd52138997907a336d2cb"
+  },
+  {
+    "id": 15,
+    "a": 0,
+    "b": 14,
+    "stem": "0 + 14 =",
+    "standardAnswer": "14",
+    "explanation": "从 0 开始，再增加 14，得到 14。",
+    "fingerprint": "6f2f3f79d65cc4270606223e286c927fd21baf7aad803ca56321a6f60c7af0f6"
+  },
+  {
+    "id": 16,
+    "a": 0,
+    "b": 15,
+    "stem": "0 + 15 =",
+    "standardAnswer": "15",
+    "explanation": "从 0 开始，再增加 15，得到 15。",
+    "fingerprint": "733d34757f00d6bf6b0f6f191cdcb45de7bb9151da55287ee75e67900b6a98c1"
+  },
+  {
+    "id": 17,
+    "a": 0,
+    "b": 16,
+    "stem": "0 + 16 =",
+    "standardAnswer": "16",
+    "explanation": "从 0 开始，再增加 16，得到 16。",
+    "fingerprint": "f78a8c2f76aecd01ff8aea798380cb3e747cae7f77d22ba1dca8ab1ccf4b3926"
+  },
+  {
+    "id": 18,
+    "a": 0,
+    "b": 17,
+    "stem": "0 + 17 =",
+    "standardAnswer": "17",
+    "explanation": "从 0 开始，再增加 17，得到 17。",
+    "fingerprint": "1737c1c8d90ac995015e3448696800cd43b776d3e8cd74e6bad1e1ff4bde5fd6"
+  },
+  {
+    "id": 19,
+    "a": 0,
+    "b": 18,
+    "stem": "0 + 18 =",
+    "standardAnswer": "18",
+    "explanation": "从 0 开始，再增加 18，得到 18。",
+    "fingerprint": "13b8e72e41f4e5fdbdb73d46d13cb11f963f30b47ccd041e24c200a09f32bbdd"
+  },
+  {
+    "id": 20,
+    "a": 0,
+    "b": 19,
+    "stem": "0 + 19 =",
+    "standardAnswer": "19",
+    "explanation": "从 0 开始，再增加 19，得到 19。",
+    "fingerprint": "5c76b81915a6ced86c2d32593b3bd257c9f4c43e145797bb9f375134c9f1c58a"
+  },
+  {
+    "id": 21,
+    "a": 1,
+    "b": 1,
+    "stem": "1 + 1 =",
+    "standardAnswer": "2",
+    "explanation": "从 1 开始，再增加 1，得到 2。",
+    "fingerprint": "cf174d4cc87e6710d95a4e141faee5f676a2bd701351671df65dbcfeab7304fb"
+  },
+  {
+    "id": 22,
+    "a": 1,
+    "b": 2,
+    "stem": "1 + 2 =",
+    "standardAnswer": "3",
+    "explanation": "从 1 开始，再增加 2，得到 3。",
+    "fingerprint": "03c897f446a3fc12d0695d198017057bf5bf799cde1439168e555ef3b2962e50"
+  },
+  {
+    "id": 23,
+    "a": 1,
+    "b": 3,
+    "stem": "1 + 3 =",
+    "standardAnswer": "4",
+    "explanation": "从 1 开始，再增加 3，得到 4。",
+    "fingerprint": "5aa2c6e87c02a16cbc3a2ba345eee86bc8da8102f63129cd247a6f6f4cb61813"
+  },
+  {
+    "id": 24,
+    "a": 1,
+    "b": 4,
+    "stem": "1 + 4 =",
+    "standardAnswer": "5",
+    "explanation": "从 1 开始，再增加 4，得到 5。",
+    "fingerprint": "c54c5b2423f6cfb9828c1fc70883eafcfa4b2e2c0ee60b6b4f302379d91488a9"
+  },
+  {
+    "id": 25,
+    "a": 1,
+    "b": 5,
+    "stem": "1 + 5 =",
+    "standardAnswer": "6",
+    "explanation": "从 1 开始，再增加 5，得到 6。",
+    "fingerprint": "150a05a4ec1e4addc1acb4b1dd02e3170d20fe2a379e6b0d446edf41d28d62e3"
+  },
+  {
+    "id": 26,
+    "a": 1,
+    "b": 6,
+    "stem": "1 + 6 =",
+    "standardAnswer": "7",
+    "explanation": "从 1 开始，再增加 6，得到 7。",
+    "fingerprint": "a1647c7dcb772d8c60d00a2b5dfb285d7992906a6c9c26cc13d8966e2109e715"
+  },
+  {
+    "id": 27,
+    "a": 1,
+    "b": 7,
+    "stem": "1 + 7 =",
+    "standardAnswer": "8",
+    "explanation": "从 1 开始，再增加 7，得到 8。",
+    "fingerprint": "5b5ab96ede2c3d0b832a037eb998db375ca3b4eb268045c855e56d36c08fde72"
+  },
+  {
+    "id": 28,
+    "a": 1,
+    "b": 8,
+    "stem": "1 + 8 =",
+    "standardAnswer": "9",
+    "explanation": "从 1 开始，再增加 8，得到 9。",
+    "fingerprint": "e4ef6e981d84c5f1712032c4f7a242a686a82946d5e083b047fdcf93d14fa343"
+  },
+  {
+    "id": 29,
+    "a": 1,
+    "b": 9,
+    "stem": "1 + 9 =",
+    "standardAnswer": "10",
+    "explanation": "从 1 开始，再增加 9，得到 10。",
+    "fingerprint": "b061d4eedb6e98d36f60310fff9641f1bcd79b2a028cd9db719e812a3f09f977"
+  },
+  {
+    "id": 30,
+    "a": 1,
+    "b": 10,
+    "stem": "1 + 10 =",
+    "standardAnswer": "11",
+    "explanation": "从 1 开始，再增加 10，得到 11。",
+    "fingerprint": "eb0a49eb6877fe057cf1f9101d5a8c24827ce4f1482f08736b2d344d0ca8eee3"
+  },
+  {
+    "id": 31,
+    "a": 1,
+    "b": 11,
+    "stem": "1 + 11 =",
+    "standardAnswer": "12",
+    "explanation": "从 1 开始，再增加 11，得到 12。",
+    "fingerprint": "c3d1741f65b21a0d6b7b4ff9a9644432daf53295682eddfcf385c7b771ea8b19"
+  },
+  {
+    "id": 32,
+    "a": 1,
+    "b": 12,
+    "stem": "1 + 12 =",
+    "standardAnswer": "13",
+    "explanation": "从 1 开始，再增加 12，得到 13。",
+    "fingerprint": "a327b1ab4ea2fdc6a5680bf2525e84a78f3e077a33b7660d275928eafb52153b"
+  },
+  {
+    "id": 33,
+    "a": 1,
+    "b": 13,
+    "stem": "1 + 13 =",
+    "standardAnswer": "14",
+    "explanation": "从 1 开始，再增加 13，得到 14。",
+    "fingerprint": "5a559d5fb8a32057ddc130ca84ebe49b8f8fa0714641b13f81b9db4b92cfd3d0"
+  },
+  {
+    "id": 34,
+    "a": 1,
+    "b": 14,
+    "stem": "1 + 14 =",
+    "standardAnswer": "15",
+    "explanation": "从 1 开始，再增加 14，得到 15。",
+    "fingerprint": "80f59f1a9e4c16a3c0adcc4b7076546e8fc6963361710722957c19a26a8b6ba8"
+  },
+  {
+    "id": 35,
+    "a": 1,
+    "b": 15,
+    "stem": "1 + 15 =",
+    "standardAnswer": "16",
+    "explanation": "从 1 开始，再增加 15，得到 16。",
+    "fingerprint": "b92ee0bc921a55404f44ead976ab2843b5b866f5933cc6df3e206e19bff89c9c"
+  },
+  {
+    "id": 36,
+    "a": 1,
+    "b": 16,
+    "stem": "1 + 16 =",
+    "standardAnswer": "17",
+    "explanation": "从 1 开始，再增加 16，得到 17。",
+    "fingerprint": "f48d5996a7eb808a8f5a5bcd0dd60f91b3983e82cf9034073ac362d0f167472c"
+  },
+  {
+    "id": 37,
+    "a": 1,
+    "b": 17,
+    "stem": "1 + 17 =",
+    "standardAnswer": "18",
+    "explanation": "从 1 开始，再增加 17，得到 18。",
+    "fingerprint": "751380b79b6c2bb3d1625d9ee4d5902c0611a2779b2a5be04fe7fc45cc583865"
+  },
+  {
+    "id": 38,
+    "a": 1,
+    "b": 18,
+    "stem": "1 + 18 =",
+    "standardAnswer": "19",
+    "explanation": "从 1 开始，再增加 18，得到 19。",
+    "fingerprint": "2c3d07c223697a01cc968f19704854789d859e035ee454baa4294c983e973ae7"
+  },
+  {
+    "id": 39,
+    "a": 1,
+    "b": 19,
+    "stem": "1 + 19 =",
+    "standardAnswer": "20",
+    "explanation": "从 1 开始，再增加 19，得到 20。",
+    "fingerprint": "5b51868b0b1348f463dffa88f4b9c6969307eb8de768cfd5eaac6d142c3cc49b"
+  },
+  {
+    "id": 40,
+    "a": 2,
+    "b": 2,
+    "stem": "2 + 2 =",
+    "standardAnswer": "4",
+    "explanation": "从 2 开始，再增加 2，得到 4。",
+    "fingerprint": "55263ba8a19b86cd2b92938c2ee1eaeab11aff8855ebe5df7dc8cdaf9682ca41"
+  },
+  {
+    "id": 41,
+    "a": 2,
+    "b": 3,
+    "stem": "2 + 3 =",
+    "standardAnswer": "5",
+    "explanation": "从 2 开始，再增加 3，得到 5。",
+    "fingerprint": "726048a6a6338ee5b823933ab0fa2525639bbbd90930d9ab8ea30ce98ce815f2"
+  },
+  {
+    "id": 42,
+    "a": 2,
+    "b": 4,
+    "stem": "2 + 4 =",
+    "standardAnswer": "6",
+    "explanation": "从 2 开始，再增加 4，得到 6。",
+    "fingerprint": "dd8eccbc46b9e7197977434fdd6b7d417f8ece06010dca8753b9e640e6b7a3de"
+  },
+  {
+    "id": 43,
+    "a": 2,
+    "b": 5,
+    "stem": "2 + 5 =",
+    "standardAnswer": "7",
+    "explanation": "从 2 开始，再增加 5，得到 7。",
+    "fingerprint": "199a6afa3ddfec48ed538e2fd48a845dc0723a5ca3d815c0ac9c4b19bcd0a8f0"
+  },
+  {
+    "id": 44,
+    "a": 2,
+    "b": 6,
+    "stem": "2 + 6 =",
+    "standardAnswer": "8",
+    "explanation": "从 2 开始，再增加 6，得到 8。",
+    "fingerprint": "ee281f04309b298c6fe2977f9b7761593aa5a79b5cfc058f6d1ef7f53d8b3d50"
+  },
+  {
+    "id": 45,
+    "a": 2,
+    "b": 7,
+    "stem": "2 + 7 =",
+    "standardAnswer": "9",
+    "explanation": "从 2 开始，再增加 7，得到 9。",
+    "fingerprint": "8404317f606c849984131533bc44d05262d6d1909a60e0597564312e5a21c643"
+  },
+  {
+    "id": 46,
+    "a": 2,
+    "b": 8,
+    "stem": "2 + 8 =",
+    "standardAnswer": "10",
+    "explanation": "从 2 开始，再增加 8，得到 10。",
+    "fingerprint": "0313bb2a2e2b79133f43f923a1a394bb82063dd9b3338648df455f6472ac69d1"
+  },
+  {
+    "id": 47,
+    "a": 2,
+    "b": 9,
+    "stem": "2 + 9 =",
+    "standardAnswer": "11",
+    "explanation": "从 2 开始，再增加 9，得到 11。",
+    "fingerprint": "ddbc66ff062d711f9e541bcd5d117e4b6dfd0aecf0afb54c7568eb6404dfff2c"
+  },
+  {
+    "id": 48,
+    "a": 2,
+    "b": 10,
+    "stem": "2 + 10 =",
+    "standardAnswer": "12",
+    "explanation": "从 2 开始，再增加 10，得到 12。",
+    "fingerprint": "34e52794b3363da02ce68a6d2848c61df6af2f9e7c4fee6b9d436e282708a062"
+  },
+  {
+    "id": 49,
+    "a": 2,
+    "b": 11,
+    "stem": "2 + 11 =",
+    "standardAnswer": "13",
+    "explanation": "从 2 开始，再增加 11，得到 13。",
+    "fingerprint": "808c90ace2d4fdd8bbee88ec9c95025c8cbc9bca41d8705782287ad70b5ba891"
+  },
+  {
+    "id": 50,
+    "a": 2,
+    "b": 12,
+    "stem": "2 + 12 =",
+    "standardAnswer": "14",
+    "explanation": "从 2 开始，再增加 12，得到 14。",
+    "fingerprint": "a5101e6623286edb31f833c8434ff330ce51523bdb7306e68cc2586e1ba9e52b"
+  },
+  {
+    "id": 51,
+    "a": 2,
+    "b": 13,
+    "stem": "2 + 13 =",
+    "standardAnswer": "15",
+    "explanation": "从 2 开始，再增加 13，得到 15。",
+    "fingerprint": "bf556a8c667d74eea72ec83d7b3bd54d51f368c7aa37d7396ad6eede04283d53"
+  },
+  {
+    "id": 52,
+    "a": 2,
+    "b": 14,
+    "stem": "2 + 14 =",
+    "standardAnswer": "16",
+    "explanation": "从 2 开始，再增加 14，得到 16。",
+    "fingerprint": "8f9d8987b692c05cc3fdeecfc4e024974a645aa5056ab6e429a96f973364ee57"
+  },
+  {
+    "id": 53,
+    "a": 2,
+    "b": 15,
+    "stem": "2 + 15 =",
+    "standardAnswer": "17",
+    "explanation": "从 2 开始，再增加 15，得到 17。",
+    "fingerprint": "1c65bb376ce320757b804369938009d310c53577acf1fa08c635899364a9289c"
+  },
+  {
+    "id": 54,
+    "a": 2,
+    "b": 16,
+    "stem": "2 + 16 =",
+    "standardAnswer": "18",
+    "explanation": "从 2 开始，再增加 16，得到 18。",
+    "fingerprint": "f84567340c42671657eb391a2cf5a2dbd918fab5e60e5c336c0ac6ab9e7bac52"
+  },
+  {
+    "id": 55,
+    "a": 2,
+    "b": 17,
+    "stem": "2 + 17 =",
+    "standardAnswer": "19",
+    "explanation": "从 2 开始，再增加 17，得到 19。",
+    "fingerprint": "d6396202ff71232b93cafaf90ba35d9a0d064b3c99208807de7d7fe276dd3093"
+  },
+  {
+    "id": 56,
+    "a": 2,
+    "b": 18,
+    "stem": "2 + 18 =",
+    "standardAnswer": "20",
+    "explanation": "从 2 开始，再增加 18，得到 20。",
+    "fingerprint": "3b9dd5b671eae91f25a0acefe61e684ad46f71c697fdcd7bf44ab52a90bd8ab3"
+  },
+  {
+    "id": 57,
+    "a": 3,
+    "b": 3,
+    "stem": "3 + 3 =",
+    "standardAnswer": "6",
+    "explanation": "从 3 开始，再增加 3，得到 6。",
+    "fingerprint": "efbfec77a0749e83cc9b583b714e431db1a1928c1bd21f073c136a885e97b171"
+  },
+  {
+    "id": 58,
+    "a": 3,
+    "b": 4,
+    "stem": "3 + 4 =",
+    "standardAnswer": "7",
+    "explanation": "从 3 开始，再增加 4，得到 7。",
+    "fingerprint": "12271fb8c57c4f6c5228a7de0a68cd194bf7877d2a338c2ae7efe1b39deeadcd"
+  },
+  {
+    "id": 59,
+    "a": 3,
+    "b": 5,
+    "stem": "3 + 5 =",
+    "standardAnswer": "8",
+    "explanation": "从 3 开始，再增加 5，得到 8。",
+    "fingerprint": "70daa2ce3286bdd82415bf95c7b073355ece417ec811ffa258082b130e073016"
+  },
+  {
+    "id": 60,
+    "a": 3,
+    "b": 6,
+    "stem": "3 + 6 =",
+    "standardAnswer": "9",
+    "explanation": "从 3 开始，再增加 6，得到 9。",
+    "fingerprint": "00a4b8ed2055f47ff771db19e6d0355a3fe64c8752a9314df9f9b594a92f1a8b"
+  },
+  {
+    "id": 61,
+    "a": 3,
+    "b": 7,
+    "stem": "3 + 7 =",
+    "standardAnswer": "10",
+    "explanation": "从 3 开始，再增加 7，得到 10。",
+    "fingerprint": "026f65f09e15c59f4dd22d76a301cf5996e7418c31d506c8528fba018bb846e2"
+  },
+  {
+    "id": 62,
+    "a": 3,
+    "b": 8,
+    "stem": "3 + 8 =",
+    "standardAnswer": "11",
+    "explanation": "从 3 开始，再增加 8，得到 11。",
+    "fingerprint": "aa4f0a5f9e102aa57293aa2032f5a90166a9d8ee57e367026a70a8707765ec1a"
+  },
+  {
+    "id": 63,
+    "a": 3,
+    "b": 9,
+    "stem": "3 + 9 =",
+    "standardAnswer": "12",
+    "explanation": "从 3 开始，再增加 9，得到 12。",
+    "fingerprint": "b0c57b3d7efa1937b107aa0ccef1ce04e00abdc018d64aa8b3aea26eeef560e8"
+  },
+  {
+    "id": 64,
+    "a": 3,
+    "b": 10,
+    "stem": "3 + 10 =",
+    "standardAnswer": "13",
+    "explanation": "从 3 开始，再增加 10，得到 13。",
+    "fingerprint": "5083279f878ce5f529ed06b61efeeaea50d4606c5d76525ddc0a9834d3660c67"
+  },
+  {
+    "id": 65,
+    "a": 3,
+    "b": 11,
+    "stem": "3 + 11 =",
+    "standardAnswer": "14",
+    "explanation": "从 3 开始，再增加 11，得到 14。",
+    "fingerprint": "519b865f718e717233d90b654997f0d18ca0df0dd98a868f2829682d53a08be1"
+  },
+  {
+    "id": 66,
+    "a": 3,
+    "b": 12,
+    "stem": "3 + 12 =",
+    "standardAnswer": "15",
+    "explanation": "从 3 开始，再增加 12，得到 15。",
+    "fingerprint": "6082c1d5dc967e559a6043ed4b80fabab2097f824e76a9ce28bf9c309d798af3"
+  },
+  {
+    "id": 67,
+    "a": 3,
+    "b": 13,
+    "stem": "3 + 13 =",
+    "standardAnswer": "16",
+    "explanation": "从 3 开始，再增加 13，得到 16。",
+    "fingerprint": "c896cc9b9541e43ffd69b88b276eb0b04a6dd1d6ad617fe17d68f61625f662ae"
+  },
+  {
+    "id": 68,
+    "a": 3,
+    "b": 14,
+    "stem": "3 + 14 =",
+    "standardAnswer": "17",
+    "explanation": "从 3 开始，再增加 14，得到 17。",
+    "fingerprint": "5d11c6c4687dcdcb3ae866103dae033a68fd828577b8dbd5febcfa9dc4179344"
+  },
+  {
+    "id": 69,
+    "a": 3,
+    "b": 15,
+    "stem": "3 + 15 =",
+    "standardAnswer": "18",
+    "explanation": "从 3 开始，再增加 15，得到 18。",
+    "fingerprint": "e6c3bde03067e3e929bd5e01d701a937db5d6e15c2d4f3f3990bfc5a991ed010"
+  },
+  {
+    "id": 70,
+    "a": 3,
+    "b": 16,
+    "stem": "3 + 16 =",
+    "standardAnswer": "19",
+    "explanation": "从 3 开始，再增加 16，得到 19。",
+    "fingerprint": "8d211c74ed26bcd022b37f767f3498af0f2fc086834b517c6659504fc70b4983"
+  },
+  {
+    "id": 71,
+    "a": 3,
+    "b": 17,
+    "stem": "3 + 17 =",
+    "standardAnswer": "20",
+    "explanation": "从 3 开始，再增加 17，得到 20。",
+    "fingerprint": "b622d81e1f75430cbbaa58f624d68b5514ed0c2916b415bbf320fef6656c3bc3"
+  },
+  {
+    "id": 72,
+    "a": 4,
+    "b": 4,
+    "stem": "4 + 4 =",
+    "standardAnswer": "8",
+    "explanation": "从 4 开始，再增加 4，得到 8。",
+    "fingerprint": "b26cedbbe6f8999f2d96e78eb76251eaa7966b47bad48b9325b6b9fc70c8b2d3"
+  },
+  {
+    "id": 73,
+    "a": 4,
+    "b": 5,
+    "stem": "4 + 5 =",
+    "standardAnswer": "9",
+    "explanation": "从 4 开始，再增加 5，得到 9。",
+    "fingerprint": "6dcdf87cfd46e3311f05a0aff6c2f04aed83c64a4a0eb4c0fe9ce783d6afba6d"
+  },
+  {
+    "id": 74,
+    "a": 4,
+    "b": 6,
+    "stem": "4 + 6 =",
+    "standardAnswer": "10",
+    "explanation": "从 4 开始，再增加 6，得到 10。",
+    "fingerprint": "93a0119d2ca466263ae62e568f418dad2ee24909cabe5d245d52f795496baad2"
+  },
+  {
+    "id": 75,
+    "a": 4,
+    "b": 7,
+    "stem": "4 + 7 =",
+    "standardAnswer": "11",
+    "explanation": "从 4 开始，再增加 7，得到 11。",
+    "fingerprint": "8661fc445d0f79e9ae97a6d856b122d4670372bee786688914621fd5c9aa5348"
+  },
+  {
+    "id": 76,
+    "a": 4,
+    "b": 8,
+    "stem": "4 + 8 =",
+    "standardAnswer": "12",
+    "explanation": "从 4 开始，再增加 8，得到 12。",
+    "fingerprint": "af2bc0a77ee88dd42796ecccc4c2f42812811e4bb26a1cf14b6a28d4364ef610"
+  },
+  {
+    "id": 77,
+    "a": 4,
+    "b": 9,
+    "stem": "4 + 9 =",
+    "standardAnswer": "13",
+    "explanation": "从 4 开始，再增加 9，得到 13。",
+    "fingerprint": "af212f4e64dda15db7bb4ea8c512053c050e85b13ea2ecab56530b200faf79c6"
+  },
+  {
+    "id": 78,
+    "a": 4,
+    "b": 10,
+    "stem": "4 + 10 =",
+    "standardAnswer": "14",
+    "explanation": "从 4 开始，再增加 10，得到 14。",
+    "fingerprint": "9aa840d22e90258e4c8f70f795f8d606e41dcd6e0bb71270a26e1874ae9db955"
+  },
+  {
+    "id": 79,
+    "a": 4,
+    "b": 11,
+    "stem": "4 + 11 =",
+    "standardAnswer": "15",
+    "explanation": "从 4 开始，再增加 11，得到 15。",
+    "fingerprint": "229bcb252a58c1d80b4942f3b9d8c4afacb14ab6c15aed2269e2e422b5cce88e"
+  },
+  {
+    "id": 80,
+    "a": 4,
+    "b": 12,
+    "stem": "4 + 12 =",
+    "standardAnswer": "16",
+    "explanation": "从 4 开始，再增加 12，得到 16。",
+    "fingerprint": "ca2b0cf6761cd7f93144951bc58bc609d0ffec06d598db8bcd6fb18b4626dca2"
+  },
+  {
+    "id": 81,
+    "a": 4,
+    "b": 13,
+    "stem": "4 + 13 =",
+    "standardAnswer": "17",
+    "explanation": "从 4 开始，再增加 13，得到 17。",
+    "fingerprint": "f95410f6757ba83920c31d161a0ef08b9499f6774378f4b2abd9fe4b7967e004"
+  },
+  {
+    "id": 82,
+    "a": 4,
+    "b": 14,
+    "stem": "4 + 14 =",
+    "standardAnswer": "18",
+    "explanation": "从 4 开始，再增加 14，得到 18。",
+    "fingerprint": "b20044be757809c33785b19d833122901431f3832767d2f64ad87c3355867614"
+  },
+  {
+    "id": 83,
+    "a": 4,
+    "b": 15,
+    "stem": "4 + 15 =",
+    "standardAnswer": "19",
+    "explanation": "从 4 开始，再增加 15，得到 19。",
+    "fingerprint": "2e8cea8e17ab5cac914cdfda7aa630a8c4e77e793d256b6017ba337e4bca6110"
+  },
+  {
+    "id": 84,
+    "a": 4,
+    "b": 16,
+    "stem": "4 + 16 =",
+    "standardAnswer": "20",
+    "explanation": "从 4 开始，再增加 16，得到 20。",
+    "fingerprint": "eacbf00e04176ca2b559de166519a5d29f8456e4277a4bc9a9cc525f43c0b77f"
+  },
+  {
+    "id": 85,
+    "a": 5,
+    "b": 5,
+    "stem": "5 + 5 =",
+    "standardAnswer": "10",
+    "explanation": "从 5 开始，再增加 5，得到 10。",
+    "fingerprint": "7ca668d84d9486118eb73ecaaa95282cc582bb018c942867c3ff8f00c4460a3f"
+  },
+  {
+    "id": 86,
+    "a": 5,
+    "b": 6,
+    "stem": "5 + 6 =",
+    "standardAnswer": "11",
+    "explanation": "从 5 开始，再增加 6，得到 11。",
+    "fingerprint": "6c37f1b4f738525395b946fa1b25586e5982c1c2afd36bda406b8846fac68edc"
+  },
+  {
+    "id": 87,
+    "a": 5,
+    "b": 7,
+    "stem": "5 + 7 =",
+    "standardAnswer": "12",
+    "explanation": "从 5 开始，再增加 7，得到 12。",
+    "fingerprint": "77b5d14182ee6589f32d0f39b087d967e1d1f3abd6a6bc4c9def7baab2b4c524"
+  },
+  {
+    "id": 88,
+    "a": 5,
+    "b": 8,
+    "stem": "5 + 8 =",
+    "standardAnswer": "13",
+    "explanation": "从 5 开始，再增加 8，得到 13。",
+    "fingerprint": "541769f3cf06ed7b297cdcfaacccbe24cc33fcae1551c39f5d879f1958563657"
+  },
+  {
+    "id": 89,
+    "a": 5,
+    "b": 9,
+    "stem": "5 + 9 =",
+    "standardAnswer": "14",
+    "explanation": "从 5 开始，再增加 9，得到 14。",
+    "fingerprint": "f1ecf3ce6c86d45596721480a172e19c4598467bf5e0c7736bb813bf357c2d37"
+  },
+  {
+    "id": 90,
+    "a": 5,
+    "b": 10,
+    "stem": "5 + 10 =",
+    "standardAnswer": "15",
+    "explanation": "从 5 开始，再增加 10，得到 15。",
+    "fingerprint": "bea0de351986a066a75f40aaf345cc283c258aa8467d669c892427c6574d9299"
+  },
+  {
+    "id": 91,
+    "a": 5,
+    "b": 11,
+    "stem": "5 + 11 =",
+    "standardAnswer": "16",
+    "explanation": "从 5 开始，再增加 11，得到 16。",
+    "fingerprint": "9d9d828b5ccaa812c9ae39cb442246a084b34816ebfe5fa6cbb8c19ec578257f"
+  },
+  {
+    "id": 92,
+    "a": 5,
+    "b": 12,
+    "stem": "5 + 12 =",
+    "standardAnswer": "17",
+    "explanation": "从 5 开始，再增加 12，得到 17。",
+    "fingerprint": "00ae4fbf733dc02b3ad4274139c4ca784249feda88e15286ce51bc9da3831671"
+  },
+  {
+    "id": 93,
+    "a": 5,
+    "b": 13,
+    "stem": "5 + 13 =",
+    "standardAnswer": "18",
+    "explanation": "从 5 开始，再增加 13，得到 18。",
+    "fingerprint": "f4c930165ef9d8396a87aa5e5a327c650933ebd4cf4e90c472cb6d6a5c6d3dd1"
+  },
+  {
+    "id": 94,
+    "a": 5,
+    "b": 14,
+    "stem": "5 + 14 =",
+    "standardAnswer": "19",
+    "explanation": "从 5 开始，再增加 14，得到 19。",
+    "fingerprint": "33f44e1f91c5e7c1dec0f11993455b3b41690ef3c5398a4b6084513881cec7e7"
+  },
+  {
+    "id": 95,
+    "a": 5,
+    "b": 15,
+    "stem": "5 + 15 =",
+    "standardAnswer": "20",
+    "explanation": "从 5 开始，再增加 15，得到 20。",
+    "fingerprint": "525e976017697ca5c8ab67b6bdd8e8ff10a9da8f87e70c524ee0ae3102ccf91c"
+  },
+  {
+    "id": 96,
+    "a": 6,
+    "b": 6,
+    "stem": "6 + 6 =",
+    "standardAnswer": "12",
+    "explanation": "从 6 开始，再增加 6，得到 12。",
+    "fingerprint": "2c0fa569b478d5d1a947a9836a7d87761bae303e664ed7bb7d493eba5ab9a13a"
+  },
+  {
+    "id": 97,
+    "a": 6,
+    "b": 7,
+    "stem": "6 + 7 =",
+    "standardAnswer": "13",
+    "explanation": "从 6 开始，再增加 7，得到 13。",
+    "fingerprint": "99a9f0123ab22b2732d1fdfa02c480eab1acd23ef81ff74b45f1153ba34e9bf7"
+  },
+  {
+    "id": 98,
+    "a": 6,
+    "b": 8,
+    "stem": "6 + 8 =",
+    "standardAnswer": "14",
+    "explanation": "从 6 开始，再增加 8，得到 14。",
+    "fingerprint": "0fd9cac8162e72175b9dedc839fa095400c858a7c3a6eb189975bbcea1d957c6"
+  },
+  {
+    "id": 99,
+    "a": 6,
+    "b": 9,
+    "stem": "6 + 9 =",
+    "standardAnswer": "15",
+    "explanation": "从 6 开始，再增加 9，得到 15。",
+    "fingerprint": "40dbb7889d887828b8844ed37aeff31c6a277d488c8d1a7a9c3d487f70aaf651"
+  },
+  {
+    "id": 100,
+    "a": 6,
+    "b": 10,
+    "stem": "6 + 10 =",
+    "standardAnswer": "16",
+    "explanation": "从 6 开始，再增加 10，得到 16。",
+    "fingerprint": "3faeff26c2c6bcaba53764e738482313a69069ccea57d1c6685975bd6b78bccf"
+  },
+  {
+    "id": 101,
+    "a": 6,
+    "b": 11,
+    "stem": "6 + 11 =",
+    "standardAnswer": "17",
+    "explanation": "从 6 开始，再增加 11，得到 17。",
+    "fingerprint": "1e6ebb9fd9e997b3c2a79f9cf509ab37ba66e9744dc12327607710f314cd681a"
+  },
+  {
+    "id": 102,
+    "a": 6,
+    "b": 12,
+    "stem": "6 + 12 =",
+    "standardAnswer": "18",
+    "explanation": "从 6 开始，再增加 12，得到 18。",
+    "fingerprint": "3471cf9dcf2e9dfba08b4642a0f9e3d718ee51d60a35a2a6c21fd58b58ed2d6d"
+  },
+  {
+    "id": 103,
+    "a": 6,
+    "b": 13,
+    "stem": "6 + 13 =",
+    "standardAnswer": "19",
+    "explanation": "从 6 开始，再增加 13，得到 19。",
+    "fingerprint": "55dbf4e244d94603665e9b16e3a966eb36ece89ad4cb1fd02edb37873349ad44"
+  },
+  {
+    "id": 104,
+    "a": 6,
+    "b": 14,
+    "stem": "6 + 14 =",
+    "standardAnswer": "20",
+    "explanation": "从 6 开始，再增加 14，得到 20。",
+    "fingerprint": "f7f22a0c94706d09c1625edfcf468bd5b5d89aac031beaa25246ac41be345d66"
+  },
+  {
+    "id": 105,
+    "a": 7,
+    "b": 7,
+    "stem": "7 + 7 =",
+    "standardAnswer": "14",
+    "explanation": "从 7 开始，再增加 7，得到 14。",
+    "fingerprint": "1f99932264a2c41565795d96d5577b0b61563a5377f1b39347f0f225aebd53f6"
+  },
+  {
+    "id": 106,
+    "a": 7,
+    "b": 8,
+    "stem": "7 + 8 =",
+    "standardAnswer": "15",
+    "explanation": "从 7 开始，再增加 8，得到 15。",
+    "fingerprint": "4973f7007ab2c909e373cd26a9041de1b05500af75a12bf8a8142e57047c48fa"
+  },
+  {
+    "id": 107,
+    "a": 7,
+    "b": 9,
+    "stem": "7 + 9 =",
+    "standardAnswer": "16",
+    "explanation": "从 7 开始，再增加 9，得到 16。",
+    "fingerprint": "fb2b5e16c1d993a91c1c5d52a2a28184e394c13ab73a42fc122b0ceec0fa4c40"
+  },
+  {
+    "id": 108,
+    "a": 7,
+    "b": 10,
+    "stem": "7 + 10 =",
+    "standardAnswer": "17",
+    "explanation": "从 7 开始，再增加 10，得到 17。",
+    "fingerprint": "03f1620dfdd73ffd1c8b4e0477ae9a4d322870795cb6344b4dd8f7dfe67d00ad"
+  },
+  {
+    "id": 109,
+    "a": 7,
+    "b": 11,
+    "stem": "7 + 11 =",
+    "standardAnswer": "18",
+    "explanation": "从 7 开始，再增加 11，得到 18。",
+    "fingerprint": "3f9fac5df6a162973945671e0d885fa0e1f9c0ae589da5c06f56b973e6be132a"
+  },
+  {
+    "id": 110,
+    "a": 7,
+    "b": 12,
+    "stem": "7 + 12 =",
+    "standardAnswer": "19",
+    "explanation": "从 7 开始，再增加 12，得到 19。",
+    "fingerprint": "8b07d187cf191ac9f6f69ed4149796db5adc4dc14d577b9147d13fb2ae84414a"
+  },
+  {
+    "id": 111,
+    "a": 7,
+    "b": 13,
+    "stem": "7 + 13 =",
+    "standardAnswer": "20",
+    "explanation": "从 7 开始，再增加 13，得到 20。",
+    "fingerprint": "94770bad91065d5b851ff7a23a03bc9cbe684c8c6198a12ad09f816c7e3a0ffa"
+  },
+  {
+    "id": 112,
+    "a": 8,
+    "b": 8,
+    "stem": "8 + 8 =",
+    "standardAnswer": "16",
+    "explanation": "从 8 开始，再增加 8，得到 16。",
+    "fingerprint": "7fb6ad487900f508ff44a31a7dc47992754beb39a24631acfa0a6bbd25f73164"
+  },
+  {
+    "id": 113,
+    "a": 8,
+    "b": 9,
+    "stem": "8 + 9 =",
+    "standardAnswer": "17",
+    "explanation": "从 8 开始，再增加 9，得到 17。",
+    "fingerprint": "e38fe76d2c0d6cb7f5820ceccf66e87ae42ce02cbd755156aa3097c8e6f50f6c"
+  },
+  {
+    "id": 114,
+    "a": 8,
+    "b": 10,
+    "stem": "8 + 10 =",
+    "standardAnswer": "18",
+    "explanation": "从 8 开始，再增加 10，得到 18。",
+    "fingerprint": "de6026aa68686721873c3bdc55dc95f6f623280d7dad1952c721238daf0fd4d0"
+  },
+  {
+    "id": 115,
+    "a": 8,
+    "b": 11,
+    "stem": "8 + 11 =",
+    "standardAnswer": "19",
+    "explanation": "从 8 开始，再增加 11，得到 19。",
+    "fingerprint": "47a9f415f57e9913e2f3c1b6464f1c592eeb6ad338fd0ccc87e82f4361a7c2dc"
+  },
+  {
+    "id": 116,
+    "a": 8,
+    "b": 12,
+    "stem": "8 + 12 =",
+    "standardAnswer": "20",
+    "explanation": "从 8 开始，再增加 12，得到 20。",
+    "fingerprint": "fc3515375a7c4c22810c57d52279332812f532e4945b54a03365ea36621e8d5d"
+  },
+  {
+    "id": 117,
+    "a": 9,
+    "b": 9,
+    "stem": "9 + 9 =",
+    "standardAnswer": "18",
+    "explanation": "从 9 开始，再增加 9，得到 18。",
+    "fingerprint": "848482ef010bd09602cd578c1b879f5318b566878f193014f236aca8dd2ec9a4"
+  },
+  {
+    "id": 118,
+    "a": 9,
+    "b": 10,
+    "stem": "9 + 10 =",
+    "standardAnswer": "19",
+    "explanation": "从 9 开始，再增加 10，得到 19。",
+    "fingerprint": "2ffb26b1602ac168c6aea7f99ac2ea582e4c8c24aa7bcb9a752ade10ed4e6179"
+  },
+  {
+    "id": 119,
+    "a": 9,
+    "b": 11,
+    "stem": "9 + 11 =",
+    "standardAnswer": "20",
+    "explanation": "从 9 开始，再增加 11，得到 20。",
+    "fingerprint": "ede89e503234dfc376989fbfbcd685754d3b8ebde90487f86d81fbdf1ac8879c"
+  },
+  {
+    "id": 120,
+    "a": 10,
+    "b": 10,
+    "stem": "10 + 10 =",
+    "standardAnswer": "20",
+    "explanation": "从 10 开始，再增加 10，得到 20。",
+    "fingerprint": "02ab85c1761271c3624ef37a94326cb33574c874421f5c7dddd860e4d47bdb18"
+  }
+]
