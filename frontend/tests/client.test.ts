@@ -1,6 +1,10 @@
 import { beforeEach, expect, test, vi } from 'vitest';
 import { health, login, me } from '../src/api/client';
 beforeEach(() => vi.unstubAllGlobals());
+test('an unavailable proxy produces a readable error rather than a JSON parser error',async()=>{
+  vi.stubGlobal('fetch',vi.fn().mockResolvedValue({ok:false,status:502,json:async()=>{throw new SyntaxError('Unexpected end of JSON input');}}));
+  await expect(health()).rejects.toThrow('服务暂不可用');
+});
 test('health checks the real endpoint with cookie credentials and exposes errors', async () => {
   const fetcher = vi.fn().mockResolvedValue({ ok:true, json:async () => ({status:'UP'}) });
   vi.stubGlobal('fetch', fetcher);

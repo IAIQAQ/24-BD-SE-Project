@@ -2,9 +2,9 @@ export interface UserProfile { id:string; loginName:string; nickname:string; rol
 export class ApiError extends Error { constructor(public readonly status:number,message:string,public readonly code=''){super(message);} }
 const base = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? '/api/v1' : 'https://localhost:18443/api/v1');
 async function request<T>(path:string, options:RequestInit = {}):Promise<T> {
-  const response = await fetch(`${base}${path}`, { ...options, credentials:'include',signal:options.signal??AbortSignal.timeout(12000) });
+  const response = await fetch(`${base}${path}`, { ...options, credentials:'include',signal:options.signal??AbortSignal.timeout(12000) }).catch(()=>{throw new ApiError(0,'无法连接服务，请检查网络后重试','NETWORK_ERROR');});
   if (response.status === 204) return undefined as T;
-  const body = await response.json();
+  const body = await response.json().catch(()=>{throw new ApiError(response.status,'服务暂不可用，请稍后重试','INVALID_RESPONSE');});
   if (!response.ok) throw new ApiError(response.status,body.message || `请求失败（${response.status}）`,body.code);
   return body.data ?? body;
 }

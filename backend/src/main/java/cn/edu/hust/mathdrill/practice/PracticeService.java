@@ -74,13 +74,13 @@ public class PracticeService {
         apply(p,input,false);p.version++;mapper.update(p);var response=Map.<String,Object>of("operationKey",input.operationKey,"version",p.version,"savedAt",OffsetDateTime.now(ZoneOffset.ofHours(8)).toString());remember(p,"SAVE",input.operationKey,h,response);return response;
     }
     private void segment(Practice p,SegmentInput input){
-        editable(p,input.editorSessionId);if(input.cumulativeMs>Duration.between(p.createdAt,LocalDateTime.now(ZoneOffset.UTC)).toMillis()+2000)throw bad("INVALID_TIME","用时超出练习存续时间");
+        editable(p,input.editorSessionId);if(input.cumulativeMs>mapper.ageMs(p.id)+2000)throw bad("INVALID_TIME","用时超出练习存续时间");
         var previous=mapper.segment(p.id,input.segmentId);if(previous==null){mapper.addSegment(p.id,input.editorSessionId,input.segmentId,input.cumulativeMs,input.ended);}
         else{if(!Objects.equals(previous.editorSessionId,input.editorSessionId))throw conflict("SEGMENT_OWNER","计时片段已失效");
             if(input.cumulativeMs<previous.cumulativeMs||(previous.ended&&input.cumulativeMs!=previous.cumulativeMs))throw bad("TIME_REGRESSION","计时片段不允许回退或重开");
-            if(input.cumulativeMs>Duration.between(previous.startedAt,LocalDateTime.now(ZoneOffset.UTC)).toMillis()+previous.cumulativeMs+2000)throw bad("INVALID_TIME","计时增长过快");
+            if(input.cumulativeMs>mapper.segmentAgeMs(p.id,input.segmentId)+2000)throw bad("INVALID_TIME","计时增长过快");
             mapper.updateSegment(p.id,input.segmentId,input.cumulativeMs,previous.ended||input.ended);
-        }p.elapsedMs=mapper.elapsed(p.id);if(p.elapsedMs>Duration.between(p.createdAt,LocalDateTime.now(ZoneOffset.UTC)).toMillis()+2000)throw bad("INVALID_TIME","总用时超出练习存续时间");mapper.update(p);
+        }p.elapsedMs=mapper.elapsed(p.id);if(p.elapsedMs>mapper.ageMs(p.id)+2000)throw bad("INVALID_TIME","总用时超出练习存续时间");mapper.update(p);
     }
     @Transactional public Map<String,Object> timing(Authentication a,long id,SegmentInput input){var p=owned(student(a),id);segment(p,input);return Map.of("elapsedMs",p.elapsedMs,"cumulativeMs",input.cumulativeMs,"timingComplete",p.timingComplete);}
     @Transactional public Map<String,Object> submit(Authentication a,long id,Write input){

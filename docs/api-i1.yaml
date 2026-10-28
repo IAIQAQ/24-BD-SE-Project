@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: 小芽口算 I1
+  version: 0.1.0
+servers:
+  - url: /api/v1
+security:
+  - session: []
+paths:
+  /catalog/points:
+    get:
+      summary: 返回已启用知识点及可用题数，不返回答案
+      responses: {'200': {description: 'data 为 Point[]，id字符串、name、grade、semester、available'}}
+  /practices:
+    get:
+      summary: 本人练习列表，page从1开始，size默认20且上限100
+      responses: {'200': {description: 'data 为 items、total、page、size'}}
+    post:
+      summary: 组卷，JSON为pointId字符串、total默认30且1至100整数、operationKey
+      responses: {'200': {description: 返回练习摘要，相同键同配置返回原练习}, '409': {description: 题库不足或操作键被不同载荷重用}}
+  /practices/{id}/open:
+    parameters: [{$ref: '#/components/parameters/practiceId'}]
+    post:
+      summary: JSON为operationKey、takeover，明确接管后轮换编辑会话与版本
+      responses: {'200': {description: 摘要和editorSessionId}, '409': {description: 另一处已打开、旧打开回执失效}}
+  /practices/{id}/draft:
+    parameters: [{$ref: '#/components/parameters/practiceId'}]
+    get:
+      summary: 返回摘要和items，包含id字符串、seq、stem、raw，不返回答案解析或编辑标识
+      responses: {'200': {description: 安全草稿}, '403': {description: 非本人}}
+  /practices/{id}/answers:
+    parameters: [{$ref: '#/components/parameters/practiceId'}]
+    put:
+      summary: 完整保存，不判分；JSON为editorSessionId、baseVersion、operationKey、currentSeq、answers数组
+      responses: {'200': {description: operationKey、version、savedAt，原键原载荷重试返回原回执}, '400': {description: 答案列表不属于本卷或字段非法}, '409': {description: 编辑权、版本、操作键或完成状态冲突}}
+  /practices/{id}/segments:
+    parameters: [{$ref: '#/components/parameters/practiceId'}]
+    post:
+      summary: JSON为editorSessionId、segmentId、cumulativeMs、ended，累计值不能回退
+      responses: {'200': {description: elapsedMs、cumulativeMs、timingComplete}, '400': {description: 时间回退或超出存续上界}}
+  /practices/{id}/submit:
+    parameters: [{$ref: '#/components/parameters/practiceId'}]
+    post:
+      summary: 完整保存字段加confirmUnanswered、可选lastSegment；在同一事务写答案、成绩、错题与完成状态
+      responses: {'200': {description: 唯一正式结果，accuracy为两位小数字符串，items含答案和解析}, '400': {description: 非法非空整数或漏答未确认}, '409': {description: 编辑/版本冲突或迟到提交已被核对阻断}}
+  /practices/{id}/submission-status:
+    parameters: [{$ref: '#/components/parameters/practiceId'}]
+    post:
+      summary: JSON为原operationKey、editorSessionId、baseVersion；同一练习行锁下核对，并必要时阻断迟到提交
+      responses: {'200': {description: 'status为COMPLETED或NOT_COMMITTED，附canEdit；只有仍有编辑权才返回新editorSessionId'}, '503': {description: 锁等待超时，code为CHECKING，应继续核对}}
+  /practices/{id}/result:
+    parameters: [{$ref: '#/components/parameters/practiceId'}]
+    get:
+      summary: 仅本人且已完成，返回摘要、correct、mistakes、unanswered、accuracy、items
+      responses: {'200': {description: 正式结果只读}, '409': {description: 尚未完成}}
+  /students/{studentId}/mistakes:
+    parameters: [{$ref: '#/components/parameters/studentId'}]
+    get:
+      summary: 本人错题，支持page、size与pointId；按历史内容指纹归组
+      responses: {'200': {description: items、不同题数total、错误次数totalErrors；每组包含history}, '403': {description: 非本人}}
+  /students/{studentId}/mistakes/{itemId}:
+    parameters:
+      - {$ref: '#/components/parameters/studentId'}
+      - {name: itemId, in: path, required: true, schema: {type: string}}
+    get:
+      summary: 指定本人错题的历史快照、答案解析和同内容历次错误记录
+      responses: {'200': {description: 历史只读}, '403': {description: 非本人或错题不属于本人}}
+components:
+  securitySchemes:
+    session: {type: apiKey, in: cookie, name: MATHDRILL_SESSION}
+  parameters:
+    practiceId: {name: id, in: path, required: true, schema: {type: string}}
+    studentId: {name: studentId, in: path, required: true, schema: {type: string}}
+# 认证端点见 auth-contract.md。所有非GET请求须先GET /auth/csrf取得token并带对应头；Cookie由客户端自动携带。
+# 通用成功包装为code/data/traceId；失败为code/message/traceId。401未登录，403失权，400参数，409冲突，503仍处理。
+# seq/currentSeq从1开始；raw保留原始字符串；时间文本含时区；计时单位毫秒。JSON DTO与contracts.ts为具体字段结构。

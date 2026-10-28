@@ -93,4 +93,42 @@ class I1FlowIntegrationTest {
         assertFalse(call(c,"POST","/practices/"+id+"/submission-status",probe,200).path("canEdit").asBoolean());
         var repeated=call(c,"POST","/practices/"+id+"/submission-status",probe,200);assertFalse(repeated.path("canEdit").asBoolean());assertFalse(repeated.has("editorSessionId"));
     }
+    @Test void timingUsesDatabaseClockAndRejectsRegressions()throws Exception{
+        var c=login("student_a");String id=create(c,1,key(),200).path("id").asText();var editor=open(c,id,false);
+        db.update("UPDATE practice SET created_at=DATE_SUB(CURRENT_TIMESTAMP(3),INTERVAL 10 SECOND) WHERE id=?",id);
+        String segment=key();var payload=new HashMap<String,Object>(Map.of("editorSessionId",editor.path("editorSessionId").asText(),"segmentId",segment,"cumulativeMs",1000,"ended",false));
+        assertEquals(1000,call(c,"POST","/practices/"+id+"/segments",payload,200).path("elapsedMs").asInt());
+        assertEquals(1000,call(c,"POST","/practices/"+id+"/segments",payload,200).path("elapsedMs").asInt());
+        payload.put("cumulativeMs",500);call(c,"POST","/practices/"+id+"/segments",payload,400);
+        payload.put("cumulativeMs",1000);payload.put("ended",true);call(c,"POST","/practices/"+id+"/segments",payload,200);
+    }
+    @Test void invalidFormatAndWrongItemListsDoNotPartlySave()throws Exception{
+        var c=login("student_a");String id=create(c,3,key(),200).path("id").asText();var editor=open(c,id,false);var d=call(c,"GET","/practices/"+id+"/draft",null,200);var inputs=answers(d,false);
+        inputs.set(0,Map.of("itemId",d.path("items").get(0).path("id").asText(),"raw","015"));inputs.set(1,Map.of("itemId",d.path("items").get(1).path("id").asText(),"raw","15.0"));
+        var payload=write(editor,inputs,key());payload.put("confirmUnanswered",true);call(c,"POST","/practices/"+id+"/submit",payload,400);
+        assertEquals(0,db.queryForObject("SELECT COUNT(*) FROM practice_item WHERE practice_id=? AND raw<>''",Integer.class,id));
+        var wrong=write(editor,List.of(inputs.getFirst()),key());call(c,"PUT","/practices/"+id+"/answers",wrong,400);
+        call(c,"POST","/practices",Map.of("pointId","1","total",1.5,"operationKey",key()),400);
+    }
+    @Test void aFailureWhileWritingMistakesRollsBackTheWholeSubmission()throws Exception{
+        var c=login("student_a");String id=create(c,3,key(),200).path("id").asText();var editor=open(c,id,false);var d=call(c,"GET","/practices/"+id+"/draft",null,200);var inputs=answers(d,false);
+        for(int i=0;i<3;i++)inputs.set(i,Map.of("itemId",d.path("items").get(i).path("id").asText(),"raw","999"));var payload=write(editor,inputs,key());payload.put("confirmUnanswered",true);
+        db.execute("ALTER TABLE mistake_record ADD CONSTRAINT fail_i1_mistake CHECK (practice_id <> "+Long.parseLong(id)+")");
+        try{assertThrows(Exception.class,()->call(c,"POST","/practices/"+id+"/submit",payload,200));}
+        finally{db.execute("ALTER TABLE mistake_record DROP CHECK fail_i1_mistake");}
+        assertEquals("IN_PROGRESS",db.queryForObject("SELECT status FROM practice WHERE id=?",String.class,id));
+        assertEquals(0,db.queryForObject("SELECT COUNT(*) FROM practice_item WHERE practice_id=? AND (outcome IS NOT NULL OR raw<>'')",Integer.class,id));
+        assertEquals(0,db.queryForObject("SELECT COUNT(*) FROM mistake_record WHERE practice_id=?",Integer.class,id));
+    }
+    @Test void changingSourceContentDoesNotChangeTheExistingSnapshot()throws Exception{
+        var c=login("student_a");String id=create(c,1,key(),200).path("id").asText();var d=call(c,"GET","/practices/"+id+"/draft",null,200);long item=d.path("items").get(0).path("id").asLong();
+        long source=db.queryForObject("SELECT question_id FROM practice_item WHERE id=?",Long.class,item);String original=db.queryForObject("SELECT explanation FROM question WHERE id=?",String.class,source);
+        try{db.update("UPDATE question SET explanation='source edit during snapshot regression' WHERE id=?",source);assertEquals(original,db.queryForObject("SELECT explanation FROM practice_item WHERE id=?",String.class,item));}
+        finally{db.update("UPDATE question SET explanation=? WHERE id=?",original,source);}
+    }
+    @Test void insufficientCatalogDoesNotCreateAPartialPractice()throws Exception{
+        var c=login("student_a");long before=db.queryForObject("SELECT COUNT(*) FROM practice",Long.class);
+        try{db.update("UPDATE question SET enabled=FALSE WHERE id>20");create(c,30,key(),409);assertEquals(before,db.queryForObject("SELECT COUNT(*) FROM practice",Long.class));}
+        finally{db.update("UPDATE question SET enabled=TRUE WHERE point_id=1");}
+    }
 }

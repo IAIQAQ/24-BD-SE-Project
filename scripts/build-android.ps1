@@ -14,13 +14,15 @@ try {
     New-Item -ItemType Directory -Path $stage -Force | Out-Null
     & robocopy $frontend $stage /MIR /XD node_modules .gradle build /XF local.properties /NFL /NDL /NJH /NJS /NP | Out-Null
     if($LASTEXITCODE -ge 8){throw '构建源码复制失败。'}
-    & robocopy "$frontend/node_modules/@capacitor/android" "$stage/node_modules/@capacitor/android" /MIR /XD .gradle build /NFL /NDL /NJH /NJS /NP | Out-Null
-    if($LASTEXITCODE -ge 8){throw 'Capacitor 构建依赖复制失败。'}
+    foreach($plugin in @('android','app')){
+        & robocopy "$frontend/node_modules/@capacitor/$plugin" "$stage/node_modules/@capacitor/$plugin" /MIR /XD .gradle build /NFL /NDL /NJH /NJS /NP | Out-Null
+        if($LASTEXITCODE -ge 8){throw 'Capacitor 构建依赖复制失败。'}
+    }
     Set-Content -LiteralPath "$stage/android/local.properties" -Value "sdk.dir=$($toolchain.sdkRoot)" -Encoding ascii
     & "$stage/android/gradlew.bat" -p "$stage/android" :app:assembleDebug :app:assembleDebugAndroidTest --console=plain --no-daemon
     if($LASTEXITCODE -ne 0){throw 'Android 构建失败。'}
     $delivery=Join-Path $ProjectRoot 'delivery'
     New-Item -ItemType Directory -Path $delivery -Force | Out-Null
-    Copy-Item -LiteralPath "$stage/android/app/build/outputs/apk/debug/app-debug.apk" -Destination "$delivery/mathdrill-foundation-debug.apk"
-    Copy-Item -LiteralPath "$stage/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" -Destination "$delivery/mathdrill-foundation-test.apk"
+    Copy-Item -LiteralPath "$stage/android/app/build/outputs/apk/debug/app-debug.apk" -Destination "$delivery/mathdrill-i1-debug.apk"
+    Copy-Item -LiteralPath "$stage/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" -Destination "$delivery/mathdrill-i1-test.apk"
 } finally {Pop-Location}
