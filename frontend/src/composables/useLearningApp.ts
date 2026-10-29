@@ -1,20 +1,23 @@
 import {computed,onMounted,onUnmounted,ref} from 'vue';
+import {confirmation,confirmAction,finishConfirmation} from './confirmation';
 import {App} from '@capacitor/app';
 import {Capacitor} from '@capacitor/core';
-import {ApiError,login,logout,me,practiceApi,type UserProfile} from '../api/client';
+import {ApiError,login,logout,me,practiceApi,updateProfile,type UserProfile} from '../api/client';
 import type {Draft,Editor,Mistake,Page,Point,Probe,Result,Summary} from '../api/contracts';
 import {SaveQueue} from './saveQueue';
 import {ForegroundClock} from './foregroundClock';
+import {useNormalComposition} from './useNormalComposition';
 
 export function useLearningApp(){
   const profile=ref<UserProfile|null>(null),username=ref(''),password=ref(''),page=ref('login');
-  const error=ref(''),busy=ref(false),points=ref<Point[]>([]),records=ref<Summary[]>([]),recordPage=ref(1),recordTotal=ref(0);
-  const total=ref(30),draft=ref<Draft|null>(null),current=ref(0),saved=ref('尚未作答'),dirty=ref(false),conflict=ref(false),takingOver=ref(false);
+  const error=ref(''),busy=ref(true),points=ref<Point[]>([]),records=ref<Summary[]>([]),recordPage=ref(1),recordTotal=ref(0);
+  const normal=useNormalComposition();let normalOwner='';
+  const total=normal.total,draft=ref<Draft|null>(null),current=ref(0),saved=ref('尚未作答'),dirty=ref(false),conflict=ref(false),takingOver=ref(false);
   const result=ref<Result|null>(null),mistakes=ref<Page<Mistake>|null>(null),selectedMistake=ref<Mistake|null>(null),mistakePage=ref(1);
   const pending=ref<{id:string;probe:Probe}|null>(null),seconds=ref(0),elapsedBase=ref(0);
   let editor:Editor|null=null,queue:SaveQueue|null=null,clock:ForegroundClock|null=null,segmentId='',lastSegment:any=null;
   let debounce:ReturnType<typeof setTimeout>|undefined,tick:ReturnType<typeof setInterval>|undefined;
-  let timingTail:Promise<unknown>=Promise.resolve(),lifecycleTail:Promise<unknown>=Promise.resolve(),stopping:Promise<void>|null=null,timingBusy=false,createAttempt:{key:string;total:number;point:string}|null=null;
+  let timingTail:Promise<unknown>=Promise.resolve(),lifecycleTail:Promise<unknown>=Promise.resolve(),stopping:Promise<void>|null=null,timingBusy=false;
   const activeItem=computed(()=>draft.value?.items[current.value]);
   const answered=computed(()=>draft.value?.items.filter(i=>i.raw.trim()!=='').length??0);
   const missing=computed(()=>(draft.value?.total??0)-answered.value);
@@ -29,12 +32,12 @@ export function useLearningApp(){
   function persistPending(){if(pending.value)sessionStorage.setItem(storageKey(),JSON.stringify(pending.value));else sessionStorage.removeItem(storageKey());}
   async function loadHome(){
     const [catalog,list]=await Promise.all([practiceApi.points(),practiceApi.list(recordPage.value)]);
-    points.value=catalog;records.value=list.items;recordTotal.value=list.total;
+    points.value=catalog.filter(p=>p.grade===profile.value?.grade);const owner=`${profile.value?.id}:${profile.value?.grade}`;if(normalOwner!==owner){normal.reset(points.value);normalOwner=owner;}records.value=list.items;recordTotal.value=list.total;
   }
   async function authenticated(user:UserProfile){
-    profile.value=user;password.value='';draft.value=null;editor=null;queue=null;conflict.value=false;dirty.value=false;createAttempt=null;result.value=null;mistakes.value=null;page.value='home';recordPage.value=1;
+    profile.value=user;password.value='';draft.value=null;editor=null;queue=null;conflict.value=false;dirty.value=false;normalOwner='';result.value=null;mistakes.value=null;page.value='home';recordPage.value=1;
     pending.value=null;const stored=sessionStorage.getItem(storageKey());if(stored){try{pending.value=JSON.parse(stored);}catch{sessionStorage.removeItem(storageKey());}}
-    await loadHome();
+    if(user.role==='STUDENT')await loadHome();
   }
   const signIn=()=>run(async()=>authenticated(await login(username.value,password.value)));
   const restore=()=>run(async()=>authenticated(await me()));
@@ -44,6 +47,7 @@ export function useLearningApp(){
     if(pending.value?.id===id){page.value='checking';await reconcile();return;}
     const raw=await practiceApi.draft(id);
     if(raw.status==='COMPLETED'){result.value=await practiceApi.result(id);page.value='result';return;}
+    if(!['PENDING','IN_PROGRESS'].includes(raw.status)){draft.value=raw;page.value='inactive';return;}
     draft.value=raw;current.value=raw.currentSeq-1;conflict.value=false;takingOver.value=false;page.value='practice';
     try{editor=await practiceApi.open(id,crypto.randomUUID(),takeover);}
     catch(e){if(e instanceof ApiError&&e.code==='EDITOR_ACTIVE'){conflict.value=true;takingOver.value=true;editor=null;queue=null;saved.value='此练习已在另一处打开；可查看已保存内容';return;}throw e;}
@@ -53,13 +57,11 @@ export function useLearningApp(){
     startTimer();
   }
   const resume=(id:string)=>run(()=>openPractice(id));
-  const takeover=()=>run(async()=>{if(!draft.value)return;if(dirty.value&&!window.confirm('当前未同步输入将被重新载入的服务端草稿替换。确认在此继续？'))return;await openPractice(draft.value.id,true);});
-  const configure=()=>{total.value=30;createAttempt=null;page.value='config';error.value='';};
+  const takeover=()=>run(async()=>{if(!draft.value)return;if(dirty.value&&!await confirmAction('当前未同步输入将被重新载入的服务端草稿替换。确认在此继续？'))return;await openPractice(draft.value.id,true);});
+  const configure=()=>{page.value='config';error.value='';};
   const create=()=>run(async()=>{
-    if(!Number.isInteger(total.value)||total.value<1||total.value>100)throw new Error('题量需为 1—100 的整数');
-    const point=points.value[0]?.id;if(!point)throw new Error('知识点尚未加载，请重试');
-    if(!createAttempt||createAttempt.total!==total.value||createAttempt.point!==point)createAttempt={key:crypto.randomUUID(),total:total.value,point};
-    const record=await practiceApi.create(point,total.value,createAttempt.key);createAttempt=null;await openPractice(record.id);
+    const owner=profile.value?.id??'',input=normal.request(owner,points.value);
+    const record=await practiceApi.createNormal(input.allocations,input.operationKey);if(profile.value?.id!==owner||!normal.isCurrent(input.operationKey))return;await openPractice(record.id);normal.finish();
   });
   function snapshot(){if(!draft.value||!editor)throw new Error('当前不具备编辑权限');return {editorSessionId:editor.editorSessionId,currentSeq:current.value+1,answers:draft.value.items.map(i=>({itemId:i.id,raw:i.raw}))};}
   function mark(){if(!queue)return;queue.change();dirty.value=true;saved.value='有未保存修改';clearTimeout(debounce);debounce=setTimeout(()=>{void save().catch(report);},800);}
@@ -99,7 +101,7 @@ export function useLearningApp(){
     clearTimeout(debounce);
   }
   const saveExit=()=>run(async()=>{await leavePractice();page.value='home';await loadHome();});
-  const abandon=()=>run(async()=>{if(!window.confirm('放弃本页未保存修改，保留服务端已有草稿？'))return;clearTimeout(debounce);pauseTimer();await stopTime().catch(()=>{});draft.value=null;queue=null;editor=null;dirty.value=false;page.value='home';await loadHome();});
+  const abandon=()=>run(async()=>{if(!await confirmAction('放弃本页未保存修改，保留服务端已有草稿？'))return;clearTimeout(debounce);pauseTimer();await stopTime().catch(()=>{});draft.value=null;queue=null;editor=null;dirty.value=false;page.value='home';await loadHome();});
   const confirmSubmit=()=>run(async()=>{
     const invalid=draft.value?.items.findIndex(i=>i.raw.trim()!==''&&!/^[0-9]+$/.test(i.raw.trim()))??-1;
     if(invalid>=0){current.value=invalid;throw new Error(`第 ${invalid+1} 题格式不正确，请输入非负整数`);}
@@ -118,6 +120,7 @@ export function useLearningApp(){
     if(checked.status==='COMPLETED'){result.value=checked.result??await practiceApi.result(p.id);pending.value=null;persistPending();page.value='result';return;}
     if(checked.status==='CHECKING'){page.value='checking';return;}
     pending.value=null;persistPending();
+    if(checked.status==='VOID'||checked.status==='WITHDRAWN'){draft.value=await practiceApi.draft(p.id);page.value='inactive';return;}
     if(checked.canEdit&&checked.editorSessionId){
       const raw=await practiceApi.draft(p.id);if(!draft.value||draft.value.id!==p.id)draft.value=raw;
       editor={...raw,editorSessionId:checked.editorSessionId,version:checked.version};queue=new SaveQueue(checked.version,payload=>practiceApi.save(p.id,payload));queue.change();dirty.value=true;conflict.value=false;elapsedBase.value=raw.elapsedMs;page.value='practice';saved.value='已确认未提交，可继续作答';startTimer();
@@ -126,13 +129,14 @@ export function useLearningApp(){
   const checkSubmission=()=>run(reconcile);
   const showResult=(id:string)=>run(async()=>{result.value=await practiceApi.result(id);page.value='result';});
   const loadMistakes=()=>run(async()=>{if(!profile.value)return;await leavePractice();mistakes.value=await practiceApi.mistakes(profile.value.id,mistakePage.value);page.value='mistakes';});
-  const showMistake=(item:Mistake)=>{selectedMistake.value=item;page.value='mistakeDetail';};
+  const showMistake=(item:Mistake)=>run(async()=>{if(!profile.value)return;selectedMistake.value=await practiceApi.mistake(profile.value.id,item.id);page.value='mistakeDetail';});
   const nextRecords=(step:number)=>run(async()=>{recordPage.value+=step;await loadHome();});
   const nextMistakes=(step:number)=>{mistakePage.value+=step;void loadMistakes();};
   const signOut=()=>run(async()=>{
-    if(dirty.value&&!window.confirm('仍有未保存输入，先保存再退出登录？取消可留在本页。'))return;
+    if(dirty.value&&!await confirmAction('仍有未保存输入，先保存再退出登录？取消可留在本页。'))return;
     await leavePractice();await logout();profile.value=null;draft.value=null;queue=null;editor=null;records.value=[];mistakes.value=null;result.value=null;page.value='login';dirty.value=false;pauseTimer();
   });
+  const saveProfile=(nickname:string,grade:number)=>run(async()=>{profile.value=await updateProfile(nickname,grade);page.value='home';await loadHome();});
   async function visibility(active:boolean){
     if(page.value!=='practice'||conflict.value||!editor||!draft.value)return;
     if(!active){pauseTimer();try{await save();await stopTime();}catch(e){report(e);}}
@@ -141,17 +145,17 @@ export function useLearningApp(){
   const transition=(active:boolean)=>{lifecycleTail=lifecycleTail.catch(()=>{}).then(()=>visibility(active));};
   const visible=()=>transition(!document.hidden);
   const beforeUnload=(e:BeforeUnloadEvent)=>{if(dirty.value||pending.value){e.preventDefault();e.returnValue='';}};
-  const back=()=>{if(page.value==='practice'){if(dirty.value&&!window.confirm('保存当前答案并返回首页？'))return;void saveExit();}else if(page.value==='confirm')returnAnswer();else if(page.value==='checking'){page.value='home';void loadHome().catch(report);}else if(page.value==='mistakeDetail')page.value='mistakes';else if(page.value!=='home'&&page.value!=='login')void home();};
+  const back=async()=>{if(page.value==='practice'){if(dirty.value&&!await confirmAction('保存当前答案并返回首页？'))return;void saveExit();}else if(page.value==='confirm')returnAnswer();else if(page.value==='checking'){page.value='home';void loadHome().catch(report);}else if(page.value==='mistakeDetail')page.value='mistakes';else if(page.value!=='home'&&page.value!=='login')void home();};
   const nativeListeners:{remove:()=>Promise<void>}[]=[];
   onMounted(async()=>{
     if(!Capacitor.isNativePlatform())document.addEventListener('visibilitychange',visible);window.addEventListener('beforeunload',beforeUnload);
     if(Capacitor.isNativePlatform()){
       nativeListeners.push(await App.addListener('appStateChange',({isActive})=>transition(isActive)));
-      nativeListeners.push(await App.addListener('backButton',()=>{if(page.value==='home'||page.value==='login'){if(window.confirm('退出小芽口算？'))void App.exitApp();}else back();}));
+      nativeListeners.push(await App.addListener('backButton',async()=>{if(confirmation.value!==null){finishConfirmation(false);return;}if(page.value==='home'||page.value==='login'){if(await confirmAction('退出小芽口算？'))void App.exitApp();}else void back();}));
     }
-    try{await authenticated(await me());}catch(e){if(!(e instanceof ApiError&&e.status===401))report(e);}
+    try{await authenticated(await me());}catch(e){if(!(e instanceof ApiError&&e.status===401))report(e);}finally{busy.value=false;}
   });
   onUnmounted(()=>{clearInterval(tick);clearTimeout(debounce);document.removeEventListener('visibilitychange',visible);window.removeEventListener('beforeunload',beforeUnload);for(const l of nativeListeners)void l.remove();});
-  return {profile,username,password,page,error,busy,points,records,total,draft,current,activeItem,answered,missing,displayTime,saved,dirty,conflict,takingOver,result,mistakes,selectedMistake,pending,recordPage,recordTotal,mistakePage,
-    signIn,restore,signOut,home,configure,create,resume,takeover,input,select,manualSave,saveExit,abandon,confirmSubmit,returnAnswer,submit,checkSubmission,showResult,loadMistakes,showMistake,nextRecords,nextMistakes,back};
+  return {profile,username,password,page,error,busy,points,normal,records,total,draft,current,activeItem,answered,missing,displayTime,saved,dirty,conflict,takingOver,result,mistakes,selectedMistake,pending,recordPage,recordTotal,mistakePage,
+    signIn,restore,signOut,saveProfile,home,configure,create,resume,takeover,input,select,manualSave,saveExit,abandon,confirmSubmit,returnAnswer,submit,checkSubmission,showResult,loadMistakes,showMistake,nextRecords,nextMistakes,back};
 }

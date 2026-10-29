@@ -14,3 +14,4 @@ $env:MATHDRILL_KEYSTORE="file:$PrivateRoot/dev-server.p12"
 $env:MATHDRILL_KEYSTORE_PASSWORD=$runtime.keystorePassword
 $env:MATHDRILL_SEED_PASSWORD=$runtime.seedPassword
 $env:MATHDRILL_SEED_ENABLED='true'
+$env:MATHDRILL_ADMIN_PASSWORD=$runtime.adminPassword

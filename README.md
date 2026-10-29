@@ -1,47 +1,62 @@
-# 小芽口算 · 正式工程
+# 小芽口算
 
-Android 首发，Vue + TypeScript + Capacitor 共用前端，Spring Boot + MyBatis + MySQL 提供统一后端。现已在 Android14 雷电模拟器和浏览器跑通真实登录、120题范围组卷、作答保存恢复、提交、结果和错题详情。当前是内部 I1 主流程版本，完整异常与真机验收状态见 `docs/acceptance-i1.md`。
+Android首发的口算学习课程项目，Android与Web共用Vue前端，Spring Boot提供统一后端。
 
-## 目录
+**软件开发已完成，最终功能版本为S01。** 学生本人完整学情S02已按用户决定取消；公网部署等服务器确定后再做。
 
-- `frontend/`：Vue 源码和 Capacitor Android 工程。
-- `backend/`：认证接口、数据库迁移和集成测试。
-- `scripts/`：本机启动、构建和真机验证。
-- `docs/`：环境、接口与验证记录。
-- `.local/`：本机私有配置、证书和日志，已排除版本管理。
-- `delivery/`：生成的 APK，已排除版本管理。
+个人GitHub源码仓库：[zhenzhu666/mathdrill](https://github.com/zhenzhu666/mathdrill)（私有，需要仓库访问权限）。私有运行资料和delivery包保留在本机。
 
-## 在本机继续开发
+## 已有功能
 
-用 PowerShell 7 在本目录操作。Node 24.20.0 沿用既有安装。JDK21、Maven3.9.16、MySQL8.4.13 和 API36 SDK 使用 `C:/Users/LENOVO/AppData/Local/Temp/mathdrill-toolchain` 的隔离工具，不修改系统 PATH；Android 构建暂存于同级 `mathdrill-android`。具体路径从 `.local/toolchain.json` 读取。
+- 学生：注册登录、普通单点/多知识点组卷、作答、保存恢复、明确接管、计时、提交判分、结果与错题。
+- 巩固：历史原题重练、按历史知识点强化，保留原成绩和错误历史。
+- 家长：家庭关联确认/解绑、固定预览发题、未开始任务撤回、结果/错题/学情只读。
+- 管理员：分类和题库维护、审核启停、错误版本处置、Excel模板及整批校验导入。
 
-1. 单独打开终端运行 `./scripts/start-database.ps1`。数据库仅监听 `127.0.0.1:13306`；已经启动时不重复启动。
-2. 首次编译或修改后端后，先停止本项目旧后端进程，再运行 `. ./scripts/runtime.ps1`，然后运行 `./backend/mvnw.cmd -f backend/pom.xml -s backend/.mvn/settings.xml package`。Windows 下运行中的 JAR 可能被锁定，不能边运行边覆盖打包。
-3. 另开终端运行 `./scripts/start-backend.ps1`，服务位于 `https://localhost:18443`。
-4. 浏览器调试：进入 `frontend`，运行 `npm ci`、`npm run dev`，打开 `http://localhost:5173`。代理校验本机后端证书，未关闭证书校验。
-5. Android 构建：回到工程根目录，运行 `./scripts/build-android.ps1`，得到 `delivery/mathdrill-i1-debug.apk` 和 `mathdrill-i1-test.apk`。旧环境验证包保留。
-6. 无USB时使用已安装雷电：运行 `D:/leidian/LDPlayer14/ldconsole.exe launch --index 0`，启动完成后运行 `D:/Huawei/ArkuiXToolchain/android-sdk/platform-tools/adb.exe connect 127.0.0.1:5555`。然后运行 `./scripts/test-i1-device.ps1 -Serial emulator-5554 -Install`，完成真实页面流程。脚本临时传入密码并在结束时清除。
-7. 以后手机USB可用时允许调试和安装，使用 `adb devices -l` 中的手机序列号作为 `-Serial` 参数。模拟器通过不代表新版本已在手机验收。
+## 启动与演示
 
-测试账号为 `student_a`、`student_b`，密码保存在 `.local/runtime.json` 的 `seedPassword` 字段。不要把此文件发到公开仓库或嵌入 APK。启动时仅初始化不存在的测试账号，不重置已有密码。
+1. [最终启动说明](docs/startup-final.md)：当前电脑的数据库、S01后端、Web与Android启动步骤。
+2. [最终演示流程](docs/demo-final.md)：学生练习、家长安排、错题巩固及管理员补充。
+3. [S01验收](docs/acceptance-s01.md)：实际测试、证据入口和未测项。
+4. [S01接口](docs/api-s01.md)及[软件窗口记录](docs/dev-window-progress.md)：技术行为与最终范围决定。
 
-## 验证命令
+启动说明针对已有本机配置。GitHub源码不包含私有运行配置、数据库数据、证书、账号密码和构建包；换机需要准备环境，不能只克隆就直接运行。
+
+## 技术结构
+
+- 前端：Vue 3、TypeScript、Vite；Capacitor复用为Android APP。
+- 后端：Java 21、Spring Boot、MyBatis/JdbcTemplate、MySQL 8.4；Flyway迁移V1—V7。
+- Android APP内置页面，通过HTTPS访问与Web相同的业务服务；权限、判分、快照和幂等由后端执行。
+
+## 工程验证
+
+S01已取得后端51/51、前端29/29、Android14/API34模拟器5/5，以及类型检查、Web和Android构建通过的记录。它们是对应版本的已有结果，不代表每次整理文档都重新执行了测试。
 
 ```powershell
+# 后端会连接专用mathdrill_test，运行前核对本机环境。
 ./scripts/test-backend.ps1
-cd frontend
+# 前端在frontend目录执行：
 npm test -- --run
 npm run build
 ```
 
-后端测试专用库为 `mathdrill_test`，开发库为 `mathdrill_dev`；测试不连接其他项目数据库。真机脚本临时传入测试配置，结束后清除手机中的临时文件，不记录密码。
+本机构建使用 `./scripts/build-android.ps1 -Version s01`。delivery中的I2/I3/S01包和manifest独立保留，历史包不覆盖；不默认运行设备测试脚本作为启动步骤。
 
-## 适用范围
+## 文件组织
 
-这是本机内部测试包，APK 内含打包后的页面，连接电脑的 HTTPS 测试服务；模拟器无需USB，实体手机需调试连接。使用 adb reverse 转发18443端口。debug 配置仅为 localhost 信任本项目证书，release 不包含此信任。自签名证书有效期60天，不安装到系统信任库。
+| 目录 | 内容 |
+| --- | --- |
+| backend | 后端源码、迁移、集成测试 |
+| frontend | 共享前端、Android工程与页面测试 |
+| scripts | 本机启动、构建及测试脚本 |
+| docs | 接口、验收、启动与演示说明、历史记录 |
+| .local（不上传） | 私有配置、证书、账号资料、备份、日志 |
+| delivery（不上传） | 冻结APK、测试APK、后端JAR、Web ZIP及manifest |
 
-页面操作：登录后点“开始新练习”，选择1—100题；作答可自动/手动保存和“保存退出”；重登后从记录继续，已有编辑会话时明确选择“在此继续”；结束检查漏答后提交，再看正式结果和错题详情。其他端接管后旧端禁止写入。提交结果不明时先核对。
+## 当前范围
 
-`delivery/manifest-i1.json` 记录APK、测试包、后端JAR与Web静态包的SHA256。最新私有数据库备份为 `.local/archive/20261028-i1-flow.sql`；此文件含会话和密码哈希，不得公开。已导出，尚未完成新库导入恢复验收。
+当前基础内容以120道自编加法为主，不宣称一至三年级教材全覆盖；标准答案为非负整数。学生有练习记录、结果和错题，家长有学情；家长任务列表最近100条。S02不在最终开发范围。
 
-便携工具和数据库数据目前位于临时目录，系统清理后需恢复，正式交付前须迁移到稳定路径并做备份。这份工程没有包含公共服务器、公开域名或正式签名配置；浏览器 localhost 测试不代表公网 Web 已验收。原有交互原型与个人报告保持独立。
+新版真机、原生文件跨应用、独立秒表、专项弱网/压力、备份还原等未单独完成的项目如实保留未测说明，本轮简化收尾不再额外展开。当前为本机运行版本，公网访问尚未部署。
+
+历史记录中的暂停、未提交及旧测试数量属于当时状态，当前软件事实以最新开发记录和S01验收为准。父目录课程材料由课程窗口维护，不作为本仓库自动上传范围。

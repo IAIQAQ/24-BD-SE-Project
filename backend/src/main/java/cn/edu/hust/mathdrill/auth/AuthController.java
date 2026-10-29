@@ -23,8 +23,13 @@ public class AuthController {
     private final AuthService users;
     private final HttpSessionSecurityContextRepository contexts;
     private final HttpSessionCsrfTokenRepository csrf;
-    public AuthController(AuthenticationManager manager,AuthService users,HttpSessionSecurityContextRepository contexts,HttpSessionCsrfTokenRepository csrf){this.manager=manager;this.users=users;this.contexts=contexts;this.csrf=csrf;}
+    private final org.springframework.security.crypto.password.PasswordEncoder encoder;
+    public AuthController(AuthenticationManager manager,AuthService users,HttpSessionSecurityContextRepository contexts,HttpSessionCsrfTokenRepository csrf,org.springframework.security.crypto.password.PasswordEncoder encoder){this.manager=manager;this.users=users;this.contexts=contexts;this.csrf=csrf;this.encoder=encoder;}
     public record Credentials(@NotBlank @Size(max=64)String loginName,@NotBlank String password){}
+    public record Registration(@NotBlank @Size(max=64)String loginName,@NotBlank @Size(max=128)String password,@NotBlank @Size(max=64)String nickname,@NotBlank String role,Integer grade){}
+    public record ProfileInput(@NotBlank @Size(max=64)String nickname,int grade){}
+    @PostMapping("/api/v1/auth/register") public Object register(@Valid @RequestBody Registration input){return ApiResponse.ok(users.register(input.loginName(),input.password(),input.nickname(),input.role(),input.grade(),encoder));}
+    @PutMapping("/api/v1/auth/profile") public Object profile(Authentication a,@Valid @RequestBody ProfileInput input){return ApiResponse.ok(users.updateProfile(a,input.nickname(),input.grade()));}
     @GetMapping("/api/v1/auth/csrf") public Object csrf(CsrfToken token){return ApiResponse.ok(Map.of("token",token.getToken(),"headerName",token.getHeaderName()));}
     @PostMapping("/api/v1/auth/login") public Object login(@Valid @RequestBody Credentials input,HttpServletRequest request,HttpServletResponse response){
         Authentication authentication=manager.authenticate(UsernamePasswordAuthenticationToken.unauthenticated(input.loginName(),input.password()));

@@ -33,9 +33,9 @@ public class I1FlowTest {
                   const button=t=>[...document.querySelectorAll('button')].find(b=>b.innerText.trim()===t);
                   const click=async t=>{await wait(()=>button(t)&&!button(t).disabled,'button '+t);button(t).click();};
                   const fill=(id,value)=>{const input=document.getElementById(id);if(!input)throw new Error('Missing input '+id);input.value=value;input.dispatchEvent(new Event('input',{bubbles:true}));};
-                  const signIn=async()=>{fill('username','student_a');fill('password',PASSWORD);document.querySelector('form').requestSubmit();await wait(()=>button('开始新练习')&&!button('开始新练习').disabled,'home loaded');};
-                  await wait(()=>button('开始新练习')||button('登录学习账号'),'initial page');
-                  if(button('开始新练习')){await click('退出登录');await waitText('登录学习账号');}
+                  const signIn=async()=>{await wait(()=>button('登录学习账号')&&!button('登录学习账号').disabled,'login ready');fill('username','student_a');fill('password',PASSWORD);document.querySelector('form').requestSubmit();await wait(()=>button('开始新练习')&&!button('开始新练习').disabled,'home loaded');};
+                  await wait(()=>button('退出登录')||button('登录学习账号'),'initial page');
+                  if(button('退出登录')){await click('退出登录');await waitText('登录学习账号');}
                   await signIn();await click('开始新练习');await waitText('练习题量');fill('total','30');await click('生成练习，开始作答');await wait(()=>document.getElementById('answer')&&!document.getElementById('answer').disabled,'draft loaded');
                   fill('answer','15');await click('下一题');await wait(()=>document.querySelector('.question .label')?.innerText==='第 2 题','question 2');fill('answer','16');
                   await click('手动保存');await waitText('已保存到服务端');await click('‹ 保存退出');await waitText('开始新练习');await click('退出登录');await waitText('登录学习账号');await signIn();

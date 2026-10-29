@@ -1,4 +1,6 @@
+param([ValidateSet('i1','i2','i3','s01')][string]$Version='s01')
 . "$PSScriptRoot/runtime.ps1"
+if($Version -ne 's01' -and ((Test-Path "$ProjectRoot/delivery/mathdrill-$Version-debug.apk") -or (Test-Path "$ProjectRoot/delivery/mathdrill-$Version-test.apk"))){throw '历史产物已冻结，不能覆盖；本批请使用 -Version s01。'}
 $frontend=Join-Path $ProjectRoot 'frontend'
 Push-Location $frontend
 try {
@@ -14,7 +16,7 @@ try {
     New-Item -ItemType Directory -Path $stage -Force | Out-Null
     & robocopy $frontend $stage /MIR /XD node_modules .gradle build /XF local.properties /NFL /NDL /NJH /NJS /NP | Out-Null
     if($LASTEXITCODE -ge 8){throw '构建源码复制失败。'}
-    foreach($plugin in @('android','app')){
+    foreach($plugin in @('android','app','filesystem','share')){
         & robocopy "$frontend/node_modules/@capacitor/$plugin" "$stage/node_modules/@capacitor/$plugin" /MIR /XD .gradle build /NFL /NDL /NJH /NJS /NP | Out-Null
         if($LASTEXITCODE -ge 8){throw 'Capacitor 构建依赖复制失败。'}
     }
@@ -23,6 +25,6 @@ try {
     if($LASTEXITCODE -ne 0){throw 'Android 构建失败。'}
     $delivery=Join-Path $ProjectRoot 'delivery'
     New-Item -ItemType Directory -Path $delivery -Force | Out-Null
-    Copy-Item -LiteralPath "$stage/android/app/build/outputs/apk/debug/app-debug.apk" -Destination "$delivery/mathdrill-i1-debug.apk"
-    Copy-Item -LiteralPath "$stage/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" -Destination "$delivery/mathdrill-i1-test.apk"
+    Copy-Item -LiteralPath "$stage/android/app/build/outputs/apk/debug/app-debug.apk" -Destination "$delivery/mathdrill-$Version-debug.apk"
+    Copy-Item -LiteralPath "$stage/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" -Destination "$delivery/mathdrill-$Version-test.apk"
 } finally {Pop-Location}
