@@ -4,7 +4,6 @@ Android首发的口算学习课程项目，Android与Web共用Vue前端，Spring
 
 **软件业务范围为S01，最新界面为已通过用户体验的P3完整互动版。** 学生本人完整学情S02已按用户决定取消；公网部署等服务器确定后再做。当前体验题库390题、11个知识点，覆盖一至三年级的基础整数口算样例，不代表完整教材覆盖。
 
-个人GitHub源码仓库：[zhenzhu666/mathdrill](https://github.com/zhenzhu666/mathdrill)（私有，需要仓库访问权限）。私有运行资料和delivery包保留在本机。
 
 ## 已有功能
 
