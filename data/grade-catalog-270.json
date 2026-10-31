@@ -1,0 +1,2481 @@
+{
+  "points": [
+    [
+      101,
+      1,
+      "20以内减法"
+    ],
+    [
+      201,
+      2,
+      "100以内加法"
+    ],
+    [
+      202,
+      2,
+      "100以内减法"
+    ],
+    [
+      203,
+      2,
+      "表内乘法"
+    ],
+    [
+      204,
+      2,
+      "表内除法"
+    ],
+    [
+      301,
+      3,
+      "整十、整百数加法（1000以内）"
+    ],
+    [
+      302,
+      3,
+      "整十、整百数减法（1000以内）"
+    ],
+    [
+      303,
+      3,
+      "两位数乘一位数"
+    ],
+    [
+      304,
+      3,
+      "两三位数除以一位数（整除）"
+    ]
+  ],
+  "questions": [
+    {
+      "id": 10001,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "16 － 13 =",
+      "answer": "3",
+      "explanation": "从16里面去掉13，还剩3。",
+      "fingerprint": "3eee062fbfedcbf5f0a6e022480ad1d5bba497dac6960682636c18d7ea8090b5"
+    },
+    {
+      "id": 10002,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "20 － 7 =",
+      "answer": "13",
+      "explanation": "从20里面去掉7，还剩13。",
+      "fingerprint": "6394593a28cfbcea5edf28c79422c5f06d5ee44e5504c7d2edb8335b0f424d37"
+    },
+    {
+      "id": 10003,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "9 － 5 =",
+      "answer": "4",
+      "explanation": "从9里面去掉5，还剩4。",
+      "fingerprint": "51537839742a799911938eb9612329abbe3272701ffb75b8e27718b7cf32157b"
+    },
+    {
+      "id": 10004,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "16 － 3 =",
+      "answer": "13",
+      "explanation": "从16里面去掉3，还剩13。",
+      "fingerprint": "948e12ddbcd15e057286030c8cfa08c623d005a470e172771f9eea6dbbd5fe43"
+    },
+    {
+      "id": 10005,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "13 － 1 =",
+      "answer": "12",
+      "explanation": "从13里面去掉1，还剩12。",
+      "fingerprint": "77130e862e8b2a1bd76bdb67557cd5e192eb6a4313174e7477a2288433811e04"
+    },
+    {
+      "id": 10006,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "15 － 0 =",
+      "answer": "15",
+      "explanation": "从15里面去掉0，还剩15。",
+      "fingerprint": "4a2337d961e3389e30d3b81c16d5b6b7adb3bb2d6be060fc8e761c8565dc15f7"
+    },
+    {
+      "id": 10007,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "4 － 3 =",
+      "answer": "1",
+      "explanation": "从4里面去掉3，还剩1。",
+      "fingerprint": "74be3356e80d5c7fcbeb539fe681530d9d8e18e98aaaa58a60742bf8a20c54c8"
+    },
+    {
+      "id": 10008,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "17 － 17 =",
+      "answer": "0",
+      "explanation": "从17里面去掉17，还剩0。",
+      "fingerprint": "22b4a6583aaa1199d104f196c318b9e052a7a3bada4c00982b931032e4ee5739"
+    },
+    {
+      "id": 10009,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "15 － 9 =",
+      "answer": "6",
+      "explanation": "从15里面去掉9，还剩6。",
+      "fingerprint": "c65935b127021926c9e89f122977745e7f4d0be95e5c7bd3b50edf24f39d7b9d"
+    },
+    {
+      "id": 10010,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "10 － 0 =",
+      "answer": "10",
+      "explanation": "从10里面去掉0，还剩10。",
+      "fingerprint": "0cd97b5a2cb1d3aae6b889d7989f8f25d6d2d084be2c1f093f8747731409b2c7"
+    },
+    {
+      "id": 10011,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "17 － 2 =",
+      "answer": "15",
+      "explanation": "从17里面去掉2，还剩15。",
+      "fingerprint": "2e232a2c151432a4f66fdf4bdff58154d40aaf4d1360b43560e191b2ff52e79b"
+    },
+    {
+      "id": 10012,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "10 － 2 =",
+      "answer": "8",
+      "explanation": "从10里面去掉2，还剩8。",
+      "fingerprint": "4eb0b9aed1695f63ff4ed838609a5bc2857d49e82045d4798f129aad237e17f3"
+    },
+    {
+      "id": 10013,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "11 － 8 =",
+      "answer": "3",
+      "explanation": "从11里面去掉8，还剩3。",
+      "fingerprint": "fbeea759bf08eae614fb26172b0389d941f441f51ef397c72275637e9da513a6"
+    },
+    {
+      "id": 10014,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "15 － 5 =",
+      "answer": "10",
+      "explanation": "从15里面去掉5，还剩10。",
+      "fingerprint": "16a87922af230783560f39799c882a062e8df5f1bd9377b17fb4440678d4ff5b"
+    },
+    {
+      "id": 10015,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "18 － 7 =",
+      "answer": "11",
+      "explanation": "从18里面去掉7，还剩11。",
+      "fingerprint": "0866795b20c78a8b073d03e8a97dae8a03dc071e58015f5993c74309ba8e6f96"
+    },
+    {
+      "id": 10016,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "19 － 11 =",
+      "answer": "8",
+      "explanation": "从19里面去掉11，还剩8。",
+      "fingerprint": "8f72da7a7e9dc65c06f7fcfee5ef22caf51211a91af227629ae7de2eed2b4948"
+    },
+    {
+      "id": 10017,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "20 － 11 =",
+      "answer": "9",
+      "explanation": "从20里面去掉11，还剩9。",
+      "fingerprint": "4064edef1f7476292d861fd4fd7f5e3d908c06d3cd6a7ddeaaee3aa8afcc52a1"
+    },
+    {
+      "id": 10018,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "12 － 7 =",
+      "answer": "5",
+      "explanation": "从12里面去掉7，还剩5。",
+      "fingerprint": "0cd452e96c0930dac5611b7b1922458addf88cf525c085ca62ac011c2c8b46c1"
+    },
+    {
+      "id": 10019,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "14 － 8 =",
+      "answer": "6",
+      "explanation": "从14里面去掉8，还剩6。",
+      "fingerprint": "396eb837e1e1078e87919fa54ddbbd5dc8a0ed02ec32414b9e9b48db9eda81a6"
+    },
+    {
+      "id": 10020,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "5 － 4 =",
+      "answer": "1",
+      "explanation": "从5里面去掉4，还剩1。",
+      "fingerprint": "f9a9b653ed6290c1b6ad0ecc67a23b1e78684d8eb2e0586879cf9dbf1b00c232"
+    },
+    {
+      "id": 10021,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "11 － 0 =",
+      "answer": "11",
+      "explanation": "从11里面去掉0，还剩11。",
+      "fingerprint": "3942ae1e697c6fdb3394c51305ea1f22657d521d0e324b975e6dca2d3098d782"
+    },
+    {
+      "id": 10022,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "20 － 18 =",
+      "answer": "2",
+      "explanation": "从20里面去掉18，还剩2。",
+      "fingerprint": "9e85b6de506008caa9879fd5725fd65b70468a18fe0dc7fd8b77d2a132894fff"
+    },
+    {
+      "id": 10023,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "8 － 6 =",
+      "answer": "2",
+      "explanation": "从8里面去掉6，还剩2。",
+      "fingerprint": "7690052729090897ad9c3460528a3372c6060cce2ef7dcbdb808099e0948546f"
+    },
+    {
+      "id": 10024,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "6 － 2 =",
+      "answer": "4",
+      "explanation": "从6里面去掉2，还剩4。",
+      "fingerprint": "4fdbe26c47ef4afcbd32164f9e8cc2f4d27ca0afee42b1a851d992f679d0a5ab"
+    },
+    {
+      "id": 10025,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "14 － 9 =",
+      "answer": "5",
+      "explanation": "从14里面去掉9，还剩5。",
+      "fingerprint": "7b99a94652815d2376fcfb533eeaeb2fc3d50b2cb5d8fe37217d08313e5343c4"
+    },
+    {
+      "id": 10026,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "19 － 8 =",
+      "answer": "11",
+      "explanation": "从19里面去掉8，还剩11。",
+      "fingerprint": "089a2984275aaa1f21dcff102320b3ba58acc32a9e9979bf2c53dd6b49b1a0a7"
+    },
+    {
+      "id": 10027,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "16 － 2 =",
+      "answer": "14",
+      "explanation": "从16里面去掉2，还剩14。",
+      "fingerprint": "d587543d17ff87f18a9a720a7388f6c926e9ef23dfcc702fadcaa2f58e9c4641"
+    },
+    {
+      "id": 10028,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "13 － 3 =",
+      "answer": "10",
+      "explanation": "从13里面去掉3，还剩10。",
+      "fingerprint": "95a43725230e5ba6c0119bb354d578431bbaf89d4a1b069daae09f9b8fe43982"
+    },
+    {
+      "id": 10029,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "19 － 19 =",
+      "answer": "0",
+      "explanation": "从19里面去掉19，还剩0。",
+      "fingerprint": "678f1e1704cc118814e4a7daf70fcbd6027b37d1d5e8afe415ffd15f717c0696"
+    },
+    {
+      "id": 10030,
+      "pointId": 101,
+      "grade": 1,
+      "stem": "15 － 1 =",
+      "answer": "14",
+      "explanation": "从15里面去掉1，还剩14。",
+      "fingerprint": "e3ce49fa6c8f6cf562db6f6c9c866953a7eedfbf4d96c99fc129474bef63a8de"
+    },
+    {
+      "id": 10031,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "4 ＋ 57 =",
+      "answer": "61",
+      "explanation": "从4开始，再加上57，得到61。",
+      "fingerprint": "17fdc19084b031b686fe502d1589240bbc3d891cd86155d76ee2680749291c65"
+    },
+    {
+      "id": 10032,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "19 ＋ 66 =",
+      "answer": "85",
+      "explanation": "从19开始，再加上66，得到85。",
+      "fingerprint": "c924ddaad0bfc061d2e2c37cab53dd17d88f68df25f06608c5595acf59dd4cbd"
+    },
+    {
+      "id": 10033,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "26 ＋ 62 =",
+      "answer": "88",
+      "explanation": "从26开始，再加上62，得到88。",
+      "fingerprint": "a078475dbfb8cdd3488b65fdae8d11e52d4686417ea7a5058597b97df9052841"
+    },
+    {
+      "id": 10034,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "1 ＋ 35 =",
+      "answer": "36",
+      "explanation": "从1开始，再加上35，得到36。",
+      "fingerprint": "cbd8d8aff3ddf760f1ed4be46f20e5cb8cbae6c1a9197d6abd5ff3b64dbc12fb"
+    },
+    {
+      "id": 10035,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "16 ＋ 83 =",
+      "answer": "99",
+      "explanation": "从16开始，再加上83，得到99。",
+      "fingerprint": "0fbe18ca0f2bfd186d474d02dd3859b473370fc7efbd81b3e2a6a11ae32009b9"
+    },
+    {
+      "id": 10036,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "19 ＋ 69 =",
+      "answer": "88",
+      "explanation": "从19开始，再加上69，得到88。",
+      "fingerprint": "fc3d961a06999ef4756a972dd73a94c6e6d8b0d7e96ff502a75e22816b101d62"
+    },
+    {
+      "id": 10037,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "31 ＋ 45 =",
+      "answer": "76",
+      "explanation": "从31开始，再加上45，得到76。",
+      "fingerprint": "1d9282aec6a4775e21cc49a2596c8744fc8943e315e412c4d4b10cfc87fa41b1"
+    },
+    {
+      "id": 10038,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "16 ＋ 33 =",
+      "answer": "49",
+      "explanation": "从16开始，再加上33，得到49。",
+      "fingerprint": "10d77c07283de197cfe144df7f11acdb614fc400427862c3a7f6b319a87787b1"
+    },
+    {
+      "id": 10039,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "29 ＋ 50 =",
+      "answer": "79",
+      "explanation": "从29开始，再加上50，得到79。",
+      "fingerprint": "ae60a43f06c5cb5c54f7315790727fe9b77ed6869c4bb95c4220bddb41c14fb4"
+    },
+    {
+      "id": 10040,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "32 ＋ 58 =",
+      "answer": "90",
+      "explanation": "从32开始，再加上58，得到90。",
+      "fingerprint": "eed3854b3a0ad906fd5c0395d36cf32dccea523fba4be19e1c7fd8709923101c"
+    },
+    {
+      "id": 10041,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "46 ＋ 51 =",
+      "answer": "97",
+      "explanation": "从46开始，再加上51，得到97。",
+      "fingerprint": "236e7e53212b4fce3a03eb8f3ceb2751bc1c43b68f3cbd751d4bd097f3286e96"
+    },
+    {
+      "id": 10042,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "31 ＋ 63 =",
+      "answer": "94",
+      "explanation": "从31开始，再加上63，得到94。",
+      "fingerprint": "1f0279ced53eafaf3f177fd16687723996b6534a56c09d4a2af19e983e132bf5"
+    },
+    {
+      "id": 10043,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "8 ＋ 52 =",
+      "answer": "60",
+      "explanation": "从8开始，再加上52，得到60。",
+      "fingerprint": "25e3ecd9e5da626370822bcf18c8e4d5a95fb013861efbeb1c68c585f4b197a0"
+    },
+    {
+      "id": 10044,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "32 ＋ 35 =",
+      "answer": "67",
+      "explanation": "从32开始，再加上35，得到67。",
+      "fingerprint": "c9023c45c25331d6542fc3844fc1063a4a5070a0b499188adf3cfe87a41ea546"
+    },
+    {
+      "id": 10045,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "4 ＋ 38 =",
+      "answer": "42",
+      "explanation": "从4开始，再加上38，得到42。",
+      "fingerprint": "e9d5bbc230c893acf2aba7c1b972b34830f203fe3e8cb94d39bf40faf7e1fcf7"
+    },
+    {
+      "id": 10046,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "40 ＋ 45 =",
+      "answer": "85",
+      "explanation": "从40开始，再加上45，得到85。",
+      "fingerprint": "82e03dec1daa43e6dd9689a9673ad98c211f6fc6f56fa7010a663582be475c01"
+    },
+    {
+      "id": 10047,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "13 ＋ 66 =",
+      "answer": "79",
+      "explanation": "从13开始，再加上66，得到79。",
+      "fingerprint": "e15c249d23c19a174e1fbfc64a8dc77d0a831be7ecd58269dadb96268d00889e"
+    },
+    {
+      "id": 10048,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "12 ＋ 75 =",
+      "answer": "87",
+      "explanation": "从12开始，再加上75，得到87。",
+      "fingerprint": "219f6aec6ae41908f450f685dc1d469a64255df2436c72113abb4b09f7f616cf"
+    },
+    {
+      "id": 10049,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "11 ＋ 38 =",
+      "answer": "49",
+      "explanation": "从11开始，再加上38，得到49。",
+      "fingerprint": "7ff9687593f54013d992942bbfdcea18b9e207f9850c8a9349c0ffb77c41009e"
+    },
+    {
+      "id": 10050,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "1 ＋ 76 =",
+      "answer": "77",
+      "explanation": "从1开始，再加上76，得到77。",
+      "fingerprint": "90684adedf4ae230c475ebc4f116f56f93f5a57c315883711050c0c864fa8997"
+    },
+    {
+      "id": 10051,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "18 ＋ 22 =",
+      "answer": "40",
+      "explanation": "从18开始，再加上22，得到40。",
+      "fingerprint": "298b7acd6f57438497f108035c8ad9c6cbd812f348049cf6e663aee792f26e4d"
+    },
+    {
+      "id": 10052,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "6 ＋ 70 =",
+      "answer": "76",
+      "explanation": "从6开始，再加上70，得到76。",
+      "fingerprint": "11526df961662b9f6a39c485a0aa389869bb16bf6e2f1ffdd4846d07d73b6d53"
+    },
+    {
+      "id": 10053,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "14 ＋ 39 =",
+      "answer": "53",
+      "explanation": "从14开始，再加上39，得到53。",
+      "fingerprint": "2a5fad3c5847c93716781ef922f246befff3ccdb91438d1872229390e0f301a5"
+    },
+    {
+      "id": 10054,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "46 ＋ 48 =",
+      "answer": "94",
+      "explanation": "从46开始，再加上48，得到94。",
+      "fingerprint": "c6addae03555dc757344bf19009913c38f36fac4598982389114156efc17cbb3"
+    },
+    {
+      "id": 10055,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "15 ＋ 84 =",
+      "answer": "99",
+      "explanation": "从15开始，再加上84，得到99。",
+      "fingerprint": "302163d1a9a0f9ebb9cc9b599e3a07a8bc37ab01754e93485784458c582d64b0"
+    },
+    {
+      "id": 10056,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "10 ＋ 76 =",
+      "answer": "86",
+      "explanation": "从10开始，再加上76，得到86。",
+      "fingerprint": "231cfe2dca79628680ed179843c96408824264c5c0083d5fef998e48a7064a50"
+    },
+    {
+      "id": 10057,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "2 ＋ 64 =",
+      "answer": "66",
+      "explanation": "从2开始，再加上64，得到66。",
+      "fingerprint": "444bbc03cc6551ddaff0fed1091d004ae65060c1b2513892f9d61a52c415e1a1"
+    },
+    {
+      "id": 10058,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "5 ＋ 25 =",
+      "answer": "30",
+      "explanation": "从5开始，再加上25，得到30。",
+      "fingerprint": "2da3ae0fbec6b42dda2bd703f3befd84f5701a38560ec1e1561e1f12549e9c3b"
+    },
+    {
+      "id": 10059,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "25 ＋ 59 =",
+      "answer": "84",
+      "explanation": "从25开始，再加上59，得到84。",
+      "fingerprint": "b705107fe7917ff385e3c62f9efd824896b1ec741580fc53be4d7ee963553e5c"
+    },
+    {
+      "id": 10060,
+      "pointId": 201,
+      "grade": 2,
+      "stem": "34 ＋ 63 =",
+      "answer": "97",
+      "explanation": "从34开始，再加上63，得到97。",
+      "fingerprint": "d63427677238091eef4422d3135b3751e382d7cc99389cd695a6121b18e10a1b"
+    },
+    {
+      "id": 10061,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "82 － 48 =",
+      "answer": "34",
+      "explanation": "从82里面去掉48，还剩34。",
+      "fingerprint": "35a352038afeafb551c0d883ea9d654a859da48d1e9856e2cca21ad2dd9e1856"
+    },
+    {
+      "id": 10062,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "90 － 47 =",
+      "answer": "43",
+      "explanation": "从90里面去掉47，还剩43。",
+      "fingerprint": "ee3d00d09a9107606a40b395e572e361922fd4f16cccd6d474cccd2977851bce"
+    },
+    {
+      "id": 10063,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "84 － 79 =",
+      "answer": "5",
+      "explanation": "从84里面去掉79，还剩5。",
+      "fingerprint": "1b4897a96cdf54b6b2df9bc889267cc8c65163b02040eee5f75ef448dcb5a987"
+    },
+    {
+      "id": 10064,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "61 － 3 =",
+      "answer": "58",
+      "explanation": "从61里面去掉3，还剩58。",
+      "fingerprint": "f55e2340062b5e36b637c6e1a8aa1ce2a8eedae057d0cdd27178ed6f3b3c697d"
+    },
+    {
+      "id": 10065,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "60 － 46 =",
+      "answer": "14",
+      "explanation": "从60里面去掉46，还剩14。",
+      "fingerprint": "7553344fc07f2853aa225eec5f7fd0f78b5beb77b096800d7b5c35cc31bf4169"
+    },
+    {
+      "id": 10066,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "83 － 68 =",
+      "answer": "15",
+      "explanation": "从83里面去掉68，还剩15。",
+      "fingerprint": "e1a4f8733db4d14ed126d122965a285d9323f7bd87bf11b1550a50ee468a941b"
+    },
+    {
+      "id": 10067,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "37 － 5 =",
+      "answer": "32",
+      "explanation": "从37里面去掉5，还剩32。",
+      "fingerprint": "25fa268f7124e0841e413abe9470b3d25fae4ac845c681ba84e4d71566b4c616"
+    },
+    {
+      "id": 10068,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "86 － 60 =",
+      "answer": "26",
+      "explanation": "从86里面去掉60，还剩26。",
+      "fingerprint": "4dc809a3e119b932a6d7524c745975d0229ecda26e773be3f789f095c2daf2c3"
+    },
+    {
+      "id": 10069,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "88 － 9 =",
+      "answer": "79",
+      "explanation": "从88里面去掉9，还剩79。",
+      "fingerprint": "9bc91c03c254b6ec779f6c29dbf5c01105cc1e582e959149d79a5f0e86f6cf68"
+    },
+    {
+      "id": 10070,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "88 － 79 =",
+      "answer": "9",
+      "explanation": "从88里面去掉79，还剩9。",
+      "fingerprint": "1f539d7319e1ceabb2e8f9e10044c2867f509fed1de68bac690d481a22f592cd"
+    },
+    {
+      "id": 10071,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "32 － 10 =",
+      "answer": "22",
+      "explanation": "从32里面去掉10，还剩22。",
+      "fingerprint": "604859e74f36007257ef85ce2ba059cecdea423f338f12202f03bdc8d45d873a"
+    },
+    {
+      "id": 10072,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "95 － 69 =",
+      "answer": "26",
+      "explanation": "从95里面去掉69，还剩26。",
+      "fingerprint": "67093c1aa6b1cf00957d7558bee1f431bbc11da60194a963a9aa82b68dab9d9b"
+    },
+    {
+      "id": 10073,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "76 － 31 =",
+      "answer": "45",
+      "explanation": "从76里面去掉31，还剩45。",
+      "fingerprint": "79b633a5f3264050aa46d70d4c7b4280cc4314e0a1eac84dcc684e84d75dfd94"
+    },
+    {
+      "id": 10074,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "61 － 32 =",
+      "answer": "29",
+      "explanation": "从61里面去掉32，还剩29。",
+      "fingerprint": "d8b4191a2acf07951e4852c47d903128e83f0ef9c623e074115f23089a270c9a"
+    },
+    {
+      "id": 10075,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "66 － 11 =",
+      "answer": "55",
+      "explanation": "从66里面去掉11，还剩55。",
+      "fingerprint": "1d9695da99f2573c4ba920f26ac7a531d11b3918170431beba288248b920cc4b"
+    },
+    {
+      "id": 10076,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "92 － 74 =",
+      "answer": "18",
+      "explanation": "从92里面去掉74，还剩18。",
+      "fingerprint": "a876f38ce5e2260f0fe66a3568c053d409deb0587a39a850d8675d9079c0eb3d"
+    },
+    {
+      "id": 10077,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "95 － 30 =",
+      "answer": "65",
+      "explanation": "从95里面去掉30，还剩65。",
+      "fingerprint": "8dd619ebcb59005af41ee89b754d8740036643af36bc029bfd46bbb9b3f3ee88"
+    },
+    {
+      "id": 10078,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "60 － 15 =",
+      "answer": "45",
+      "explanation": "从60里面去掉15，还剩45。",
+      "fingerprint": "26838ba772b80e15a2ab19c02d03c7e9f882241fdce74cadc7cf3a589dd18ac2"
+    },
+    {
+      "id": 10079,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "84 － 20 =",
+      "answer": "64",
+      "explanation": "从84里面去掉20，还剩64。",
+      "fingerprint": "aa6b1a6bf6831208eb0aeedd9dc21ff176013172e4b34f3f17a2b499dad29e8f"
+    },
+    {
+      "id": 10080,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "76 － 37 =",
+      "answer": "39",
+      "explanation": "从76里面去掉37，还剩39。",
+      "fingerprint": "dcc9099f18586eadfb71d534dc190390a1756be41af90a24a3c84e17e18c832c"
+    },
+    {
+      "id": 10081,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "91 － 16 =",
+      "answer": "75",
+      "explanation": "从91里面去掉16，还剩75。",
+      "fingerprint": "6b674480ff7ed6499da12bacc3b2e33b2891de2504acf29b657036d1d81378b0"
+    },
+    {
+      "id": 10082,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "50 － 37 =",
+      "answer": "13",
+      "explanation": "从50里面去掉37，还剩13。",
+      "fingerprint": "75c7d8818fa5c859519d030e8d8e2002a2ced380c9b62a1e7beb408d99d7b99f"
+    },
+    {
+      "id": 10083,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "86 － 43 =",
+      "answer": "43",
+      "explanation": "从86里面去掉43，还剩43。",
+      "fingerprint": "c2288c9956ef773aa447ae37ea6bd9cb337547a63ec6810d38bdab546852e50e"
+    },
+    {
+      "id": 10084,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "90 － 14 =",
+      "answer": "76",
+      "explanation": "从90里面去掉14，还剩76。",
+      "fingerprint": "1d1275cd833f9aabc95d5210af4158da985f6cd5bf130daa25ad3f08248eb62e"
+    },
+    {
+      "id": 10085,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "32 － 16 =",
+      "answer": "16",
+      "explanation": "从32里面去掉16，还剩16。",
+      "fingerprint": "2bda3757b038c48d1d97007d3ee2500387b048ba97e2726d610ab97032b6e5a7"
+    },
+    {
+      "id": 10086,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "95 － 25 =",
+      "answer": "70",
+      "explanation": "从95里面去掉25，还剩70。",
+      "fingerprint": "5dbc4a8cb04d114c4f6a35fc48ed3b00a517616c472b383b6cf0b508deec6c22"
+    },
+    {
+      "id": 10087,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "67 － 36 =",
+      "answer": "31",
+      "explanation": "从67里面去掉36，还剩31。",
+      "fingerprint": "04cef10cea7180934d87318717da0e78c7f86f027f7329ec8b5bdee17176f9a5"
+    },
+    {
+      "id": 10088,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "68 － 16 =",
+      "answer": "52",
+      "explanation": "从68里面去掉16，还剩52。",
+      "fingerprint": "248709d6b9676be28fe5610f76c9194a87fc361f058c41a693174fb42c1fc994"
+    },
+    {
+      "id": 10089,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "88 － 44 =",
+      "answer": "44",
+      "explanation": "从88里面去掉44，还剩44。",
+      "fingerprint": "1debf81a7866a5dc9508213c7b9b3483e8c2bdf554b6589d5246020b763d4173"
+    },
+    {
+      "id": 10090,
+      "pointId": 202,
+      "grade": 2,
+      "stem": "90 － 69 =",
+      "answer": "21",
+      "explanation": "从90里面去掉69，还剩21。",
+      "fingerprint": "ed01e67e40d16ff302bf3d682c326c053bd5b3ad6ad2c5fd9b310aac6b357ca7"
+    },
+    {
+      "id": 10091,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "1 × 6 =",
+      "answer": "6",
+      "explanation": "1个6相加，得到6。",
+      "fingerprint": "99eb6a548250cf0aab5926ed63f5072bc1637ff361f79605539ac1c1c06df188"
+    },
+    {
+      "id": 10092,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "1 × 3 =",
+      "answer": "3",
+      "explanation": "1个3相加，得到3。",
+      "fingerprint": "e65185860d0d0553b165eeba6d28c8ad9c0a6ae86156da72237748a6cf12daeb"
+    },
+    {
+      "id": 10093,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "5 × 6 =",
+      "answer": "30",
+      "explanation": "5个6相加，得到30。",
+      "fingerprint": "27f66c24424c16c73dbc4460e3306ebf7e3d0661f4082b11baf7d12eec94e853"
+    },
+    {
+      "id": 10094,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "6 × 9 =",
+      "answer": "54",
+      "explanation": "6个9相加，得到54。",
+      "fingerprint": "f1507bfd179efcb2672c8bcfb32324e1d9a46dde74e33782e764f7ac223776d5"
+    },
+    {
+      "id": 10095,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "2 × 6 =",
+      "answer": "12",
+      "explanation": "2个6相加，得到12。",
+      "fingerprint": "82d858e9505b93dfc4a065576f7c09766ff174711deb52dd03afd5d4370cc79d"
+    },
+    {
+      "id": 10096,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "1 × 2 =",
+      "answer": "2",
+      "explanation": "1个2相加，得到2。",
+      "fingerprint": "5eed6a7ae1f457ee921c4f0e1e443ee32dd48577926c8da333de88747db1fb15"
+    },
+    {
+      "id": 10097,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "7 × 9 =",
+      "answer": "63",
+      "explanation": "7个9相加，得到63。",
+      "fingerprint": "f3ab3c2c1b2f4245dd0fbcdba84c82fa2dba2f45df6812ea0a6870731b6d7f59"
+    },
+    {
+      "id": 10098,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "2 × 9 =",
+      "answer": "18",
+      "explanation": "2个9相加，得到18。",
+      "fingerprint": "6e76d4654b0016f3f5b430704fd390e738d8c14c1bcedbec8df895499b4c8356"
+    },
+    {
+      "id": 10099,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "2 × 8 =",
+      "answer": "16",
+      "explanation": "2个8相加，得到16。",
+      "fingerprint": "d9f587299bfdbe764e0ef3fe19893cabf17b9deac851b1a58d91d955f7f56c1b"
+    },
+    {
+      "id": 10100,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "7 × 7 =",
+      "answer": "49",
+      "explanation": "7个7相加，得到49。",
+      "fingerprint": "db4b5e89d5974e6b036360e5702d9e37af31038836ee2fbb110742dd620965e8"
+    },
+    {
+      "id": 10101,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "6 × 7 =",
+      "answer": "42",
+      "explanation": "6个7相加，得到42。",
+      "fingerprint": "b4214223ebda671a38daac7d4a4e50256de6d6911d3e5d694668e267cb016702"
+    },
+    {
+      "id": 10102,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "3 × 8 =",
+      "answer": "24",
+      "explanation": "3个8相加，得到24。",
+      "fingerprint": "7c75f530f1a6a20253aada00fc6fe88726d39c75c04fd7ab77434e6f2b0069f3"
+    },
+    {
+      "id": 10103,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "1 × 7 =",
+      "answer": "7",
+      "explanation": "1个7相加，得到7。",
+      "fingerprint": "69f8d4a486568a76c8266c2f67f164f93946751538329ad5b2f3a7c59801d40f"
+    },
+    {
+      "id": 10104,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "1 × 9 =",
+      "answer": "9",
+      "explanation": "1个9相加，得到9。",
+      "fingerprint": "56ab721f28018a48463f5552f081e7dd1525e3d8a439b587113cefabc902295d"
+    },
+    {
+      "id": 10105,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "1 × 4 =",
+      "answer": "4",
+      "explanation": "1个4相加，得到4。",
+      "fingerprint": "8799644b4f9b43c0f272b4b1129efd0ecfb607a2134f1e57d994fb5fd835381f"
+    },
+    {
+      "id": 10106,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "5 × 5 =",
+      "answer": "25",
+      "explanation": "5个5相加，得到25。",
+      "fingerprint": "8981ed2c9697a1c25730267dc8fb7f7b085728aee55d5cbc22f219f7b1e7ca76"
+    },
+    {
+      "id": 10107,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "3 × 3 =",
+      "answer": "9",
+      "explanation": "3个3相加，得到9。",
+      "fingerprint": "7fd1004a2220ff6de0c258edcaecda05effb3541d55dc9a0affe58aba6778b28"
+    },
+    {
+      "id": 10108,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "3 × 9 =",
+      "answer": "27",
+      "explanation": "3个9相加，得到27。",
+      "fingerprint": "5f909d712f90e074f7c89a8f80bb8e10bef8425531d99cda3d343e6b997d652b"
+    },
+    {
+      "id": 10109,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "2 × 4 =",
+      "answer": "8",
+      "explanation": "2个4相加，得到8。",
+      "fingerprint": "6c479684ec93431664b2b88aa6d0541f762a59e6ed257fcb5537b9b2fa6adaf3"
+    },
+    {
+      "id": 10110,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "3 × 4 =",
+      "answer": "12",
+      "explanation": "3个4相加，得到12。",
+      "fingerprint": "64ed77b0add83fe967b30bcfc1235a3a7b93cebad969a2fe4c94f807d600afb2"
+    },
+    {
+      "id": 10111,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "8 × 8 =",
+      "answer": "64",
+      "explanation": "8个8相加，得到64。",
+      "fingerprint": "e6760baf1106202632438793e57edc41b77ce1e1169a4b10a1d29dbbdebd430d"
+    },
+    {
+      "id": 10112,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "4 × 5 =",
+      "answer": "20",
+      "explanation": "4个5相加，得到20。",
+      "fingerprint": "2e4b0886cb64aaba018b1e5b60a7409086edaa91852640037bfc9b382b8c78b4"
+    },
+    {
+      "id": 10113,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "2 × 5 =",
+      "answer": "10",
+      "explanation": "2个5相加，得到10。",
+      "fingerprint": "8f6572e8e6cc6a4630fcdfe60c5d888cd45c238264931653784605589c51b057"
+    },
+    {
+      "id": 10114,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "2 × 7 =",
+      "answer": "14",
+      "explanation": "2个7相加，得到14。",
+      "fingerprint": "dbcaa575885428737ed52d1c83d3d9b009322639b3c77a1976392e82781b0409"
+    },
+    {
+      "id": 10115,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "5 × 7 =",
+      "answer": "35",
+      "explanation": "5个7相加，得到35。",
+      "fingerprint": "2f7f52e82f492f90c4dd04ecc70818fa1e2b59ced48e6656a96e42b5482fcb79"
+    },
+    {
+      "id": 10116,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "5 × 9 =",
+      "answer": "45",
+      "explanation": "5个9相加，得到45。",
+      "fingerprint": "9b9b247e20be0c292732de2a59603c106ffee634f66b40a5e205ba22a530fd19"
+    },
+    {
+      "id": 10117,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "4 × 9 =",
+      "answer": "36",
+      "explanation": "4个9相加，得到36。",
+      "fingerprint": "2b65b0655eebb715ffa68a625e1f291edbb5830943a0712a50bfe72ea99d6a9b"
+    },
+    {
+      "id": 10118,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "2 × 2 =",
+      "answer": "4",
+      "explanation": "2个2相加，得到4。",
+      "fingerprint": "fd32fcdcb80f3901ca9ed586e6a1e403f4dfe85c02f6355f4c35d3ab5addf7ff"
+    },
+    {
+      "id": 10119,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "8 × 9 =",
+      "answer": "72",
+      "explanation": "8个9相加，得到72。",
+      "fingerprint": "a4707fdafdfbce6ba392f9e7d26c50ea6c71e4004793fd6a004c0d38ae5cabc4"
+    },
+    {
+      "id": 10120,
+      "pointId": 203,
+      "grade": 2,
+      "stem": "3 × 7 =",
+      "answer": "21",
+      "explanation": "3个7相加，得到21。",
+      "fingerprint": "573bca55e932ee832095e82d63d6fc4d8c1751a5341341b621220869790362b5"
+    },
+    {
+      "id": 10121,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "42 ÷ 7 =",
+      "answer": "6",
+      "explanation": "因为7×6＝42，所以42÷7＝6。",
+      "fingerprint": "84bb22bc0b2b1d80d2ecd1f7dc5956350ba1826201cc9b0cb96a8a69f8a3d29f"
+    },
+    {
+      "id": 10122,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "6 ÷ 3 =",
+      "answer": "2",
+      "explanation": "因为3×2＝6，所以6÷3＝2。",
+      "fingerprint": "e5542fcd0ac376422b819b4e68bf66ad9003c9ac3dba05c3193117596a7c646e"
+    },
+    {
+      "id": 10123,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "36 ÷ 4 =",
+      "answer": "9",
+      "explanation": "因为4×9＝36，所以36÷4＝9。",
+      "fingerprint": "0e6bca5c05411e6137f30a2ddefca02037d1b9201f7d2b9ce01004b7e348d9fa"
+    },
+    {
+      "id": 10124,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "24 ÷ 3 =",
+      "answer": "8",
+      "explanation": "因为3×8＝24，所以24÷3＝8。",
+      "fingerprint": "b3dd24fd10cf46c632c269dba2eef9586c549a561327b0e7dd5912245bf75736"
+    },
+    {
+      "id": 10125,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "56 ÷ 7 =",
+      "answer": "8",
+      "explanation": "因为7×8＝56，所以56÷7＝8。",
+      "fingerprint": "cbce676efc5012c7f2e2b22cf52ccf8e7b2ff328882b6ef74ae7b3789dd7318f"
+    },
+    {
+      "id": 10126,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "64 ÷ 8 =",
+      "answer": "8",
+      "explanation": "因为8×8＝64，所以64÷8＝8。",
+      "fingerprint": "5c28491c1e412b50a3541e4b068152eae2a0fe888a2434fe395ccbe27251cf4a"
+    },
+    {
+      "id": 10127,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "42 ÷ 6 =",
+      "answer": "7",
+      "explanation": "因为6×7＝42，所以42÷6＝7。",
+      "fingerprint": "f8d574d7220b0bb300358712b18c5a653a270d5d0cad99339969ee3a98d011bd"
+    },
+    {
+      "id": 10128,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "15 ÷ 3 =",
+      "answer": "5",
+      "explanation": "因为3×5＝15，所以15÷3＝5。",
+      "fingerprint": "b88b72947b1cab4bd99cec349b5186c9e68b5ac4c5956e177060a9885f72d1b4"
+    },
+    {
+      "id": 10129,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "12 ÷ 4 =",
+      "answer": "3",
+      "explanation": "因为4×3＝12，所以12÷4＝3。",
+      "fingerprint": "0d154cb09f1decaa28da503aeec19609f59caa150a8000e1acbf9f021d6fadb6"
+    },
+    {
+      "id": 10130,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "9 ÷ 9 =",
+      "answer": "1",
+      "explanation": "因为9×1＝9，所以9÷9＝1。",
+      "fingerprint": "bd340da60c0a330d67ea64d2e243a6e2f83ac8cadb484392f3716b2764a99077"
+    },
+    {
+      "id": 10131,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "36 ÷ 9 =",
+      "answer": "4",
+      "explanation": "因为9×4＝36，所以36÷9＝4。",
+      "fingerprint": "e8362bea5a669c9e2d348546eda923ac250dc48b9cd33dd84b02b63c3196b2c8"
+    },
+    {
+      "id": 10132,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "63 ÷ 9 =",
+      "answer": "7",
+      "explanation": "因为9×7＝63，所以63÷9＝7。",
+      "fingerprint": "50ae5e88a72d2b1f4294bd9e35a3b57196b3236d127be6e9d49c739003dd5872"
+    },
+    {
+      "id": 10133,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "10 ÷ 2 =",
+      "answer": "5",
+      "explanation": "因为2×5＝10，所以10÷2＝5。",
+      "fingerprint": "173f245ece5209d10cb2e5e874635827c87e498375bcb84623630c63e18d279b"
+    },
+    {
+      "id": 10134,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "10 ÷ 5 =",
+      "answer": "2",
+      "explanation": "因为5×2＝10，所以10÷5＝2。",
+      "fingerprint": "220cc9b0228bfa7205ab9f628e22028daeefb681c4b780151d38ab6dc62daca4"
+    },
+    {
+      "id": 10135,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "48 ÷ 8 =",
+      "answer": "6",
+      "explanation": "因为8×6＝48，所以48÷8＝6。",
+      "fingerprint": "e5a0ba2f28b4e3969436487d306b7160a7f65bdf0f7a723b4d4fe1e70ad6b58c"
+    },
+    {
+      "id": 10136,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "15 ÷ 5 =",
+      "answer": "3",
+      "explanation": "因为5×3＝15，所以15÷5＝3。",
+      "fingerprint": "ac7d8ba1c7ab32f3690a10dea7a2154eb336685fb34ca809e8eecec214547b4d"
+    },
+    {
+      "id": 10137,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "48 ÷ 6 =",
+      "answer": "8",
+      "explanation": "因为6×8＝48，所以48÷6＝8。",
+      "fingerprint": "e82886028c7ddfb9e3ba9d7737481f09c3a44c3977728ffdee9776ecfde9f4f6"
+    },
+    {
+      "id": 10138,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "35 ÷ 5 =",
+      "answer": "7",
+      "explanation": "因为5×7＝35，所以35÷5＝7。",
+      "fingerprint": "f244805270f8171e0bb381295888d5d49e3ad7772784291f0fbe61c24c6774dc"
+    },
+    {
+      "id": 10139,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "20 ÷ 4 =",
+      "answer": "5",
+      "explanation": "因为4×5＝20，所以20÷4＝5。",
+      "fingerprint": "d6098e82087ecfede02f8dd056e927a5b68497dc08a58da59271bc1d8dd33bc8"
+    },
+    {
+      "id": 10140,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "45 ÷ 9 =",
+      "answer": "5",
+      "explanation": "因为9×5＝45，所以45÷9＝5。",
+      "fingerprint": "9cfdcfde24e9d66739de09561598ebc06215838ca5057036ebb2ed512e706e46"
+    },
+    {
+      "id": 10141,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "3 ÷ 3 =",
+      "answer": "1",
+      "explanation": "因为3×1＝3，所以3÷3＝1。",
+      "fingerprint": "222f71342382e06d365c8175501cd85e081d7b921cfd8e6994a1559fb701f7e6"
+    },
+    {
+      "id": 10142,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "12 ÷ 3 =",
+      "answer": "4",
+      "explanation": "因为3×4＝12，所以12÷3＝4。",
+      "fingerprint": "e13a39cba2f6dbb030fc2d51e110ec02cc297d1afeb5d800f14be752fc4cd902"
+    },
+    {
+      "id": 10143,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "18 ÷ 3 =",
+      "answer": "6",
+      "explanation": "因为3×6＝18，所以18÷3＝6。",
+      "fingerprint": "d1b59b2cca06b2d34be96cf4bc17fb44808e85822ab2023a903a69beed693d2e"
+    },
+    {
+      "id": 10144,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "4 ÷ 4 =",
+      "answer": "1",
+      "explanation": "因为4×1＝4，所以4÷4＝1。",
+      "fingerprint": "95f6d40a9ca0074b4947ba1673d72872874b005df2a0190facee06f9b883d6c9"
+    },
+    {
+      "id": 10145,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "21 ÷ 3 =",
+      "answer": "7",
+      "explanation": "因为3×7＝21，所以21÷3＝7。",
+      "fingerprint": "ad3b6a38ce2ee35335eb2b0a9eb3c93acccbfe0e116bea310bfb7258b6b7df5a"
+    },
+    {
+      "id": 10146,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "18 ÷ 9 =",
+      "answer": "2",
+      "explanation": "因为9×2＝18，所以18÷9＝2。",
+      "fingerprint": "523e4a352e68fe49d24955cd6c0c324450ffa5b30f8113e87d7a0eae3e7831da"
+    },
+    {
+      "id": 10147,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "72 ÷ 9 =",
+      "answer": "8",
+      "explanation": "因为9×8＝72，所以72÷9＝8。",
+      "fingerprint": "f3f4811d44d01dc68d6e0d0e7925dfd199e1592c20a83e8c168382061c71c067"
+    },
+    {
+      "id": 10148,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "8 ÷ 4 =",
+      "answer": "2",
+      "explanation": "因为4×2＝8，所以8÷4＝2。",
+      "fingerprint": "caba1ac719b921cbe62d9d5113abaa2b52662191763fcd42391fa5fac4de8d0c"
+    },
+    {
+      "id": 10149,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "40 ÷ 8 =",
+      "answer": "5",
+      "explanation": "因为8×5＝40，所以40÷8＝5。",
+      "fingerprint": "b3598d5b7f28558e5e790da6b66d06ee95c7273227c8a0b775ee34d7cecf2adb"
+    },
+    {
+      "id": 10150,
+      "pointId": 204,
+      "grade": 2,
+      "stem": "28 ÷ 4 =",
+      "answer": "7",
+      "explanation": "因为4×7＝28，所以28÷4＝7。",
+      "fingerprint": "1c3b64497622f4bb52be70de8125830ec1185ef3bdbb1d0dca10214ac32c94b3"
+    },
+    {
+      "id": 10151,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "220 ＋ 410 =",
+      "answer": "630",
+      "explanation": "从220开始，再加上410，得到630。",
+      "fingerprint": "1844be0ed3128d27e6651fc9380121a290c57d29d14911f169a6f06ec37a26bf"
+    },
+    {
+      "id": 10152,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "300 ＋ 360 =",
+      "answer": "660",
+      "explanation": "从300开始，再加上360，得到660。",
+      "fingerprint": "001068d32c4784503e221adb7f533a2fa4adc40f9ec1841bb6388cb480fd87d2"
+    },
+    {
+      "id": 10153,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "350 ＋ 550 =",
+      "answer": "900",
+      "explanation": "从350开始，再加上550，得到900。",
+      "fingerprint": "9eb70b74209a10a71846b271106f0377c7b7ca4d1f4a9a7cfe9ced114565c391"
+    },
+    {
+      "id": 10154,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "270 ＋ 280 =",
+      "answer": "550",
+      "explanation": "从270开始，再加上280，得到550。",
+      "fingerprint": "68ab90e6d4cb6b1ae9d5ef1e2c0ba94dd97aeabdb1aa78042e7fee40e1334cef"
+    },
+    {
+      "id": 10155,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "120 ＋ 440 =",
+      "answer": "560",
+      "explanation": "从120开始，再加上440，得到560。",
+      "fingerprint": "fa841a83a949c27da2186ce3f43b5697a72a21456c5ea7d868da46cbf0f3f7da"
+    },
+    {
+      "id": 10156,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "130 ＋ 450 =",
+      "answer": "580",
+      "explanation": "从130开始，再加上450，得到580。",
+      "fingerprint": "795726900fedb75f8669ec2a86b9d77137107878c4bf94fe6a7ab350dc48f89d"
+    },
+    {
+      "id": 10157,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "60 ＋ 570 =",
+      "answer": "630",
+      "explanation": "从60开始，再加上570，得到630。",
+      "fingerprint": "fdf713637b728e6797922d5726006387c65e4309051b575ada4cb01bf07609c9"
+    },
+    {
+      "id": 10158,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "120 ＋ 740 =",
+      "answer": "860",
+      "explanation": "从120开始，再加上740，得到860。",
+      "fingerprint": "49fc46bfc90d6b50a8781c941697100b4a80a801a6a6cf353d4cf0072f144452"
+    },
+    {
+      "id": 10159,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "330 ＋ 370 =",
+      "answer": "700",
+      "explanation": "从330开始，再加上370，得到700。",
+      "fingerprint": "fb6ff95d7165fcdbbc8bd2283b58bb8d0f2924cbdff1e7a9ffb962e4cd711dfb"
+    },
+    {
+      "id": 10160,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "70 ＋ 220 =",
+      "answer": "290",
+      "explanation": "从70开始，再加上220，得到290。",
+      "fingerprint": "ccf53565647818d9997f2929835b7517609a48d6c97408cbeb703a490ece1ae6"
+    },
+    {
+      "id": 10161,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "50 ＋ 460 =",
+      "answer": "510",
+      "explanation": "从50开始，再加上460，得到510。",
+      "fingerprint": "1d621b4e2ecbfb36a19f8e36bd6ee66323c666404fddfb94b06e6759b54abe6e"
+    },
+    {
+      "id": 10162,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "250 ＋ 730 =",
+      "answer": "980",
+      "explanation": "从250开始，再加上730，得到980。",
+      "fingerprint": "cc7306b4280accbe29bea8fa622dcfa5a82776f0891ebc6fccf286d7b6278fae"
+    },
+    {
+      "id": 10163,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "370 ＋ 420 =",
+      "answer": "790",
+      "explanation": "从370开始，再加上420，得到790。",
+      "fingerprint": "ace887c43b05ebd96715518063f2472b330e6b7f2da97e78bfab48f685573b55"
+    },
+    {
+      "id": 10164,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "160 ＋ 550 =",
+      "answer": "710",
+      "explanation": "从160开始，再加上550，得到710。",
+      "fingerprint": "e0b47eaad4bde51dbebfff1c5b6c7f41d5176ddd0196deec77bc9612595f339b"
+    },
+    {
+      "id": 10165,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "20 ＋ 610 =",
+      "answer": "630",
+      "explanation": "从20开始，再加上610，得到630。",
+      "fingerprint": "2a20f288ce12f0cbd667f7497f39d8f252a3b8323fb3d1b7a06039be7ed652c8"
+    },
+    {
+      "id": 10166,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "90 ＋ 340 =",
+      "answer": "430",
+      "explanation": "从90开始，再加上340，得到430。",
+      "fingerprint": "1975152915dad08786251726858103d5caeef83fa1a5de38099c52c7e987e80c"
+    },
+    {
+      "id": 10167,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "150 ＋ 390 =",
+      "answer": "540",
+      "explanation": "从150开始，再加上390，得到540。",
+      "fingerprint": "1923f98a6272eae983f17a4f4cd469ee3768dd89c7997a9368e084ad37cabde6"
+    },
+    {
+      "id": 10168,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "370 ＋ 560 =",
+      "answer": "930",
+      "explanation": "从370开始，再加上560，得到930。",
+      "fingerprint": "9f8320fb76c8d1d071ff3e5bd844ddb39c7c5dc1922a1610868f691756260540"
+    },
+    {
+      "id": 10169,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "170 ＋ 270 =",
+      "answer": "440",
+      "explanation": "从170开始，再加上270，得到440。",
+      "fingerprint": "9c2580a46509f77b8ffd76da3141345389455391823cf38bdf48d5a9ab2e2cdd"
+    },
+    {
+      "id": 10170,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "280 ＋ 310 =",
+      "answer": "590",
+      "explanation": "从280开始，再加上310，得到590。",
+      "fingerprint": "e9a87c1f8b4762ef5043414b3b0ac64c2e9925e43dc1e43ab39a8097489aeb7b"
+    },
+    {
+      "id": 10171,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "110 ＋ 550 =",
+      "answer": "660",
+      "explanation": "从110开始，再加上550，得到660。",
+      "fingerprint": "4306470448cc879e132f249baea2b64d3b45e50fb361923fac6f2f8b14889839"
+    },
+    {
+      "id": 10172,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "260 ＋ 700 =",
+      "answer": "960",
+      "explanation": "从260开始，再加上700，得到960。",
+      "fingerprint": "6f4ee309ca3a068dc1de82d76b48bafddac42261a0924929f37539b9e2e1ebb0"
+    },
+    {
+      "id": 10173,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "10 ＋ 740 =",
+      "answer": "750",
+      "explanation": "从10开始，再加上740，得到750。",
+      "fingerprint": "1c99998618768f2c4a1fd2d9efd5262ac7a6763b3f3b4d3acd6b3fcbfe1f5869"
+    },
+    {
+      "id": 10174,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "10 ＋ 810 =",
+      "answer": "820",
+      "explanation": "从10开始，再加上810，得到820。",
+      "fingerprint": "3e49e1b1f7e6c31377331fed1452f160cb8c7be81545fce4fb760aaa1d2731d9"
+    },
+    {
+      "id": 10175,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "40 ＋ 340 =",
+      "answer": "380",
+      "explanation": "从40开始，再加上340，得到380。",
+      "fingerprint": "56ef86fd3a7aa9218f43b9fed96f6196c47214583baa77cc9eae757941774740"
+    },
+    {
+      "id": 10176,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "260 ＋ 330 =",
+      "answer": "590",
+      "explanation": "从260开始，再加上330，得到590。",
+      "fingerprint": "0b64fa6cb602a74eee29075b1a0ab210eb65d54a2bb5b4734ebf11340f6180c7"
+    },
+    {
+      "id": 10177,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "150 ＋ 180 =",
+      "answer": "330",
+      "explanation": "从150开始，再加上180，得到330。",
+      "fingerprint": "06959b0e95a7616e6e1fab7460a277827dd847529f92f8b1c2f5100d5d1c2688"
+    },
+    {
+      "id": 10178,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "100 ＋ 320 =",
+      "answer": "420",
+      "explanation": "从100开始，再加上320，得到420。",
+      "fingerprint": "f235361af93cefdbc5ef2b1940312945ce7ce22d13a649aa26c3d67559fe98c9"
+    },
+    {
+      "id": 10179,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "180 ＋ 520 =",
+      "answer": "700",
+      "explanation": "从180开始，再加上520，得到700。",
+      "fingerprint": "3a9bf6dc57606c91415cb34f9835d00cd3dcecb2578762386dad1509c098f817"
+    },
+    {
+      "id": 10180,
+      "pointId": 301,
+      "grade": 3,
+      "stem": "80 ＋ 680 =",
+      "answer": "760",
+      "explanation": "从80开始，再加上680，得到760。",
+      "fingerprint": "e5ba9b5b72b8054e096cccbf92696ebe0ef647db33fd89567a164ee382ee8377"
+    },
+    {
+      "id": 10181,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "960 － 520 =",
+      "answer": "440",
+      "explanation": "从960里面去掉520，还剩440。",
+      "fingerprint": "713023de662b5b9a4785debad1e14ac4cbe49d789a00215a154ab8a1aac408fc"
+    },
+    {
+      "id": 10182,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "940 － 900 =",
+      "answer": "40",
+      "explanation": "从940里面去掉900，还剩40。",
+      "fingerprint": "753eaac648ab284eb02899be4cfa683302d937aa7a3048e91b4116ebf1bfe6e3"
+    },
+    {
+      "id": 10183,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "960 － 190 =",
+      "answer": "770",
+      "explanation": "从960里面去掉190，还剩770。",
+      "fingerprint": "1704f81e1df7485b8894bbdb9522bc26426749ffedb8805075dfa1de2a18d983"
+    },
+    {
+      "id": 10184,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "820 － 590 =",
+      "answer": "230",
+      "explanation": "从820里面去掉590，还剩230。",
+      "fingerprint": "ef3f9e0aa99fb70ce691f0d6a09dabe5c983895a03d2e033acfbffa0f4553ade"
+    },
+    {
+      "id": 10185,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "890 － 190 =",
+      "answer": "700",
+      "explanation": "从890里面去掉190，还剩700。",
+      "fingerprint": "d1ed55173a538c86d9625a46f894a4f1995e1a13e4671ccc852080394a5671f6"
+    },
+    {
+      "id": 10186,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "560 － 540 =",
+      "answer": "20",
+      "explanation": "从560里面去掉540，还剩20。",
+      "fingerprint": "fa12406f869a0ea14e91bb0e8a70d279a0f093ddff0227820a7ea7406371dee6"
+    },
+    {
+      "id": 10187,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "270 － 20 =",
+      "answer": "250",
+      "explanation": "从270里面去掉20，还剩250。",
+      "fingerprint": "63036afb4e540947fddda09e43194bba70531e3d2de983cccbb345c1723fa02d"
+    },
+    {
+      "id": 10188,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "790 － 620 =",
+      "answer": "170",
+      "explanation": "从790里面去掉620，还剩170。",
+      "fingerprint": "c59c321557ddf66ebd140fe112e36e0a8d5f217be63383572ece199405a3e884"
+    },
+    {
+      "id": 10189,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "810 － 640 =",
+      "answer": "170",
+      "explanation": "从810里面去掉640，还剩170。",
+      "fingerprint": "6a3fe1a5eb4789d38c0ac37db8e860b197f2b9c5f56f39c6f6ead2dd1ae8a0c2"
+    },
+    {
+      "id": 10190,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "580 － 140 =",
+      "answer": "440",
+      "explanation": "从580里面去掉140，还剩440。",
+      "fingerprint": "1e604ebad98cc4a0d94cda6e063d3696acf3d6d1632f92e553eccd4f651fa065"
+    },
+    {
+      "id": 10191,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "910 － 770 =",
+      "answer": "140",
+      "explanation": "从910里面去掉770，还剩140。",
+      "fingerprint": "61a953a7583aabd513df8bc1f0c53c0648efba3f6f2b675a720a8828bea10372"
+    },
+    {
+      "id": 10192,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "810 － 410 =",
+      "answer": "400",
+      "explanation": "从810里面去掉410，还剩400。",
+      "fingerprint": "a7db07bea451d087c460d3be72e2fd79034848b2fbc2268c79aa94c22a6542d8"
+    },
+    {
+      "id": 10193,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "750 － 520 =",
+      "answer": "230",
+      "explanation": "从750里面去掉520，还剩230。",
+      "fingerprint": "f58f6f13f81b07361a7a643b645901bed8eb02702e7b241a2d57b14ace8e3010"
+    },
+    {
+      "id": 10194,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "440 － 240 =",
+      "answer": "200",
+      "explanation": "从440里面去掉240，还剩200。",
+      "fingerprint": "296fc07920f2d6ba06a7d9f2a3afa84ec0fa27f9777ed27fc0e28527dab1f579"
+    },
+    {
+      "id": 10195,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "950 － 600 =",
+      "answer": "350",
+      "explanation": "从950里面去掉600，还剩350。",
+      "fingerprint": "b6f5aef1dfe3c44a4b8a24bf4dc384e8f4f3c10cbd9ec0514e68908a9b00856d"
+    },
+    {
+      "id": 10196,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "240 － 50 =",
+      "answer": "190",
+      "explanation": "从240里面去掉50，还剩190。",
+      "fingerprint": "1899aa92727ad3e17dcfa864c2602efa2247ab7c42974095bcf295832a73e11f"
+    },
+    {
+      "id": 10197,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "610 － 160 =",
+      "answer": "450",
+      "explanation": "从610里面去掉160，还剩450。",
+      "fingerprint": "b559b5aa73e36e8a7d1440c018e6cb50e35a192153e67d7cf1ad0c8eb3bb8db4"
+    },
+    {
+      "id": 10198,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "980 － 680 =",
+      "answer": "300",
+      "explanation": "从980里面去掉680，还剩300。",
+      "fingerprint": "e790ed386f811a07d062c32db6556072f4e5783e387f610cc6b38f68570b16b3"
+    },
+    {
+      "id": 10199,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "470 － 100 =",
+      "answer": "370",
+      "explanation": "从470里面去掉100，还剩370。",
+      "fingerprint": "2bfc51cb96f816fcf91a64f6ec722161d3126b010bb400009786196dd83633e5"
+    },
+    {
+      "id": 10200,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "910 － 530 =",
+      "answer": "380",
+      "explanation": "从910里面去掉530，还剩380。",
+      "fingerprint": "d349e055d67fc97f5a658d5086387afd1be660406bb3679bec4b6e52db57a7b2"
+    },
+    {
+      "id": 10201,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "310 － 210 =",
+      "answer": "100",
+      "explanation": "从310里面去掉210，还剩100。",
+      "fingerprint": "0bf37d0c35c2328ba12ddb0943da8fc578d4c521e9e197ccf329f8ef0d9f7cf6"
+    },
+    {
+      "id": 10202,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "960 － 240 =",
+      "answer": "720",
+      "explanation": "从960里面去掉240，还剩720。",
+      "fingerprint": "17b05e68e7dbee0ecfb72c18399b910c6addd2ae03a0bf03165acd7aa8107b68"
+    },
+    {
+      "id": 10203,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "370 － 10 =",
+      "answer": "360",
+      "explanation": "从370里面去掉10，还剩360。",
+      "fingerprint": "a6b4138a9ba9373255d797a4ea93ecb28282bf9154c79cc74e431394139b40a5"
+    },
+    {
+      "id": 10204,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "780 － 310 =",
+      "answer": "470",
+      "explanation": "从780里面去掉310，还剩470。",
+      "fingerprint": "277dd827d3d8f775d1513e837e82b0d50075b4d4bd7b898f4e49dc4746b9e451"
+    },
+    {
+      "id": 10205,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "790 － 550 =",
+      "answer": "240",
+      "explanation": "从790里面去掉550，还剩240。",
+      "fingerprint": "ac72ba913bf2676c9a6731b8c3d831e3dfeabe5cc736cb428b88c8215fdc7423"
+    },
+    {
+      "id": 10206,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "890 － 120 =",
+      "answer": "770",
+      "explanation": "从890里面去掉120，还剩770。",
+      "fingerprint": "155702d1c1f0cc95999cee246384053de1cf06d012357be711f0e0028a387537"
+    },
+    {
+      "id": 10207,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "700 － 60 =",
+      "answer": "640",
+      "explanation": "从700里面去掉60，还剩640。",
+      "fingerprint": "a98baa2c8b0b618c0de21dd50e2c9736b42839119e999226a31707c1de23dea3"
+    },
+    {
+      "id": 10208,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "940 － 580 =",
+      "answer": "360",
+      "explanation": "从940里面去掉580，还剩360。",
+      "fingerprint": "f676d83f3eb67572c0280ab4029a5aef268d06eb8fee7b11944e6d06d31edf1a"
+    },
+    {
+      "id": 10209,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "850 － 710 =",
+      "answer": "140",
+      "explanation": "从850里面去掉710，还剩140。",
+      "fingerprint": "a026db7a272d47aca1f2482d23f9a75d00a55996b883d54cf2f18d4bb240a2b6"
+    },
+    {
+      "id": 10210,
+      "pointId": 302,
+      "grade": 3,
+      "stem": "790 － 590 =",
+      "answer": "200",
+      "explanation": "从790里面去掉590，还剩200。",
+      "fingerprint": "bd67b4a564bdf613d70d9bf14f67db1ad404ca9c80066aa37387ab185812f1bc"
+    },
+    {
+      "id": 10211,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "12 × 2 =",
+      "answer": "24",
+      "explanation": "先算10×2，再算2×2，合起来是24。",
+      "fingerprint": "da3f2a53dfa855e37c124b7a3ecf2627da00529d82438fad776981a73d193520"
+    },
+    {
+      "id": 10212,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "25 × 3 =",
+      "answer": "75",
+      "explanation": "先算20×3，再算5×3，合起来是75。",
+      "fingerprint": "afd9d43a905b14cec45521794c868d4cf839a2010a011307e8e0bfeb22490ce6"
+    },
+    {
+      "id": 10213,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "22 × 3 =",
+      "answer": "66",
+      "explanation": "先算20×3，再算2×3，合起来是66。",
+      "fingerprint": "d4cf2cf7f4e154731c2f73d05dde09f381db089902a52c0c9c20479c4b0577d2"
+    },
+    {
+      "id": 10214,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "15 × 5 =",
+      "answer": "75",
+      "explanation": "先算10×5，再算5×5，合起来是75。",
+      "fingerprint": "309daff64315dccbc5764e87ea0288e73a133a4eed71e3d2b3d765b2b02a71a7"
+    },
+    {
+      "id": 10215,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "46 × 2 =",
+      "answer": "92",
+      "explanation": "先算40×2，再算6×2，合起来是92。",
+      "fingerprint": "ad4bfbd3aee9b6e2ad752785cefdb9a20707e45ce058a37392d3a15e31f97295"
+    },
+    {
+      "id": 10216,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "26 × 4 =",
+      "answer": "104",
+      "explanation": "先算20×4，再算6×4，合起来是104。",
+      "fingerprint": "7c9083d04412d8a1cdc9ca30ab5fc0d7f515ce0c70e33904bfb512bc5d011ca8"
+    },
+    {
+      "id": 10217,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "46 × 3 =",
+      "answer": "138",
+      "explanation": "先算40×3，再算6×3，合起来是138。",
+      "fingerprint": "bfff64cca03ec11480de4ab875fcf1822bfbc71b8f1d86d83e05c560ae3924b0"
+    },
+    {
+      "id": 10218,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "43 × 2 =",
+      "answer": "86",
+      "explanation": "先算40×2，再算3×2，合起来是86。",
+      "fingerprint": "c8fcfed4cca911f46cb2678a382fb42898c6b0ea6356d340ebfcee0f7fe7e704"
+    },
+    {
+      "id": 10219,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "35 × 3 =",
+      "answer": "105",
+      "explanation": "先算30×3，再算5×3，合起来是105。",
+      "fingerprint": "18287890b6bd91c5f2128d169f4ee8e79bed85d84f92b549bf4ef917ecec9377"
+    },
+    {
+      "id": 10220,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "20 × 2 =",
+      "answer": "40",
+      "explanation": "先算20×2，再算0×2，合起来是40。",
+      "fingerprint": "2f29fbfa6400cfcc95ea60a25fc27c5a76a738562203155f12bd0c272952affa"
+    },
+    {
+      "id": 10221,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "36 × 2 =",
+      "answer": "72",
+      "explanation": "先算30×2，再算6×2，合起来是72。",
+      "fingerprint": "973e83204fdbb6be5dc0515633761685f850a16da4f687d7839b14483ec9e81f"
+    },
+    {
+      "id": 10222,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "40 × 3 =",
+      "answer": "120",
+      "explanation": "先算40×3，再算0×3，合起来是120。",
+      "fingerprint": "6e51303b5fbdbe283f59da5c3cbb4167919e3ecbe6fcce0ec11271e352bcbba7"
+    },
+    {
+      "id": 10223,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "15 × 4 =",
+      "answer": "60",
+      "explanation": "先算10×4，再算5×4，合起来是60。",
+      "fingerprint": "a0a1a438e857c795368c67e493b8b383f6db0565483595a66dcd964534d2b575"
+    },
+    {
+      "id": 10224,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "26 × 3 =",
+      "answer": "78",
+      "explanation": "先算20×3，再算6×3，合起来是78。",
+      "fingerprint": "e4f840f72e488b2205134a0162ea79623c565ecb7b43a7801cfe5ed824bd4f5f"
+    },
+    {
+      "id": 10225,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "43 × 5 =",
+      "answer": "215",
+      "explanation": "先算40×5，再算3×5，合起来是215。",
+      "fingerprint": "dab1eb0dcd5fed2cfd3a3fd305fe2f545e371c209385d529490b695ae123b52a"
+    },
+    {
+      "id": 10226,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "44 × 5 =",
+      "answer": "220",
+      "explanation": "先算40×5，再算4×5，合起来是220。",
+      "fingerprint": "0bd6b2326d6644bcee3c25eb938b8c73956b099318295558a3487bc95285b582"
+    },
+    {
+      "id": 10227,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "49 × 5 =",
+      "answer": "245",
+      "explanation": "先算40×5，再算9×5，合起来是245。",
+      "fingerprint": "c1b908890c1593f3618b926711eb74c4abb793989f919b1e339c5e0fc45e0593"
+    },
+    {
+      "id": 10228,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "17 × 5 =",
+      "answer": "85",
+      "explanation": "先算10×5，再算7×5，合起来是85。",
+      "fingerprint": "43b52013b3a30dd51cd751159ce26268e527b91c8fe5b84c9724caf3bc1f9aa3"
+    },
+    {
+      "id": 10229,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "35 × 2 =",
+      "answer": "70",
+      "explanation": "先算30×2，再算5×2，合起来是70。",
+      "fingerprint": "308568580519de4326120b782b9925ecaf476791a7c595a43f540f59384f238d"
+    },
+    {
+      "id": 10230,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "18 × 5 =",
+      "answer": "90",
+      "explanation": "先算10×5，再算8×5，合起来是90。",
+      "fingerprint": "3adbc9c5645ed783fd4bba898b8f48763f9b3e71677e9cb3946916d7a8f96693"
+    },
+    {
+      "id": 10231,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "41 × 4 =",
+      "answer": "164",
+      "explanation": "先算40×4，再算1×4，合起来是164。",
+      "fingerprint": "9a098b3fe3a81844887b9eade6a6b6dd31b8b4c8625930e3b6361489b41f406c"
+    },
+    {
+      "id": 10232,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "28 × 4 =",
+      "answer": "112",
+      "explanation": "先算20×4，再算8×4，合起来是112。",
+      "fingerprint": "675ef59d07e0f6b67b8ab680239044d2f49ffb093675b4e63320d30c06743e69"
+    },
+    {
+      "id": 10233,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "10 × 3 =",
+      "answer": "30",
+      "explanation": "先算10×3，再算0×3，合起来是30。",
+      "fingerprint": "5006dc97810af8beac78948d0aa5c832b1538db8691d69f891cf27c1306609a3"
+    },
+    {
+      "id": 10234,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "36 × 3 =",
+      "answer": "108",
+      "explanation": "先算30×3，再算6×3，合起来是108。",
+      "fingerprint": "d4d87aa6f701e9110411011723e90e1ce0d41c0c92b496abde862199128b77d0"
+    },
+    {
+      "id": 10235,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "27 × 5 =",
+      "answer": "135",
+      "explanation": "先算20×5，再算7×5，合起来是135。",
+      "fingerprint": "9ecb26b9fcf3082f7b301678dcbb5a0ee9e330129aac8ad57ea3f2ca90b00ef3"
+    },
+    {
+      "id": 10236,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "12 × 3 =",
+      "answer": "36",
+      "explanation": "先算10×3，再算2×3，合起来是36。",
+      "fingerprint": "65658f35726bf67eec6ef120c6c25b2e1263264919ab98c0366bf6ec44d5dbe0"
+    },
+    {
+      "id": 10237,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "24 × 4 =",
+      "answer": "96",
+      "explanation": "先算20×4，再算4×4，合起来是96。",
+      "fingerprint": "262e25017daae411438706b1516f3d1d2fcd1bb4f5ada83e79982c740698a726"
+    },
+    {
+      "id": 10238,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "23 × 5 =",
+      "answer": "115",
+      "explanation": "先算20×5，再算3×5，合起来是115。",
+      "fingerprint": "69b46cf7a2a2e402de12c44a5fcb85ff86d1f6e0fbbdcd0fe3cec5ffec490916"
+    },
+    {
+      "id": 10239,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "31 × 4 =",
+      "answer": "124",
+      "explanation": "先算30×4，再算1×4，合起来是124。",
+      "fingerprint": "f2678f2a2b87e2dddc6cf4fd367daea424516f2584cffbc75f0185c72094f47f"
+    },
+    {
+      "id": 10240,
+      "pointId": 303,
+      "grade": 3,
+      "stem": "19 × 4 =",
+      "answer": "76",
+      "explanation": "先算10×4，再算9×4，合起来是76。",
+      "fingerprint": "12ec587f10bafd4c1bb3cab730e41c13720231ff702a84f6211afd477588cf4e"
+    },
+    {
+      "id": 10241,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "88 ÷ 2 =",
+      "answer": "44",
+      "explanation": "因为2×44＝88，所以88÷2＝44。",
+      "fingerprint": "4f241f8dfad6b143fbefd1468b1653ee1f38aa2d80f06136c4634dc7df6e90ca"
+    },
+    {
+      "id": 10242,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "36 ÷ 3 =",
+      "answer": "12",
+      "explanation": "因为3×12＝36，所以36÷3＝12。",
+      "fingerprint": "c0ba741c9c552c9a91a27e1f7b7b01b7c84d388084d576cc2b895b91c1aa00e5"
+    },
+    {
+      "id": 10243,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "68 ÷ 4 =",
+      "answer": "17",
+      "explanation": "因为4×17＝68，所以68÷4＝17。",
+      "fingerprint": "b926e7178178cab31a3f22c18ef48bad59bf97dd0211f608fd1af541c86b176f"
+    },
+    {
+      "id": 10244,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "144 ÷ 4 =",
+      "answer": "36",
+      "explanation": "因为4×36＝144，所以144÷4＝36。",
+      "fingerprint": "abdb83673a9fe607f30fe59915f67e8958960450b50f2363d770a685396f1e89"
+    },
+    {
+      "id": 10245,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "92 ÷ 4 =",
+      "answer": "23",
+      "explanation": "因为4×23＝92，所以92÷4＝23。",
+      "fingerprint": "3dbf8c15d73f2d71bf7d3996584134ec4e3d4ddb5c773b30816f477409567c6d"
+    },
+    {
+      "id": 10246,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "48 ÷ 2 =",
+      "answer": "24",
+      "explanation": "因为2×24＝48，所以48÷2＝24。",
+      "fingerprint": "4805b0fa86bb15998628f56df54e24321ccc70b9710cc83e5de90ec049b58ede"
+    },
+    {
+      "id": 10247,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "54 ÷ 3 =",
+      "answer": "18",
+      "explanation": "因为3×18＝54，所以54÷3＝18。",
+      "fingerprint": "5d7f0214a9f42dcf00b339e2741f488844c7fa6e5d7aa74d0165517a12cb63db"
+    },
+    {
+      "id": 10248,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "140 ÷ 5 =",
+      "answer": "28",
+      "explanation": "因为5×28＝140，所以140÷5＝28。",
+      "fingerprint": "6c3c5a4798bc6065078b862247c8c5bfb537d53f1cc6f5305cb4946ae5838993"
+    },
+    {
+      "id": 10249,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "205 ÷ 5 =",
+      "answer": "41",
+      "explanation": "因为5×41＝205，所以205÷5＝41。",
+      "fingerprint": "5f29d96d9620503812676aeeca6e7cf0217b48b3db6840ce5390139883a6bc8a"
+    },
+    {
+      "id": 10250,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "111 ÷ 3 =",
+      "answer": "37",
+      "explanation": "因为3×37＝111，所以111÷3＝37。",
+      "fingerprint": "8fdbc3dac3fada96956a4d4d79a71621738377d6d3feae2c43c64244cc6c7125"
+    },
+    {
+      "id": 10251,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "63 ÷ 3 =",
+      "answer": "21",
+      "explanation": "因为3×21＝63，所以63÷3＝21。",
+      "fingerprint": "e1288d81bcaa7b4142b03a68ff917940f4cfb35395bba8fdf5a5e1f611e4fc07"
+    },
+    {
+      "id": 10252,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "228 ÷ 4 =",
+      "answer": "57",
+      "explanation": "因为4×57＝228，所以228÷4＝57。",
+      "fingerprint": "ff857b7b0ca6d68f09343b1a5da4f60198ef5e325193270673273783a6eec608"
+    },
+    {
+      "id": 10253,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "230 ÷ 5 =",
+      "answer": "46",
+      "explanation": "因为5×46＝230，所以230÷5＝46。",
+      "fingerprint": "893b0a80c524f388ba0e085ea4b6d03df629bc42eb4d152cbc843fc64617f199"
+    },
+    {
+      "id": 10254,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "51 ÷ 3 =",
+      "answer": "17",
+      "explanation": "因为3×17＝51，所以51÷3＝17。",
+      "fingerprint": "99d11f42041e62e4e58c992fd5fce953f101085a311dfda1edc555ad6fb088e5"
+    },
+    {
+      "id": 10255,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "44 ÷ 2 =",
+      "answer": "22",
+      "explanation": "因为2×22＝44，所以44÷2＝22。",
+      "fingerprint": "2dafd0c490591cf3a08d005d511f566670b2293a5c460741dd43e77e5e5e8a5c"
+    },
+    {
+      "id": 10256,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "46 ÷ 2 =",
+      "answer": "23",
+      "explanation": "因为2×23＝46，所以46÷2＝23。",
+      "fingerprint": "5677a3494857bf1f0686724ec95b0673d1c9d69961efffafaa5db7722f328124"
+    },
+    {
+      "id": 10257,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "99 ÷ 3 =",
+      "answer": "33",
+      "explanation": "因为3×33＝99，所以99÷3＝33。",
+      "fingerprint": "02a83dbf8f3f8b4a0bd247f259e65fd85ee6a3de4c4d1091336e6238af8742ff"
+    },
+    {
+      "id": 10258,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "78 ÷ 3 =",
+      "answer": "26",
+      "explanation": "因为3×26＝78，所以78÷3＝26。",
+      "fingerprint": "2973fa050a950a913a11e76c77db6a053c2b5ae2edc775f22e22d3a12e7529a7"
+    },
+    {
+      "id": 10259,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "150 ÷ 5 =",
+      "answer": "30",
+      "explanation": "因为5×30＝150，所以150÷5＝30。",
+      "fingerprint": "81006e1791af1eed0cf101f4e575e5457271cfae16dd9ae06b713aa15a942d87"
+    },
+    {
+      "id": 10260,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "64 ÷ 2 =",
+      "answer": "32",
+      "explanation": "因为2×32＝64，所以64÷2＝32。",
+      "fingerprint": "30a090e88eadfe7295ea0d73fec4c466721eab0ff5e601862dc7281dad49015a"
+    },
+    {
+      "id": 10261,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "105 ÷ 3 =",
+      "answer": "35",
+      "explanation": "因为3×35＝105，所以105÷3＝35。",
+      "fingerprint": "d548b3a6d27e913f69856854d2294e36846adb7d1436fd2debfe8a7ba10afeb2"
+    },
+    {
+      "id": 10262,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "174 ÷ 3 =",
+      "answer": "58",
+      "explanation": "因为3×58＝174，所以174÷3＝58。",
+      "fingerprint": "b95207a770738734c71279a53a24da2c0aa3ca2345890b1c43550319fdc7b617"
+    },
+    {
+      "id": 10263,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "90 ÷ 2 =",
+      "answer": "45",
+      "explanation": "因为2×45＝90，所以90÷2＝45。",
+      "fingerprint": "5f2f630c5705f2d2dc47d2fa951cedf0aeb14f37f657ff76a033ea9fe5a2d06e"
+    },
+    {
+      "id": 10264,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "114 ÷ 2 =",
+      "answer": "57",
+      "explanation": "因为2×57＝114，所以114÷2＝57。",
+      "fingerprint": "24edbd54d4aec0615c1aaf6ba93bdbd7f1bd92d1adba2aa701b00c65464498bc"
+    },
+    {
+      "id": 10265,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "168 ÷ 3 =",
+      "answer": "56",
+      "explanation": "因为3×56＝168，所以168÷3＝56。",
+      "fingerprint": "2d12f7c2b3728d8fcb80518e2b76f1adee53afbc593ce4fbca488f0dde9be661"
+    },
+    {
+      "id": 10266,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "100 ÷ 4 =",
+      "answer": "25",
+      "explanation": "因为4×25＝100，所以100÷4＝25。",
+      "fingerprint": "7c5ec52ec11ab768ab23ec50b499662dd61f4cdc89e81af1f037740408538333"
+    },
+    {
+      "id": 10267,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "208 ÷ 4 =",
+      "answer": "52",
+      "explanation": "因为4×52＝208，所以208÷4＝52。",
+      "fingerprint": "5ce8f4907b34d8f8fdbb4c7d4e1e7d7b35be159014439d8056bded9e529ecc40"
+    },
+    {
+      "id": 10268,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "162 ÷ 3 =",
+      "answer": "54",
+      "explanation": "因为3×54＝162，所以162÷3＝54。",
+      "fingerprint": "e35e03b487ad46d3529a371f44b026a5e14f797f96a57ab49560817998d73242"
+    },
+    {
+      "id": 10269,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "55 ÷ 5 =",
+      "answer": "11",
+      "explanation": "因为5×11＝55，所以55÷5＝11。",
+      "fingerprint": "1683d656ead5353cda51a81d16a9a7cea01c32e574dab61002500d3b099f94d9"
+    },
+    {
+      "id": 10270,
+      "pointId": 304,
+      "grade": 3,
+      "stem": "295 ÷ 5 =",
+      "answer": "59",
+      "explanation": "因为5×59＝295，所以295÷5＝59。",
+      "fingerprint": "361fbd02aebd59800909f29c7f567defcf75d66a160ac94e0a08b9606d439af5"
+    }
+  ]
+}

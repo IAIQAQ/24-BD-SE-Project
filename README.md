@@ -1,39 +1,64 @@
-# 大数据2401-四区兄弟组-软件工程作品
+# 小芽口算
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+Android首发的口算学习课程项目，Android与Web共用Vue前端，Spring Boot提供统一后端。
 
-#### 软件架构
-软件架构说明
+**软件业务范围为S01，最新界面为已通过用户体验的P3完整互动版。** 学生本人完整学情S02已按用户决定取消；公网部署等服务器确定后再做。当前体验题库390题、11个知识点，覆盖一至三年级的基础整数口算样例，不代表完整教材覆盖。
 
+个人GitHub源码仓库：[zhenzhu666/mathdrill](https://github.com/zhenzhu666/mathdrill)（私有，需要仓库访问权限）。私有运行资料和delivery包保留在本机。
 
-#### 安装教程
+## 已有功能
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- 学生：注册登录、普通单点/多知识点组卷、作答、保存恢复、明确接管、计时、提交判分、结果与错题。
+- 巩固：历史原题重练、按历史知识点强化，保留原成绩和错误历史。
+- 家长：家庭关联确认/解绑、固定预览发题、未开始任务撤回、结果/错题/学情只读。
+- 管理员：分类和题库维护、审核启停、错误版本处置、Excel模板及整批校验导入。
 
-#### 使用说明
+## 启动与演示
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. [当前启动说明](docs/startup-classroom.md)：当前电脑独立体验库、S01后端、P3 Web与Android启动步骤。
+2. [P3完整版体验流程](docs/ui-p3-experience.md)：学生、家长、管理员依次体验；[原业务演示流程](docs/demo-final.md)保留。
+3. [S01验收](docs/acceptance-s01.md)：实际测试、证据入口和未测项。
+4. [S01接口](docs/api-s01.md)及[软件窗口记录](docs/dev-window-progress.md)：技术行为与最终范围决定。
 
-#### 参与贡献
+启动说明针对已有本机配置。GitHub源码不包含私有运行配置、数据库数据、证书、账号密码和构建包；换机需要准备环境，不能只克隆就直接运行。
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+## 技术结构
 
+- 前端：Vue 3、TypeScript、Vite；Capacitor复用为Android APP。
+- 后端：Java 21、Spring Boot、MyBatis/JdbcTemplate、MySQL 8.4；Flyway迁移V1—V7。
+- Android APP内置页面，通过HTTPS访问与Web相同的业务服务；权限、判分、快照和幂等由后端执行。
 
-#### 特技
+## 工程验证
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+S01已取得后端51/51、前端29/29、Android14/API34模拟器5/5，以及类型检查、Web和Android构建通过的记录。它们是对应版本的已有结果，不代表每次整理文档都重新执行了测试。
+
+P3最终工程检查为前端75/75（19文件），类型/Web/Android app与test编译通过，三身份网页流程及320/390/768布局检查完成，用户已确认第四批体验无问题。P3未运行模拟器验收；真机、原生专项、弱网、隔离还原/稳定存储、性能、换机交接及公网试用仍待处理。详见[P3最终工程记录](docs/evidence/ui-p3/final/completion.md)。
+
+```powershell
+# 后端会连接专用mathdrill_test，运行前核对本机环境。
+./scripts/test-backend.ps1
+# 前端在frontend目录执行：
+npm test -- --run
+npm run build
+```
+
+本机构建使用 `./scripts/build-android.ps1 -Version ui-p3-v1`，同名产物已存在时拒绝覆盖，需要新批次名称。delivery中的I2/I3/S01、P1/P2/P3包和manifest独立保留，不上传GitHub；不默认运行设备测试脚本作为启动步骤。
+
+## 文件组织
+
+| 目录 | 内容 |
+| --- | --- |
+| backend | 后端源码、迁移、集成测试 |
+| frontend | 共享前端、Android工程与页面测试 |
+| scripts | 本机启动、构建及测试脚本 |
+| docs | 接口、验收、启动与演示说明、历史记录 |
+| .local（不上传） | 私有配置、证书、账号资料、备份、日志 |
+| delivery（不上传） | 冻结APK、测试APK、后端JAR、Web ZIP及manifest |
+
+## 当前范围
+
+当前基础内容以120道自编加法为主，不宣称一至三年级教材全覆盖；标准答案为非负整数。学生有练习记录、结果和错题，家长有学情；家长任务列表最近100条。S02不在最终开发范围。
+
+新版真机、原生文件跨应用、独立秒表、专项弱网/压力、备份还原等未单独完成的项目如实保留未测说明，本轮简化收尾不再额外展开。当前为本机运行版本，公网访问尚未部署。
+
+历史记录中的暂停、未提交及旧测试数量属于当时状态，当前软件事实以最新开发记录和S01验收为准。父目录课程材料由课程窗口维护，不作为本仓库自动上传范围。

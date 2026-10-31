@@ -1,0 +1,15 @@
+node_modules/
+__pycache__/
+dist/
+target/
+.local/
+.tools/
+delivery/
+frontend/android/.gradle/
+frontend/android/local.properties
+frontend/android/**/build/
+*.log
+*.jks
+*.p12
+.env.local
+frontend/android/app/src/debug/res/raw/dev_server.pem

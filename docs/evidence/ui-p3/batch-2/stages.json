@@ -1,0 +1,31 @@
+[
+  {
+    "animation": "practice-growth",
+    "label": "已填写 0/5 题",
+    "stage": "1"
+  },
+  {
+    "label": "已填写 1/5 题",
+    "stage": "1"
+  },
+  {
+    "label": "已填写 3/5 题",
+    "stage": "2"
+  },
+  {
+    "animation": "practice-growth",
+    "label": "已填写 3/5 题",
+    "restored": true,
+    "stage": "2"
+  },
+  {
+    "hasCelebration": false,
+    "label": "已填写 5/5 题",
+    "stage": "3"
+  },
+  {
+    "cleared": true,
+    "label": "已填写 4/5 题",
+    "stage": "2"
+  }
+]

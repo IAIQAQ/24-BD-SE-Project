@@ -1,0 +1,1 @@
+CREATE TABLE import_batch(id VARCHAR(36) PRIMARY KEY,owner_id BIGINT NOT NULL,payload_hash CHAR(64) NOT NULL,state VARCHAR(16) NOT NULL,payload_json JSON NOT NULL,report_json JSON NOT NULL,UNIQUE(owner_id,payload_hash),FOREIGN KEY(owner_id) REFERENCES sys_account(id)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
