@@ -33,14 +33,14 @@ public class I1FlowTest {
                   const button=t=>[...document.querySelectorAll('button')].find(b=>b.innerText.trim()===t);
                   const click=async t=>{await wait(()=>button(t)&&!button(t).disabled,'button '+t);button(t).click();};
                   const fill=(id,value)=>{const input=document.getElementById(id);if(!input)throw new Error('Missing input '+id);input.value=value;input.dispatchEvent(new Event('input',{bubbles:true}));};
-                  const signIn=async()=>{await wait(()=>button('登录学习账号')&&!button('登录学习账号').disabled,'login ready');fill('username','student_a');fill('password',PASSWORD);document.querySelector('form').requestSubmit();await wait(()=>button('开始新练习')&&!button('开始新练习').disabled,'home loaded');};
+                  const signIn=async()=>{await wait(()=>button('登录学习账号')&&!button('登录学习账号').disabled,'login ready');fill('username','student_a');fill('password',PASSWORD);document.querySelector('form').requestSubmit();await wait(()=>button('开始练习')&&!button('开始练习').disabled,'home loaded');};
                   await wait(()=>button('退出登录')||button('登录学习账号'),'initial page');
                   if(button('退出登录')){await click('退出登录');await waitText('登录学习账号');}
-                  await signIn();await click('开始新练习');await waitText('练习题量');fill('total','30');await click('生成练习，开始作答');await wait(()=>document.getElementById('answer')&&!document.getElementById('answer').disabled,'draft loaded');
+                  await signIn();await click('开始练习');await waitText('选题数');fill('total','30');await click('开始练习');await wait(()=>document.getElementById('answer')&&!document.getElementById('answer').disabled,'draft loaded');
                   fill('answer','15');await click('下一题');await wait(()=>document.querySelector('.question .label')?.innerText==='第 2 题','question 2');fill('answer','16');
-                  await click('手动保存');await waitText('已保存到服务端');await click('‹ 保存退出');await waitText('开始新练习');await click('退出登录');await waitText('登录学习账号');await signIn();
+                  await click('手动保存');await waitText('答案已保存');await click('‹ 保存退出');await waitText('开始练习');await click('退出登录');await waitText('登录学习账号');await signIn();
                   const continuing=[...document.querySelectorAll('button.record')].find(b=>b.innerText.includes('进行中'));if(!continuing)throw new Error('Missing saved practice');continuing.click();await waitText('你的答案');await wait(()=>document.querySelector('main').getAttribute('aria-busy')==='false','resume loaded');
-                  if(text().includes('当前页面没有编辑权'))await click('在此继续（重新载入草稿）');
+                  if(text().includes('这份练习已在别处打开'))await click('在这里继续答题');
                   await wait(()=>document.getElementById('answer')&&!document.getElementById('answer').disabled,'editable');
                   if(document.getElementById('answer').value!=='16')throw new Error('Second saved answer not restored');await click('上一题');await wait(()=>document.querySelector('.question .label')?.innerText==='第 1 题','question 1');
                   if(document.getElementById('answer').value!=='15')throw new Error('First saved answer not restored');
@@ -50,11 +50,11 @@ public class I1FlowTest {
                     fill('answer',i<24?String(Number(m[1])+Number(m[2])):i<28?'999':'');
                     if(i<29)await click('下一题');
                   }
-                  await click('结束并检查');await waitText('准备提交了吗');if(!text().includes('还有 2 题未答'))throw new Error('Missing unanswered confirmation');
-                  await click('确认漏答并提交');await waitText('80.00');
+                  await click('结束并检查');await waitText('准备提交了吗');if(!text().includes('还有 2 题没做'))throw new Error('Missing unanswered confirmation');
+                  await click('仍然交卷');await waitText('80.00');
                   const score=text();if(!score.includes('24')||!score.includes('4')||!score.includes('2'))throw new Error('Unexpected result counters');
-                  await click('查看我的错题');await waitText('我的错题本');
-                  const records=document.querySelectorAll('button.record');if(records.length<6)throw new Error('Missing mistake records');records[0].click();await waitText('正式作答记录');
+                  await click('查看我的错题');await waitText('我的错题');
+                  const records=document.querySelectorAll('button.record');if(records.length<6)throw new Error('Missing mistake records');records[0].click();await waitText('以前的作答记录');
                   const result={restored:true,total:30,correct:24,wrong:4,unanswered:2,accuracy:'80.00',mistakeDetails:true};
                   return result;
                 })().then(data=>window.__i1Probe={done:true,data}).catch(e=>window.__i1Probe={done:true,error:String(e)});

@@ -1,0 +1,183 @@
+.learning-ui{--ink:#234d3c;--soft:#e8f0dd;--line:#dce6d2;max-width:640px;padding:calc(24px + env(safe-area-inset-top,0px)) 24px calc(112px + env(safe-area-inset-bottom,0px));color:var(--ink);font-size:16px;line-height:1.6}
+
+.learning-ui *{min-width:0}
+.learning-ui .ui-icon{width:25px;height:25px;display:inline-block;vertical-align:middle;flex-shrink:0}
+.learning-ui header{gap:12px}
+.learning-ui .badge{font-size:14px}
+.learning-ui h1{font-size:30px;line-height:1.35;margin:12px 0 24px}
+.learning-ui h2{font-size:21px}
+.learning-ui h3{font-size:18px}
+.learning-ui p{line-height:1.65}
+.learning-ui .eyebrow{font-size:14px;letter-spacing:0;margin:28px 0 6px;color:#586f4f}
+.learning-ui .muted,.learning-ui small,.learning-ui .label,.learning-ui .save-state,.learning-ui .account,.learning-ui .record small,.learning-ui .history p,.learning-ui .empty,.learning-ui .result-item p{font-size:14px;color:#55694d}
+.learning-ui .account{align-items:center;gap:12px;margin:16px 0 24px}
+.learning-ui button{min-height:48px;font-size:16px}
+.learning-ui .primary,.learning-ui .secondary{font-size:17px;min-height:54px;border-radius:18px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:12px}
+.learning-ui button:disabled{cursor:not-allowed}
+.learning-ui .primary{background:#285b49}
+.learning-ui label{font-size:16px;margin-top:18px}
+.learning-ui input,.learning-ui select,.learning-ui textarea{font-size:18px;min-height:54px}
+.learning-ui input::placeholder{font-size:15px}
+.learning-ui .checkbox{min-height:24px;width:24px;height:24px;accent-color:#285b49;flex-shrink:0}
+.learning-ui button:focus-visible,.learning-ui input:focus-visible,.learning-ui select:focus-visible,.learning-ui summary:focus-visible{outline:3px solid #759755;outline-offset:4px}
+.learning-ui .card{border-radius:24px;padding:22px;margin:16px 0;box-shadow:0 5px 18px #284e3b06}
+.learning-ui .hero{border-radius:28px;padding:28px 24px;text-align:left}
+.learning-ui .hero p{font-size:16px;color:#55694d}
+.learning-ui .hero-top{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.learning-ui .hero h2{font-size:30px;margin:0}
+.learning-ui .operation-art{display:grid;grid-template-columns:repeat(2,48px);gap:8px}
+.learning-ui .operation-art span{display:grid;place-items:center;background:#ffffffa0;border-radius:15px;width:48px;height:48px}
+.learning-ui .operation-art .ui-icon{width:28px;height:28px}
+.learning-ui .hero .primary{margin-top:24px}
+.learning-ui .record{border-radius:22px;padding:20px;gap:16px;min-height:96px;box-shadow:0 4px 15px #284e3b05}
+.learning-ui .record b{font-size:17px;font-weight:600;line-height:1.6;overflow-wrap:anywhere}
+.learning-ui .record-icon{width:52px;height:52px;border-radius:17px;flex-shrink:0}
+.learning-ui .record-copy{flex:1}
+.learning-ui .record .record-copy small{margin-top:8px}
+.learning-ui .task-label{display:inline-block;background:#edf2e3;border-radius:9px;padding:3px 8px;font-size:14px;font-weight:500;margin-top:6px}
+.learning-ui .task-label.parent{background:#fbecd7;color:#79572b}
+.learning-ui .record-action{font-size:14px;color:#285b49;flex-shrink:0}
+.learning-ui .error,.learning-ui .notice{font-size:16px;border-radius:18px;color:#864e32}
+.learning-ui .notice button{min-height:48px}
+.learning-ui .back,.learning-ui .text-button{font-size:15px;min-height:48px}
+.learning-ui .question{padding:28px 16px}
+.learning-ui .question h1{font-size:40px;overflow-wrap:anywhere}
+.learning-ui .question input{font-size:30px;min-height:72px}
+.learning-ui .answer-label{font-size:16px}
+.learning-ui .section-title>span,.learning-ui .practice-top>span{font-size:16px}
+.learning-ui .section-title{gap:16px}
+.learning-ui .section-title h2{font-size:18px}
+.learning-ui .save-state{font-size:14px;display:flex;align-items:center;gap:8px}
+.learning-ui progress{height:10px;accent-color:#5b824a}
+.learning-ui .two{gap:12px}
+.learning-ui .two button{white-space:normal}
+.learning-ui summary{font-size:16px;color:#48633e;min-height:48px;line-height:1.6;padding:12px 0}
+.learning-ui .numbers{grid-template-columns:repeat(5,1fr)}
+.learning-ui .numbers button{font-size:16px}
+.learning-ui .score{text-align:center}
+.learning-ui .score>strong{font-size:48px}
+.learning-ui .score .score-count{font-size:24px;font-weight:600}
+.learning-ui .stats span{font-size:14px}
+.learning-ui .stats b{font-size:26px}
+.learning-ui .result-item summary{font-size:18px;gap:16px}
+.learning-ui .result-item summary>span{overflow-wrap:anywhere}
+.learning-ui .result-item summary b{flex-shrink:0;font-size:16px}
+.learning-ui nav{max-width:640px;background:#f8faf4f5;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));gap:8px}
+.learning-ui nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:14px;border-radius:16px;min-height:64px}
+.learning-ui nav .active{background:#e8f0dd}
+.learning-ui footer{font-size:14px}
+.learning-ui dialog{line-height:1.7}
+.learning-ui dialog .two{flex-wrap:wrap}
+.learning-ui dialog .two button{flex-basis:120px}
+.learning-ui .normal-config{border:0;padding:0;margin:12px 0}
+.learning-ui legend{font-size:21px;font-weight:600;padding:0;margin:0 0 12px}
+.learning-ui .point-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.learning-ui .point-choice{position:relative;border:2px solid var(--line);border-radius:22px;background:#fff;padding:18px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:0;cursor:pointer;overflow-wrap:anywhere}
+.learning-ui .point-choice:focus-within{outline:3px solid #759755;outline-offset:3px}
+.learning-ui .point-choice .checkbox{position:absolute;right:12px;top:14px;margin:0}
+.learning-ui .point-choice.chosen{background:#e8f0dd;border-color:#285b49}
+.learning-ui .point-symbol{display:grid;place-items:center;background:#f2f5eb;border-radius:14px;width:48px;height:48px;margin-bottom:6px}
+.learning-ui .point-symbol .ui-icon{width:30px;height:30px}
+.learning-ui .point-choice b{font-size:17px;font-weight:600;line-height:1.5}
+.learning-ui .point-choice small{font-size:14px}
+.learning-ui .normal-config h2{margin-top:28px}
+.learning-ui .quantity-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.learning-ui .quantity-buttons button{border:2px solid var(--line);border-radius:14px;background:#fff;padding:8px 4px}
+.learning-ui .quantity-buttons .selected{border-color:#285b49;background:#e8f0dd;font-weight:600}
+.learning-ui .allocation-details{padding:0 16px;background:#fff;border-radius:18px;border:1px solid var(--line)}
+.learning-ui .allocation-details[open]{padding-bottom:18px}
+.learning-ui .config-total{background:#e8f0dd;border-radius:15px;padding:12px 16px}
+.learning-ui .mistake-card{padding:18px}
+.learning-ui .mistake-select{margin:0;display:flex;align-items:center;gap:12px;min-height:48px}
+.learning-ui .mistake-card.chosen{border:2px solid #285b49;background:#edf3e5}
+.learning-ui .mistake-card .record{box-shadow:none;border:0;background:transparent;padding:10px 0;margin:4px 0;min-height:72px}
+.learning-ui .mistake-card .record b{font-size:28px}
+.learning-ui .mistake-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#e8f0dd;padding:12px 16px;border-radius:18px;margin:16px 0}
+.learning-ui .mistake-toolbar .primary{width:auto;margin:0;font-size:16px;min-height:48px;padding:10px 16px}
+.learning-ui .review-options>h2{display:flex;align-items:center;gap:10px}
+.learning-ui .review-options h3{margin-top:24px}
+.learning-ui .replay-equations{padding-left:24px}
+.learning-ui .replay-equations li{font-size:22px}
+.learning-ui .replay-equations small{display:block;font-size:14px}
+.learning-ui .parent-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:22px 0}
+.learning-ui .parent-tabs button{border:1px solid var(--line);border-radius:16px;background:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;min-height:76px;padding:8px 3px}
+.learning-ui .parent-tabs .active{background:#e8f0dd;border-color:#285b49;font-weight:600}
+.learning-ui .child-focus{background:#e8f0dd;border-radius:22px;padding:16px 18px;margin-top:18px}
+.learning-ui .child-focus label{margin:0 0 8px}
+.learning-ui .child-focus .text-button{margin:4px 0 0;width:100%;text-align:left}
+.learning-ui .task-card-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.learning-ui .task-card-head b{font-size:18px}
+.learning-ui .status-pill{font-size:14px;border-radius:10px;background:#e8f0dd;padding:4px 10px;flex-shrink:0}
+.learning-ui .metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0}
+.learning-ui .metric-grid div{background:#e8f0dd;border-radius:17px;padding:16px 6px;text-align:center}
+.learning-ui .metric-grid strong{display:block;font-size:25px;overflow-wrap:anywhere}
+.learning-ui .metric-grid small{display:block;font-size:14px}
+.learning-ui li{font-size:16px}
+.learning-ui .quick{flex-wrap:wrap}
+.learning-ui .quick button{font-size:15px}
+.learning-ui .history button{font-size:16px}
+
+@media(max-width:380px){.learning-ui{padding-left:16px;padding-right:16px}
+.learning-ui h1{font-size:26px}
+.learning-ui .hero{padding:22px 18px}
+.learning-ui .hero h2{font-size:26px}
+.learning-ui .hero-top{gap:12px}
+.learning-ui .operation-art{grid-template-columns:repeat(2,40px)}
+.learning-ui .operation-art span{width:40px;height:40px}
+.learning-ui .record{padding:16px 12px;gap:10px}
+.learning-ui .record-icon{width:44px;height:44px}
+.learning-ui .record-action{display:flex;flex-direction:column;align-items:center}
+.learning-ui .point-choice{padding:16px 10px}
+.learning-ui .question h1{font-size:34px}
+.learning-ui .metric-grid strong{font-size:21px}
+}
+
+@media(prefers-reduced-motion:reduce){.learning-ui *{scroll-behavior:auto;animation:none!important;transition:none!important}
+}
+
+
+/* P2 scene layouts remain limited to student pages. */
+.learning-ui.student-ui{padding-left:16px;padding-right:16px;background:radial-gradient(ellipse at 95% 18%,#e8f3df70,transparent 55%)}
+.student-ui .home-greeting{font-size:clamp(25px,6.9vw,36px);line-height:1.5;margin:12px 0 20px;font-weight:700;color:#174d3a;overflow-wrap:anywhere}
+.greeting-rays{color:#f5c84b;font-size:25px;margin-left:5px}
+.student-ui .student-home>.section-title{margin-top:6px}
+.student-ui .student-home>.section-title h2{font-size:25px;font-weight:700;margin:0;color:#174d3a}
+.student-ui .home-encouragement{padding:12px 0 4px;margin-top:18px}
+.student-ui .home-encouragement .sprout-companion{display:flex;flex-direction:row;justify-content:center;gap:8px;align-items:center}
+.student-ui .home-encouragement .sprout-picture{width:100px;height:100px;flex:0 0 100px}
+.student-ui .home-encouragement .sprout-companion p{background:#fff0d0;border-radius:30px 30px 30px 5px;padding:14px 18px;font-size:17px;font-weight:600;color:#285b49;margin:0}
+.student-ui nav{border-radius:28px 28px 0 0;box-shadow:0 -5px 25px #335c3810;background:#fffffaf5;border-top:1px solid #f0f3e9}
+.student-ui nav button{border-radius:20px;min-height:62px}
+.student-ui nav button.active{background:#e9f1e4;color:#1c5d43}
+@media(min-width:600px){.learning-ui.student-ui{padding-left:24px;padding-right:24px}}
+
+.student-ui .review-garden,.student-ui .result-garden{display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:8px;align-items:center;background:#e9f2df url('../assets/sprout/p2-scene/garden.webp') center/cover;border-radius:24px;padding:18px 14px;margin:18px 0}
+.student-ui .review-garden .eyebrow,.student-ui .result-garden .eyebrow{margin:0;font-size:14px;letter-spacing:0}
+.student-ui .review-garden h1,.student-ui .result-garden h1{font-size:27px;line-height:1.45;margin:8px 0;color:#174d3a;font-weight:700}
+.student-ui .review-hint{margin:6px 0;font-size:16px;color:#5d7855}
+.student-ui .review-garden .sprout-picture,.student-ui .result-garden .sprout-picture{width:104px;height:104px}
+.student-ui .review-garden .sprout-companion p,.student-ui .result-garden .sprout-companion p{font-size:14px;margin:0}
+.student-ui .mistake-card{border-radius:24px;box-shadow:0 5px 15px #244f3610}
+.student-ui .mistake-card .record-copy b{font-size:25px;font-weight:700;color:#174d3a;line-height:1.45}
+.student-ui .mistake-card.chosen{border:2px solid #649654;background:#f0f6e5}
+.student-ui .score{background:linear-gradient(135deg,#e8f1d9,#e1efdc);border-radius:26px}
+.student-ui .empty .sprout-picture{width:150px;height:150px}
+@media(max-width:360px){.student-ui .review-garden,.student-ui .result-garden{grid-template-columns:minmax(0,1fr) 84px;padding:16px 12px}.student-ui .review-garden .sprout-picture,.student-ui .result-garden .sprout-picture{width:80px;height:80px}.student-ui .review-garden h1,.student-ui .result-garden h1{font-size:25px}}
+
+.student-ui .result-garden .sprout-companion{flex-direction:column;gap:0;padding:0;margin:0;background:transparent;text-align:center;min-width:0}
+.student-ui .review-garden .sprout-picture,.student-ui .result-garden .sprout-picture{flex-basis:auto;flex-shrink:1}
+
+/* P3 batch 1: visual feedback stays within the student interface. */
+.student-ui button:not(:disabled){transition:transform 140ms ease,background-color 140ms ease,box-shadow 140ms ease}
+.student-ui button:not(:disabled):active{transform:scale(.98)}
+.student-ui nav button:not(:disabled):active{transform:scale(.96)}
+.student-ui .illustrated-practice{transition:box-shadow 140ms ease,border-color 140ms ease}
+.student-ui .illustrated-practice:focus-within{border-color:#7da373;box-shadow:0 0 0 2px #dcebcf}
+.student-ui .illustrated-card:not(:disabled):active{background:#edf4e4;transform:none}
+@media(hover:hover){.student-ui .illustrated-card:not(:disabled):hover{background:#f1f6e9}}
+@media(prefers-reduced-motion:reduce){.student-ui button:not(:disabled):active{transform:none}.student-ui *{transition:none!important;animation:none!important}}
+
+.student-ui .sound-toggle{display:inline-flex;align-items:center;min-height:48px;padding:6px 12px;border:1px solid #d6e2c8;border-radius:16px;font-size:14px;color:#45643d;margin:8px 0;background:#f4f8ed}
+.student-ui .sound-toggle[aria-pressed=true]{background:#e0edce;border-color:#85a66b}
+.student-ui .sound-notice{margin:4px 0 8px;font-size:14px}
+.student-ui .save-state.save-feedback{color:#28683f;background:#e1efcf;border-radius:10px;transition:background-color 140ms ease}

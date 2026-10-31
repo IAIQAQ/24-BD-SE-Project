@@ -2,7 +2,7 @@
 
 Android首发的口算学习课程项目，Android与Web共用Vue前端，Spring Boot提供统一后端。
 
-**软件开发已完成，最终功能版本为S01。** 学生本人完整学情S02已按用户决定取消；公网部署等服务器确定后再做。
+**软件业务范围为S01，最新界面为已通过用户体验的P3完整互动版。** 学生本人完整学情S02已按用户决定取消；公网部署等服务器确定后再做。当前体验题库390题、11个知识点，覆盖一至三年级的基础整数口算样例，不代表完整教材覆盖。
 
 个人GitHub源码仓库：[zhenzhu666/mathdrill](https://github.com/zhenzhu666/mathdrill)（私有，需要仓库访问权限）。私有运行资料和delivery包保留在本机。
 
@@ -15,8 +15,8 @@ Android首发的口算学习课程项目，Android与Web共用Vue前端，Spring
 
 ## 启动与演示
 
-1. [最终启动说明](docs/startup-final.md)：当前电脑的数据库、S01后端、Web与Android启动步骤。
-2. [最终演示流程](docs/demo-final.md)：学生练习、家长安排、错题巩固及管理员补充。
+1. [当前启动说明](docs/startup-classroom.md)：当前电脑独立体验库、S01后端、P3 Web与Android启动步骤。
+2. [P3完整版体验流程](docs/ui-p3-experience.md)：学生、家长、管理员依次体验；[原业务演示流程](docs/demo-final.md)保留。
 3. [S01验收](docs/acceptance-s01.md)：实际测试、证据入口和未测项。
 4. [S01接口](docs/api-s01.md)及[软件窗口记录](docs/dev-window-progress.md)：技术行为与最终范围决定。
 
@@ -32,6 +32,8 @@ Android首发的口算学习课程项目，Android与Web共用Vue前端，Spring
 
 S01已取得后端51/51、前端29/29、Android14/API34模拟器5/5，以及类型检查、Web和Android构建通过的记录。它们是对应版本的已有结果，不代表每次整理文档都重新执行了测试。
 
+P3最终工程检查为前端75/75（19文件），类型/Web/Android app与test编译通过，三身份网页流程及320/390/768布局检查完成，用户已确认第四批体验无问题。P3未运行模拟器验收；真机、原生专项、弱网、隔离还原/稳定存储、性能、换机交接及公网试用仍待处理。详见[P3最终工程记录](docs/evidence/ui-p3/final/completion.md)。
+
 ```powershell
 # 后端会连接专用mathdrill_test，运行前核对本机环境。
 ./scripts/test-backend.ps1
@@ -40,7 +42,7 @@ npm test -- --run
 npm run build
 ```
 
-本机构建使用 `./scripts/build-android.ps1 -Version s01`。delivery中的I2/I3/S01包和manifest独立保留，历史包不覆盖；不默认运行设备测试脚本作为启动步骤。
+本机构建使用 `./scripts/build-android.ps1 -Version ui-p3-v1`，同名产物已存在时拒绝覆盖，需要新批次名称。delivery中的I2/I3/S01、P1/P2/P3包和manifest独立保留，不上传GitHub；不默认运行设备测试脚本作为启动步骤。
 
 ## 文件组织
 

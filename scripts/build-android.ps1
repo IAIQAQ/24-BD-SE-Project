@@ -1,6 +1,6 @@
-param([ValidateSet('i1','i2','i3','s01')][string]$Version='s01')
+param([ValidateSet('i1','i2','i3','s01','classroom-20261030','ui-p1-v1','ui-p1-v2','ui-p2-v1','ui-p2-v2','ui-p3-b1-v1','ui-p3-b2-v1','ui-p3-b2-v2','ui-p3-b3-v1','ui-p3-b3-v2','ui-p3-v1')][string]$Version='ui-p3-v1')
 . "$PSScriptRoot/runtime.ps1"
-if($Version -ne 's01' -and ((Test-Path "$ProjectRoot/delivery/mathdrill-$Version-debug.apk") -or (Test-Path "$ProjectRoot/delivery/mathdrill-$Version-test.apk"))){throw '历史产物已冻结，不能覆盖；本批请使用 -Version s01。'}
+if((Test-Path "$ProjectRoot/delivery/mathdrill-$Version-debug.apk") -or (Test-Path "$ProjectRoot/delivery/mathdrill-$Version-test.apk")){throw '该批次产物已存在，不能覆盖；请先确定新的独立产物名称。'}
 $frontend=Join-Path $ProjectRoot 'frontend'
 Push-Location $frontend
 try {

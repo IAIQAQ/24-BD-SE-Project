@@ -1,0 +1,23 @@
+[
+  {
+    "loaded": true,
+    "scrollWidth": 305,
+    "src": "/src/assets/sprout/p3-growth/unfolding.webp",
+    "stage": "舒展",
+    "width": 320
+  },
+  {
+    "loaded": true,
+    "scrollWidth": 375,
+    "src": "/src/assets/sprout/p3-growth/unfolding.webp",
+    "stage": "舒展",
+    "width": 390
+  },
+  {
+    "loaded": true,
+    "scrollWidth": 753,
+    "src": "/src/assets/sprout/p3-growth/unfolding.webp",
+    "stage": "舒展",
+    "width": 768
+  }
+]

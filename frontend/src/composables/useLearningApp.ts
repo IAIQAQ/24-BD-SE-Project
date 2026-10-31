@@ -1,4 +1,4 @@
-import {computed,onMounted,onUnmounted,ref} from 'vue';
+import {computed,onMounted,onUnmounted,readonly,ref} from 'vue';
 import {confirmation,confirmAction,finishConfirmation} from './confirmation';
 import {App} from '@capacitor/app';
 import {Capacitor} from '@capacitor/core';
@@ -8,9 +8,18 @@ import {SaveQueue} from './saveQueue';
 import {ForegroundClock} from './foregroundClock';
 import {useNormalComposition} from './useNormalComposition';
 
+export type PracticeFeedback={sequence:number;kind:'saved'|'completed';practiceId:string};
 export function useLearningApp(){
   const profile=ref<UserProfile|null>(null),username=ref(''),password=ref(''),page=ref('login');
   const error=ref(''),busy=ref(true),points=ref<Point[]>([]),records=ref<Summary[]>([]),recordPage=ref(1),recordTotal=ref(0);
+  const feedback=ref<PracticeFeedback|null>(null),foreground=ref(typeof document==='undefined'||!document.hidden);
+  let feedbackSequence=0;const completedFeedbackIds=new Set<string>();
+  function resetFeedback(){feedback.value=null;completedFeedbackIds.clear();}
+  function publishFeedback(kind:PracticeFeedback['kind'],id:string){
+    if(profile.value?.role!=='STUDENT')return;
+    if(kind==='completed'){if(completedFeedbackIds.has(id))return;completedFeedbackIds.add(id);if(result.value?.contentError)return;}
+    feedback.value={sequence:++feedbackSequence,kind,practiceId:id};
+  }
   const normal=useNormalComposition();let normalOwner='';
   const total=normal.total,draft=ref<Draft|null>(null),current=ref(0),saved=ref('尚未作答'),dirty=ref(false),conflict=ref(false),takingOver=ref(false);
   const result=ref<Result|null>(null),mistakes=ref<Page<Mistake>|null>(null),selectedMistake=ref<Mistake|null>(null),mistakePage=ref(1);
@@ -24,7 +33,7 @@ export function useLearningApp(){
   const displayTime=computed(()=>`${Math.floor(seconds.value/60)}:${String(seconds.value%60).padStart(2,'0')}`);
   function report(e:unknown){
     error.value=e instanceof Error?e.message:'操作失败，请重试';
-    if(e instanceof ApiError&&e.status===401){pauseTimer();profile.value=null;page.value='login';error.value='登录已失效，请重新登录。已保存答案仍在服务端。';}
+    if(e instanceof ApiError&&e.status===401){pauseTimer();resetFeedback();profile.value=null;page.value='login';error.value='登录已失效，请重新登录。已经保存的答案不会丢。';}
     if(e instanceof ApiError&&e.status===409&&['EDITOR_CHANGED','VERSION_CONFLICT','EDITOR_ACTIVE'].includes(e.code)){conflict.value=true;pauseTimer();}
   }
   async function run(action:()=>Promise<void>){if(busy.value)return;busy.value=true;error.value='';try{await action();}catch(e){report(e);}finally{busy.value=false;}}
@@ -35,7 +44,7 @@ export function useLearningApp(){
     points.value=catalog.filter(p=>p.grade===profile.value?.grade);const owner=`${profile.value?.id}:${profile.value?.grade}`;if(normalOwner!==owner){normal.reset(points.value);normalOwner=owner;}records.value=list.items;recordTotal.value=list.total;
   }
   async function authenticated(user:UserProfile){
-    profile.value=user;password.value='';draft.value=null;editor=null;queue=null;conflict.value=false;dirty.value=false;normalOwner='';result.value=null;mistakes.value=null;page.value='home';recordPage.value=1;
+    resetFeedback();profile.value=user;password.value='';draft.value=null;editor=null;queue=null;conflict.value=false;dirty.value=false;normalOwner='';result.value=null;mistakes.value=null;page.value='home';recordPage.value=1;
     pending.value=null;const stored=sessionStorage.getItem(storageKey());if(stored){try{pending.value=JSON.parse(stored);}catch{sessionStorage.removeItem(storageKey());}}
     if(user.role==='STUDENT')await loadHome();
   }
@@ -53,27 +62,32 @@ export function useLearningApp(){
     catch(e){if(e instanceof ApiError&&e.code==='EDITOR_ACTIVE'){conflict.value=true;takingOver.value=true;editor=null;queue=null;saved.value='此练习已在另一处打开；可查看已保存内容';return;}throw e;}
     // 打开可能在锁内推进版本，之后重新取持久草稿。
     draft.value=await practiceApi.draft(id);current.value=draft.value.currentSeq-1;
-    queue=new SaveQueue(editor.version,payload=>practiceApi.save(id,payload));dirty.value=false;saved.value='已载入服务端草稿';elapsedBase.value=draft.value.elapsedMs;
+    queue=new SaveQueue(editor.version,payload=>practiceApi.save(id,payload));dirty.value=false;saved.value='已找回上次保存的答案';elapsedBase.value=draft.value.elapsedMs;
     startTimer();
   }
   const resume=(id:string)=>run(()=>openPractice(id));
-  const takeover=()=>run(async()=>{if(!draft.value)return;if(dirty.value&&!await confirmAction('当前未同步输入将被重新载入的服务端草稿替换。确认在此继续？'))return;await openPractice(draft.value.id,true);});
+  const takeover=()=>run(async()=>{if(!draft.value)return;if(dirty.value&&!await confirmAction('将打开上次保存的答案，本页还没保存的内容会被替换。要在这里继续吗？'))return;await openPractice(draft.value.id,true);});
   const configure=()=>{page.value='config';error.value='';};
   const create=()=>run(async()=>{
     const owner=profile.value?.id??'',input=normal.request(owner,points.value);
     const record=await practiceApi.createNormal(input.allocations,input.operationKey);if(profile.value?.id!==owner||!normal.isCurrent(input.operationKey))return;await openPractice(record.id);normal.finish();
   });
-  function snapshot(){if(!draft.value||!editor)throw new Error('当前不具备编辑权限');return {editorSessionId:editor.editorSessionId,currentSeq:current.value+1,answers:draft.value.items.map(i=>({itemId:i.id,raw:i.raw}))};}
-  function mark(){if(!queue)return;queue.change();dirty.value=true;saved.value='有未保存修改';clearTimeout(debounce);debounce=setTimeout(()=>{void save().catch(report);},800);}
+  function snapshot(){if(!draft.value||!editor)throw new Error('请先选择在这里继续答题');return {editorSessionId:editor.editorSessionId,currentSeq:current.value+1,answers:draft.value.items.map(i=>({itemId:i.id,raw:i.raw}))};}
+  function mark(){if(!queue)return;queue.change();dirty.value=true;saved.value='答案还没保存';clearTimeout(debounce);debounce=setTimeout(()=>{void save().catch(report);},800);}
   function input(value:string){if(!activeItem.value||conflict.value)return;activeItem.value.raw=value;mark();}
   function select(index:number){if(!draft.value||index<0||index>=draft.value.total)return;current.value=index;if(!conflict.value)mark();}
   async function save(){
     clearTimeout(debounce);if(!queue||!draft.value||conflict.value)return;
     const currentQueue=queue;const payload=snapshot();saved.value='正在保存…';
-    try{await currentQueue.save(payload);if(queue===currentQueue){dirty.value=currentQueue.dirty;saved.value=dirty.value?'仍有新修改待保存':'已保存到服务端';}}
-    catch(e){saved.value='保存未确认，当前输入仍保留在本页';throw e;}
+    try{await currentQueue.save(payload);if(queue===currentQueue){dirty.value=currentQueue.dirty;saved.value=dirty.value?'新答案正在等待保存':'答案已保存';}}
+    catch(e){saved.value='还没确认保存成功，请先不要关闭页面';throw e;}
   }
-  const manualSave=()=>run(save);
+  const manualSave=()=>run(async()=>{
+    if(!queue||!draft.value||conflict.value)return;
+    const originalQueue=queue,id=draft.value.id,owner=profile.value?.id;
+    await save();
+    if(queue===originalQueue&&!originalQueue.dirty&&draft.value?.id===id&&profile.value?.id===owner&&!conflict.value)publishFeedback('saved',id);
+  });
   async function syncTime(ended=false){
     if(!draft.value||!editor||!clock)return;
     const id=draft.value.id,payload={editorSessionId:editor.editorSessionId,segmentId,cumulativeMs:clock.elapsed(),ended};
@@ -101,10 +115,10 @@ export function useLearningApp(){
     clearTimeout(debounce);
   }
   const saveExit=()=>run(async()=>{await leavePractice();page.value='home';await loadHome();});
-  const abandon=()=>run(async()=>{if(!await confirmAction('放弃本页未保存修改，保留服务端已有草稿？'))return;clearTimeout(debounce);pauseTimer();await stopTime().catch(()=>{});draft.value=null;queue=null;editor=null;dirty.value=false;page.value='home';await loadHome();});
+  const abandon=()=>run(async()=>{if(!await confirmAction('要放弃本页还没保存的答案吗？以前保存的答案会保留。'))return;clearTimeout(debounce);pauseTimer();await stopTime().catch(()=>{});draft.value=null;queue=null;editor=null;dirty.value=false;page.value='home';await loadHome();});
   const confirmSubmit=()=>run(async()=>{
     const invalid=draft.value?.items.findIndex(i=>i.raw.trim()!==''&&!/^[0-9]+$/.test(i.raw.trim()))??-1;
-    if(invalid>=0){current.value=invalid;throw new Error(`第 ${invalid+1} 题格式不正确，请输入非负整数`);}
+    if(invalid>=0){current.value=invalid;throw new Error(`第 ${invalid+1} 题格式不正确，请填写0或更大的整数，如0、5、12`);}
     await save();await stopTime();page.value='confirm';
   });
   const returnAnswer=()=>{page.value='practice';startTimer();};
@@ -112,19 +126,19 @@ export function useLearningApp(){
     if(!draft.value||!editor||!queue)return;
     const id=draft.value.id,operationKey=crypto.randomUUID(),probe={operationKey,editorSessionId:editor.editorSessionId,baseVersion:queue.version};
     const payload={...snapshot(),...probe,confirmUnanswered:true,lastSegment};pending.value={id,probe};persistPending();page.value='checking';
-    try{result.value=await practiceApi.submit(id,payload);pending.value=null;persistPending();dirty.value=false;page.value='result';}
+    try{result.value=await practiceApi.submit(id,payload);pending.value=null;persistPending();dirty.value=false;page.value='result';publishFeedback('completed',id);}
     catch(e){if(e instanceof ApiError&&e.status===400){pending.value=null;persistPending();page.value='practice';startTimer();}report(e);}
   });
   async function reconcile(){
     if(!pending.value)return;const p=pending.value;const checked=await practiceApi.reconcile(p.id,p.probe);
-    if(checked.status==='COMPLETED'){result.value=checked.result??await practiceApi.result(p.id);pending.value=null;persistPending();page.value='result';return;}
+    if(checked.status==='COMPLETED'){result.value=checked.result??await practiceApi.result(p.id);pending.value=null;persistPending();page.value='result';publishFeedback('completed',p.id);return;}
     if(checked.status==='CHECKING'){page.value='checking';return;}
     pending.value=null;persistPending();
     if(checked.status==='VOID'||checked.status==='WITHDRAWN'){draft.value=await practiceApi.draft(p.id);page.value='inactive';return;}
     if(checked.canEdit&&checked.editorSessionId){
       const raw=await practiceApi.draft(p.id);if(!draft.value||draft.value.id!==p.id)draft.value=raw;
       editor={...raw,editorSessionId:checked.editorSessionId,version:checked.version};queue=new SaveQueue(checked.version,payload=>practiceApi.save(p.id,payload));queue.change();dirty.value=true;conflict.value=false;elapsedBase.value=raw.elapsedMs;page.value='practice';saved.value='已确认未提交，可继续作答';startTimer();
-    }else{draft.value=await practiceApi.draft(p.id);page.value='practice';conflict.value=true;takingOver.value=true;error.value='未提交成功，另一处已继续。当前页面没有编辑权。';}
+    }else{draft.value=await practiceApi.draft(p.id);page.value='practice';conflict.value=true;takingOver.value=true;error.value='还没有交卷，这份练习已在别处打开。请先选择在这里继续。';}
   }
   const checkSubmission=()=>run(reconcile);
   const showResult=(id:string)=>run(async()=>{result.value=await practiceApi.result(id);page.value='result';});
@@ -134,15 +148,15 @@ export function useLearningApp(){
   const nextMistakes=(step:number)=>{mistakePage.value+=step;void loadMistakes();};
   const signOut=()=>run(async()=>{
     if(dirty.value&&!await confirmAction('仍有未保存输入，先保存再退出登录？取消可留在本页。'))return;
-    await leavePractice();await logout();profile.value=null;draft.value=null;queue=null;editor=null;records.value=[];mistakes.value=null;result.value=null;page.value='login';dirty.value=false;pauseTimer();
+    await leavePractice();await logout();resetFeedback();profile.value=null;draft.value=null;queue=null;editor=null;records.value=[];mistakes.value=null;result.value=null;page.value='login';dirty.value=false;pauseTimer();
   });
   const saveProfile=(nickname:string,grade:number)=>run(async()=>{profile.value=await updateProfile(nickname,grade);page.value='home';await loadHome();});
   async function visibility(active:boolean){
     if(page.value!=='practice'||conflict.value||!editor||!draft.value)return;
     if(!active){pauseTimer();try{await save();await stopTime();}catch(e){report(e);}}
-    else{try{await save();await stopTime();const raw=await practiceApi.draft(draft.value.id);if(raw.status==='COMPLETED'){result.value=await practiceApi.result(raw.id);page.value='result';return;}if(queue&&raw.version!==queue.version){conflict.value=true;error.value='草稿已在另一处更新，请核对后明确接管';return;}elapsedBase.value=raw.elapsedMs;startTimer();}catch(e){report(e);if(!conflict.value&&profile.value)startTimer();}}
+    else{try{await save();await stopTime();const raw=await practiceApi.draft(draft.value.id);if(raw.status==='COMPLETED'){result.value=await practiceApi.result(raw.id);page.value='result';return;}if(queue&&raw.version!==queue.version){conflict.value=true;error.value='答案已在别处更新，请确认是否要在这里继续。';return;}elapsedBase.value=raw.elapsedMs;startTimer();}catch(e){report(e);if(!conflict.value&&profile.value)startTimer();}}
   }
-  const transition=(active:boolean)=>{lifecycleTail=lifecycleTail.catch(()=>{}).then(()=>visibility(active));};
+  const transition=(active:boolean)=>{foreground.value=active;lifecycleTail=lifecycleTail.catch(()=>{}).then(()=>visibility(active));};
   const visible=()=>transition(!document.hidden);
   const beforeUnload=(e:BeforeUnloadEvent)=>{if(dirty.value||pending.value){e.preventDefault();e.returnValue='';}};
   const back=async()=>{if(page.value==='practice'){if(dirty.value&&!await confirmAction('保存当前答案并返回首页？'))return;void saveExit();}else if(page.value==='confirm')returnAnswer();else if(page.value==='checking'){page.value='home';void loadHome().catch(report);}else if(page.value==='mistakeDetail')page.value='mistakes';else if(page.value!=='home'&&page.value!=='login')void home();};
@@ -156,6 +170,6 @@ export function useLearningApp(){
     try{await authenticated(await me());}catch(e){if(!(e instanceof ApiError&&e.status===401))report(e);}finally{busy.value=false;}
   });
   onUnmounted(()=>{clearInterval(tick);clearTimeout(debounce);document.removeEventListener('visibilitychange',visible);window.removeEventListener('beforeunload',beforeUnload);for(const l of nativeListeners)void l.remove();});
-  return {profile,username,password,page,error,busy,points,normal,records,total,draft,current,activeItem,answered,missing,displayTime,saved,dirty,conflict,takingOver,result,mistakes,selectedMistake,pending,recordPage,recordTotal,mistakePage,
+  return {feedback:readonly(feedback),foreground:readonly(foreground),profile,username,password,page,error,busy,points,normal,records,total,draft,current,activeItem,answered,missing,displayTime,saved,dirty,conflict,takingOver,result,mistakes,selectedMistake,pending,recordPage,recordTotal,mistakePage,
     signIn,restore,signOut,saveProfile,home,configure,create,resume,takeover,input,select,manualSave,saveExit,abandon,confirmSubmit,returnAnswer,submit,checkSubmission,showResult,loadMistakes,showMistake,nextRecords,nextMistakes,back};
 }

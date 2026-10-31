@@ -1,0 +1,47 @@
+[
+  {
+    "brokenImages": 0,
+    "hero": {
+      "bottom": 329.5,
+      "height": 176,
+      "left": 16,
+      "right": 289,
+      "top": 153.5,
+      "width": 273,
+      "x": 16,
+      "y": 153.5
+    },
+    "scrollWidth": 305,
+    "width": 320
+  },
+  {
+    "brokenImages": 0,
+    "hero": {
+      "bottom": 340.359375,
+      "height": 184,
+      "left": 16,
+      "right": 359,
+      "top": 156.359375,
+      "width": 343,
+      "x": 16,
+      "y": 156.359375
+    },
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "brokenImages": 0,
+    "hero": {
+      "bottom": 458.765625,
+      "height": 288.765625,
+      "left": 80.5,
+      "right": 672.5,
+      "top": 170,
+      "width": 592,
+      "x": 80.5,
+      "y": 170
+    },
+    "scrollWidth": 753,
+    "width": 768
+  }
+]

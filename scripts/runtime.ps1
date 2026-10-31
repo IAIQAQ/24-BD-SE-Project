@@ -1,4 +1,4 @@
-param([ValidateSet('mathdrill_dev','mathdrill_test')] [string]$Database='mathdrill_dev')
+param([ValidateSet('mathdrill_dev','mathdrill_test','mathdrill_demo')] [string]$Database='mathdrill_dev')
 $ErrorActionPreference='Stop'
 $ProjectRoot=Split-Path $PSScriptRoot -Parent
 $PrivateRoot=Join-Path $ProjectRoot '.local'
