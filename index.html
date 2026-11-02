@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f7f1">
+  <title>小芽口算 · APP 交互原型</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="prototype-model.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="studio-header">
+    <a class="studio-brand" href="#" aria-label="小芽口算原型首页"><span class="brand-icon" data-icon="sprout"></span><span>小芽口算 <small>产品交互原型</small></span></a>
+    <div class="studio-meta"><span class="live-dot"></span> 本地模拟 <span class="separator">/</span> Android · 学生端 <button class="text-button" data-action="reset" title="清除本机的演示记录">重置演示 <span data-icon="reset"></span></button></div>
+  </header>
+  <main class="studio-layout">
+    <aside class="journey-panel">
+      <span class="eyebrow">从一次练习开始</span>
+      <h1>小小的练习，<br>看得见的进步。</h1>
+      <p class="studio-description">把出题、作答和错题回顾，<br>串成一段轻松的学习旅程。</p>
+      <ol id="journey" class="journey-list" aria-label="演示流程"></ol>
+      <div class="scope-note"><span data-icon="shield"></span><p>这是可点击的设计原型。<br>使用模拟账号与题目，<br>无需填写真实个人信息。</p></div>
+    </aside>
+    <section class="device-column" aria-label="APP 原型">
+      <div class="device-caption"><span class="live-dot"></span> 可交互预览 <span>01 / 学生端</span></div>
+      <div class="device">
+        <div class="status-bar" aria-hidden="true"><span>9:41</span><div><span data-icon="signal"></span><span data-icon="wifi"></span><span class="battery"></span></div></div>
+        <div id="app" class="app" aria-live="off"></div>
+        <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+        <div id="modal-root"></div>
+        <div class="gesture-bar" aria-hidden="true"></div>
+      </div>
+      <p class="device-footnote">点击手机中的按钮，像使用 APP 一样体验。</p>
+    </section>
+    <aside class="guide-panel">
+      <span class="eyebrow">体验小助手</span>
+      <h2 id="guide-title">先和小芽打个招呼</h2>
+      <p id="guide-copy">演示账号已经准备好。点击“进入学习”，开始体验学生的完整操作流程。</p>
+      <div class="guide-divider"></div>
+      <span class="tiny-label">演示工具 · 不属于正式 APP</span>
+      <button class="demo-fill" data-action="fill-example"><span data-icon="wand"></span><span>填入示例答案<small>30 题时：24 对 · 4 错 · 2 漏</small></span><span data-icon="arrow"></span></button>
+      <div class="scenario-controls">
+        <label><span><b>模拟保存失败</b><small>检查输入保留与重试反馈</small></span><input id="mock-save-fail" type="checkbox" role="switch"></label>
+        <label><span><b>模拟提交待核对</b><small>提交后先核对，再显示结果</small></span><input id="mock-submit-pending" type="checkbox" role="switch"></label>
+      </div>
+      <div class="guide-tip"><span data-icon="bulb"></span><p><strong>试试中途离开</strong><br>作答后“保存并退出”，再到“我的”退出登录。重新登录后，进度仍可继续。</p></div>
+      <div class="prototype-legend"><span>本机模拟保存</span><span>无正式后端</span><span>未连接真实账号</span></div>
+    </aside>
+  </main>
+</body>
+</html>
